@@ -1,0 +1,661 @@
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footerSection {
+  position: relative;
+
+  background: #21151f;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+.footerContainer {
+  width: min(1280px, calc(100% - 40px));
+
+  margin: 0 auto;
+
+  padding: 20px 0;
+}
+
+
+/* =========================================
+   MAIN FOOTER
+========================================= */
+
+.footerMain {
+  display: grid;
+
+  grid-template-columns:
+    1.25fr
+    0.8fr
+    0.9fr
+    1fr;
+
+  gap: 55px;
+
+  padding: 20px 0 30px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footerBrand {
+  max-width: 320px;
+}
+
+.footerLogo {
+  display: inline-flex;
+
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.footerLogo img {
+  display: block;
+
+  width: 185px;
+  height: 100px;
+
+  
+
+  object-fit: contain;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.footerLogo:hover img {
+  transform: scale(1.02);
+}
+
+.footerBrandText {
+  max-width: 300px;
+
+  margin: 18px 0 20px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.footerSocials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.footerSocial {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footerSocial svg {
+  width: 15px;
+  height: 15px;
+}
+
+.footerSocial:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: var(--primary);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.footerColumn {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.footerColumnLabel {
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.footerColumn h3 {
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 23px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.footerNav {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.footerNav a {
+  min-height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  text-decoration: none;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.footerNav a svg {
+  width: 14px;
+  height: 14px;
+
+  color: var(--accent);
+
+  opacity: 0;
+
+  transform: translateX(-4px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: #ffffff;
+
+  padding-left: 4px;
+}
+
+.footerNav a:hover svg {
+  opacity: 1;
+
+  transform: translate(0, -2px);
+}
+
+
+/* =========================================
+   HOURS
+========================================= */
+
+.footerHours {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.footerHour {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding-bottom: 11px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.footerHour span {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footerHour strong {
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footerContact {
+  gap: 0;
+}
+
+.footerContactItem {
+  min-height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition:
+    color 0.3s ease;
+}
+
+.footerContactItem:hover {
+  color: var(--accent);
+}
+
+.footerContactIcon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(200, 155, 109, 0.35);
+
+  border-radius: 50%;
+
+  color: var(--accent);
+}
+
+.footerContactIcon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footerContactText {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.footerContactText small {
+  color: rgba(255, 255, 255, 0.48);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+}
+
+.footerContactText strong {
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.footerCta {
+  min-height: 150px;
+
+  margin: 25px 0;
+
+  padding: 20px 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      105deg,
+      #3b1838 0%,
+      #4a2445 55%,
+      #5b3154 100%
+    );
+
+  border: 1px solid rgba(200, 155, 109, 0.18);
+}
+
+.footerCtaContent {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.footerCtaLabel {
+  margin-bottom: 5px;
+
+  color: var(--accent);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.footerCta h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+.footerCta h2 em {
+  display: block;
+
+  color: var(--accent);
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+.footerCtaButton {
+  min-height: 48px;
+
+  padding: 0 7px 0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border-radius: 999px;
+
+  background: #f8f5f1;
+
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.footerCtaButton:hover {
+  background: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+.footerCtaIcon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #ffffff;
+}
+
+.footerCtaIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.footerBottom {
+  min-height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 12px;
+}
+
+.footerBackTop {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease;
+}
+
+.footerBackTop svg {
+  width: 14px;
+  height: 14px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.footerBackTop:hover {
+  color: var(--accent);
+}
+
+.footerBackTop:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .footerMain {
+    grid-template-columns: 1.2fr 0.8fr 0.8fr;
+
+    gap: 35px;
+  }
+
+  .footerContact {
+    grid-column: span 1;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .footerContainer {
+    width: calc(100% - 30px);
+
+    padding: 20px 0;
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px 25px;
+
+    padding-bottom: 25px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+
+    max-width: 500px;
+  }
+
+  .footerLogo img {
+    width: 145px;
+  }
+
+  .footerCta {
+    min-height: auto;
+
+    padding: 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .footerCtaButton {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+  .footerBottom {
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+  .footerMain {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .footerBrand {
+    grid-column: auto;
+  }
+
+  .footerColumn h3 {
+    font-size: 21px;
+  }
+
+  .footerCta h2 {
+    font-size: 34px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}

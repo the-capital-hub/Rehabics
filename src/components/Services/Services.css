@@ -1,0 +1,354 @@
+.servicesSection {
+  background: var(--white);
+  color: var(--text);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.servicesContainer {
+  width: min(100% - 40px, 1280px);
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.servicesHeader {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.servicesHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.servicesLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.servicesLabelDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.servicesCount {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.servicesHeaderContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 50px;
+  align-items: end;
+}
+
+.servicesHeaderContent h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.servicesHeaderContent h2 span {
+  display: block;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.servicesHeaderContent p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* GRID */
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 20px;
+}
+
+/* CARD */
+
+.serviceCard {
+  overflow: hidden;
+  border: 1px solid rgba(59, 24, 56, 0.12);
+  border-radius: 20px;
+  background: var(--ivory);
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 155, 109, 0.55);
+  box-shadow: 0 20px 50px rgba(59, 24, 56, 0.1);
+}
+
+/* IMAGE */
+
+.serviceImageWrap {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+}
+
+.serviceImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.serviceCard:hover .serviceImage {
+  transform: scale(1.06);
+}
+
+.serviceImageOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 24, 56, 0.15) 0%,
+      rgba(59, 24, 56, 0.05) 35%,
+      rgba(59, 24, 56, 0.72) 100%
+    );
+}
+
+.serviceCardTop {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.serviceNumber {
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.serviceIcon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(59, 24, 56, 0.65);
+  color: var(--white);
+  font-size: 17px;
+  backdrop-filter: blur(8px);
+}
+
+.serviceImageTitle {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+}
+
+.serviceImageTitle span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* CONTENT */
+
+.serviceCardContent {
+  padding: 18px;
+}
+
+.serviceTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.serviceTitleRow h3 {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.serviceArrow {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(59, 24, 56, 0.12);
+  border-radius: 50%;
+  color: var(--secondary);
+  font-size: 16px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.serviceCard:hover .serviceArrow {
+  transform: rotate(45deg);
+  background: var(--primary);
+  color: var(--white);
+}
+
+.serviceDescription {
+  max-width: 480px;
+  margin: 8px 0 15px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* SERVICE LIST */
+
+.serviceList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(59, 24, 56, 0.1);
+}
+
+.serviceItem {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-bottom: 1px solid rgba(59, 24, 56, 0.08);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.serviceItem:nth-child(odd) {
+  border-right: 1px solid rgba(59, 24, 56, 0.08);
+}
+
+.serviceItemDot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* FOOTER */
+
+.serviceCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.serviceCardFooter svg {
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .serviceCardFooter svg {
+  transform: translate(3px, -3px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .servicesHeaderContent {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .servicesHeaderContent p {
+    max-width: 600px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .servicesContainer {
+    width: min(100% - 30px, 1280px);
+  }
+
+  .servicesHeaderTop {
+    margin-bottom: 14px;
+  }
+
+  .servicesCount {
+    display: none;
+  }
+
+  .servicesHeaderContent h2 {
+    font-size: 32px;
+  }
+
+  .servicesHeaderContent p {
+    font-size: 12px;
+  }
+
+  .serviceImageWrap {
+    height: 200px;
+  }
+
+  .serviceCardContent {
+    padding: 16px;
+  }
+
+  .serviceTitleRow h3 {
+    font-size: 23px;
+  }
+
+  .serviceList {
+    grid-template-columns: 1fr;
+  }
+
+  .serviceItem:nth-child(odd) {
+    border-right: 0;
+  }
+}

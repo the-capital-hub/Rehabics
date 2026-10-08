@@ -1,0 +1,224 @@
+.locationsSection {
+  background: var(--white);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.locationsContainer {
+  width: min(100% - 40px, 1280px);
+  margin: 0 auto;
+}
+
+.locationsHeader {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 760px);
+  gap: 45px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.locationsLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 7px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.locationsLabelLine {
+  width: 25px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.locationsHeader h2 {
+  margin: 0;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 500;
+  line-height: 1.12;
+}
+
+.locationsHeader h2 span {
+  display: block;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.locationsHeader p {
+  max-width: 530px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.locationsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.locationCard {
+  padding: 20px;
+  border-radius: 18px;
+  background: var(--primary);
+  color: var(--white);
+  transition: transform 0.3s ease;
+}
+
+.locationCard:hover {
+  transform: translateY(-3px);
+}
+
+.locationCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.locationCardTop > span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.locationIcon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(200, 155, 109, 0.45);
+  border-radius: 50%;
+  color: var(--accent);
+}
+
+.locationCard h3 {
+  margin: 20px 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.locationCard p {
+  min-height: 72px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.locationLink {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.locationLink svg {
+  transition: transform 0.3s ease;
+}
+
+.locationLink:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.contactStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(59, 24, 56, 0.12);
+  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 78px;
+  padding: 12px 16px;
+  border-right: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.contactItem:last-child {
+  border-right: 0;
+}
+
+.contactItem > svg {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.contactItem div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contactItem span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contactItem strong {
+  color: var(--primary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+@media (max-width: 850px) {
+  .locationsHeader {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .locationsLabel {
+    padding-top: 0;
+  }
+
+  .contactStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .contactItem {
+    border-right: 0;
+    border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+  }
+
+  .contactItem:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .locationsContainer {
+    width: min(100% - 30px, 1280px);
+  }
+
+  .locationsHeader h2 {
+    font-size: 30px;
+  }
+
+  .locationsHeader p {
+    font-size: 12px;
+  }
+
+  .locationsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationCard p {
+    min-height: auto;
+  }
+}

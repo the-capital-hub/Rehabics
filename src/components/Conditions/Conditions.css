@@ -1,0 +1,350 @@
+.conditionsSection {
+  background: var(--ivory);
+  color: var(--text);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.conditionsContainer {
+  width: min(100% - 40px, 1280px);
+  margin: 0 auto;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.conditionsIntro {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.conditionsHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.conditionsLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.conditionsLabelDot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.conditionsCount {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.conditionsHeaderContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 50px;
+  align-items: end;
+}
+
+.conditionsHeaderContent h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.conditionsHeaderContent h2 span {
+  display: block;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+.conditionsHeaderContent p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.conditionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding-top: 20px;
+}
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.conditionCard {
+  overflow: hidden;
+  border: 1px solid rgba(59, 24, 56, 0.12);
+  border-radius: 20px;
+  background: var(--white);
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.conditionCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 155, 109, 0.55);
+  box-shadow: 0 20px 50px rgba(59, 24, 56, 0.1);
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.conditionImageWrap {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+}
+
+.conditionImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.conditionCard:hover .conditionImage {
+  transform: scale(1.06);
+}
+
+.conditionImageOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 24, 56, 0.1) 0%,
+      rgba(59, 24, 56, 0.04) 40%,
+      rgba(59, 24, 56, 0.76) 100%
+    );
+}
+
+.conditionTop {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conditionNumber {
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.conditionIcon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  background: rgba(59, 24, 56, 0.65);
+
+  color: var(--white);
+  font-size: 17px;
+
+  backdrop-filter: blur(8px);
+}
+
+.conditionImageBottom {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+}
+
+.conditionImageBottom span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+
+.conditionContent {
+  padding: 18px;
+}
+
+.conditionTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.conditionTitleRow h3 {
+  max-width: 500px;
+  margin: 0;
+
+  color: var(--primary);
+
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.conditionArrow {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(59, 24, 56, 0.12);
+  border-radius: 50%;
+
+  color: var(--secondary);
+  font-size: 16px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.conditionCard:hover .conditionArrow {
+  transform: rotate(45deg);
+  background: var(--primary);
+  color: var(--white);
+}
+
+.conditionContent > p {
+  max-width: 520px;
+  margin: 9px 0 15px;
+
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.conditionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 13px;
+
+  border-top: 1px solid rgba(59, 24, 56, 0.1);
+
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.conditionFooter svg {
+  font-size: 15px;
+
+  transition: transform 0.3s ease;
+}
+
+.conditionCard:hover .conditionFooter svg {
+  transform: translate(3px, -3px);
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .conditionsHeaderContent {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .conditionsHeaderContent p {
+    max-width: 600px;
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 650px) {
+  .conditionsContainer {
+    width: min(100% - 30px, 1280px);
+  }
+
+  .conditionsHeaderTop {
+    margin-bottom: 14px;
+  }
+
+  .conditionsCount {
+    display: none;
+  }
+
+  .conditionsHeaderContent h2 {
+    font-size: 32px;
+  }
+
+  .conditionsHeaderContent p {
+    font-size: 12px;
+  }
+
+  .conditionsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .conditionImageWrap {
+    height: 200px;
+  }
+
+  .conditionContent {
+    padding: 16px;
+  }
+
+  .conditionTitleRow h3 {
+    font-size: 23px;
+  }
+}

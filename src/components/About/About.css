@@ -1,0 +1,746 @@
+
+.aboutSection {
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px 0;
+
+  background: var(--ivory);
+}
+
+.aboutContainer {
+  width: min(1280px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.aboutFounderVisual {
+  position: relative;
+  min-height: 390px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--plum);
+}
+
+.founderImage {
+  position: absolute;
+  inset: 0;
+  background-image: url(
+    "https://images.pexels.com/photos/20860617/pexels-photo-20860617.jpeg?auto=compress&cs=tinysrgb&w=1400"
+  );
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+}
+
+.aboutFounderVisual:hover .founderImage {
+  transform: scale(1.04);
+}
+
+.founderOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(59, 24, 56, 0.08),
+    rgba(33, 28, 32, 0.25)
+  );
+}
+
+.founderTop {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founderTop span:first-child {
+  color: var(--accent);
+}
+
+.founderInfo {
+  padding-top: 14px;
+}
+
+.founderInfoLabel {
+  display: block;
+  margin-bottom: 5px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founderInfo h3 {
+  margin: 0;
+
+  color: var(--plum);
+
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.founderInfo p {
+  max-width: 450px;
+  margin: 6px 0 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.aboutIntro {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 55px;
+
+  align-items: stretch;
+
+  padding: 20px 0;
+}
+
+
+/* =========================================
+   INTRO CONTENT
+========================================= */
+
+.aboutIntroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 10px 0;
+}
+
+.aboutLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 16px;
+
+  color: var(--plum);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.aboutLabelDot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 5px rgba(200, 155, 109, 0.12);
+}
+
+.aboutIntroContent h2 {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: var(--plum);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.aboutIntroContent h2 span {
+  display: block;
+
+  color: var(--secondary-plum);
+
+  font-style: italic;
+}
+
+.aboutLead {
+  max-width: 520px;
+
+  margin: 18px 0 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   ABOUT LINK
+========================================= */
+
+.aboutLink {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 20px;
+
+  color: var(--plum);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.aboutLinkIcon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--plum);
+
+  color: #ffffff;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.aboutLink:hover .aboutLinkIcon {
+  transform: rotate(45deg);
+  background: var(--accent);
+}
+
+
+/* =========================================
+   FOUNDER VISUAL
+========================================= */
+
+.aboutFounderVisual {
+  position: relative;
+
+  min-height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: var(--plum);
+}
+
+.founderImage {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("https://images.pexels.com/photos/20860617/pexels-photo-20860617.jpeg?auto=compress&cs=tinysrgb&w=1400");
+
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.01);
+
+  transition: transform 0.8s ease;
+}
+
+.aboutFounderVisual:hover .founderImage {
+  transform: scale(1.045);
+}
+
+.founderOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 24, 56, 0.12) 0%,
+      rgba(59, 24, 56, 0.18) 35%,
+      rgba(33, 28, 32, 0.88) 100%
+    );
+}
+
+
+/* =========================================
+   FOUNDER TOP
+========================================= */
+
+.founderTop {
+  position: absolute;
+
+  top: 18px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founderTop span:first-child {
+  color: var(--accent);
+}
+
+
+/* =========================================
+   FOUNDER CARD
+========================================= */
+
+.founderCard {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  max-width: 420px;
+
+  padding: 18px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  background: rgba(59, 24, 56, 0.76);
+
+  backdrop-filter: blur(10px);
+}
+
+.founderCardLabel {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.founderCard h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.founderCard p {
+  max-width: 360px;
+
+  margin: 8px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PHILOSOPHY
+========================================= */
+
+.aboutPhilosophy {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+
+  gap: 50px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid rgba(59, 24, 56, 0.12);
+  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+}
+
+.philosophyTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.smallLabel {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--accent);
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.philosophyTitle h3 {
+  margin: 0;
+
+  color: var(--plum);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.philosophyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+
+  align-items: center;
+}
+
+.philosophyContent p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   STRENGTH CARDS
+========================================= */
+
+.strengths {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+
+  margin-top: 18px;
+}
+
+.strength {
+  position: relative;
+
+  min-height: 220px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  border-radius: 18px;
+
+  background-size: cover;
+  background-position: center;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.strength:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 40px rgba(59, 24, 56, 0.18);
+}
+
+.strengthOverlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 24, 56, 0.42) 0%,
+      rgba(59, 24, 56, 0.68) 45%,
+      rgba(33, 28, 32, 0.95) 100%
+    );
+
+  transition: background 0.4s ease;
+}
+
+.strength:hover .strengthOverlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(59, 24, 56, 0.3) 0%,
+      rgba(59, 24, 56, 0.62) 45%,
+      rgba(33, 28, 32, 0.96) 100%
+    );
+}
+
+.strengthInner {
+  position: relative;
+  z-index: 2;
+
+  min-height: 220px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.strengthTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.strengthIcon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: var(--accent);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.strength:hover .strengthIcon {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.strengthIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.strengthNumber {
+  color: rgba(255, 255, 255, 0.68);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.strengthContent {
+  max-width: 230px;
+}
+
+.strengthContent h4 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.strengthContent p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .aboutIntro {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+  }
+
+  .aboutIntroContent h2 {
+    font-size: 48px;
+  }
+
+  .aboutPhilosophy {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .philosophyContent {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .strengths {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .aboutSection {
+    padding: 15px 0;
+  }
+
+  .aboutContainer {
+    width: min(100% - 28px, 1280px);
+  }
+
+  .aboutIntro {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 15px 0;
+  }
+
+  .aboutIntroContent {
+    padding: 0;
+  }
+
+  .aboutIntroContent h2 {
+    font-size: 38px;
+  }
+
+  .aboutLead {
+    margin-top: 14px;
+
+    font-size: 13px;
+  }
+
+  .aboutLink {
+    margin-top: 14px;
+  }
+
+  .aboutFounderVisual {
+    min-height: 330px;
+
+    border-radius: 16px;
+  }
+
+  .founderCard {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+
+    padding: 15px;
+  }
+
+  .founderCard h3 {
+    font-size: 24px;
+  }
+
+  .aboutPhilosophy {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    padding: 15px 0;
+  }
+
+  .philosophyTitle h3 {
+    font-size: 34px;
+  }
+
+  .philosophyContent {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .philosophyContent p {
+    font-size: 13px;
+  }
+
+  .strengths {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 12px;
+  }
+
+  .strength {
+    min-height: 200px;
+
+    border-radius: 16px;
+  }
+
+  .strengthInner {
+    min-height: 200px;
+
+    padding: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .aboutIntroContent h2 {
+    font-size: 33px;
+  }
+
+  .aboutFounderVisual {
+    min-height: 300px;
+  }
+
+  .founderCard h3 {
+    font-size: 22px;
+  }
+
+  .philosophyTitle h3 {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,424 @@
+.doctorSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--ivory);
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.doctorContainer {
+  width: min(1280px, calc(100% - 40px));
+  height: calc(100vh - 40px);
+  max-height: 760px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+  gap: 55px;
+  align-items: center;
+}
+
+/* LEFT CONTENT */
+
+.doctorContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.doctorHeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.doctorLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.doctorLabelDot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.doctorCount {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* HEADING */
+
+.doctorHeading {
+  margin-bottom: 22px;
+}
+
+.doctorHeading h2 {
+  margin: 0;
+  color: var(--primary);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.doctorHeading h2 span {
+  display: block;
+  color: var(--secondary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.doctorRole {
+  margin: 16px 0 0;
+  color: var(--accent);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* DESCRIPTION */
+
+.doctorDescription {
+  max-width: 610px;
+  margin-bottom: 24px;
+}
+
+.doctorDescription p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.doctorDescription p:last-child {
+  margin-bottom: 0;
+}
+
+/* HIGHLIGHTS */
+
+.doctorHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.doctorHighlight {
+  min-height: 88px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+
+  border: 1px solid rgba(59, 24, 56, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.doctorHighlight:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 155, 109, 0.5);
+  background: #ffffff;
+}
+
+.doctorHighlightIcon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(200, 155, 109, 0.14);
+  color: var(--accent);
+
+  font-size: 15px;
+}
+
+.doctorHighlightText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doctorHighlightText span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doctorHighlightText strong {
+  color: var(--primary);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+/* LINK */
+
+.doctorLink {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: gap 0.3s ease;
+}
+
+.doctorLink:hover {
+  gap: 17px;
+}
+
+.doctorLinkIcon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.doctorLink:hover .doctorLinkIcon {
+  transform: rotate(8deg);
+  background: var(--accent);
+}
+
+/* RIGHT IMAGE */
+
+.doctorVisual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.doctorImageWrap {
+  position: relative;
+  width: 100%;
+  height: min(670px, calc(100vh - 80px));
+
+  min-height: 520px;
+  overflow: hidden;
+
+  background: var(--primary);
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.8s ease;
+}
+
+.doctorImageWrap:hover .doctorImage {
+  transform: scale(1.035);
+}
+
+.doctorImageOverlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(59, 24, 56, 0.2),
+      transparent 35%,
+      rgba(59, 24, 56, 0.75)
+    );
+}
+
+.doctorImageTop {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.doctorImageBottom {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: #ffffff;
+}
+
+.doctorImageBottom span {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.doctorImageBottom strong {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .doctorContainer {
+    height: auto;
+    max-height: none;
+
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .doctorVisual {
+    order: -1;
+  }
+
+  .doctorImageWrap {
+    height: 480px;
+    min-height: 0;
+  }
+
+  .doctorContent {
+    padding-bottom: 10px;
+  }
+
+  .doctorHeading h2 {
+    font-size: clamp(46px, 8vw, 64px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .doctorSection {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  .doctorContainer {
+    width: min(100% - 30px, 1280px);
+    gap: 25px;
+  }
+
+  .doctorHeaderTop {
+    margin-bottom: 20px;
+  }
+
+  .doctorCount {
+    display: none;
+  }
+
+  .doctorHeading {
+    margin-bottom: 18px;
+  }
+
+  .doctorHeading h2 {
+    font-size: clamp(42px, 13vw, 56px);
+  }
+
+  .doctorRole {
+    margin-top: 13px;
+    font-size: 12px;
+  }
+
+  .doctorDescription {
+    margin-bottom: 20px;
+  }
+
+  .doctorDescription p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .doctorHighlights {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .doctorHighlight {
+    min-height: 68px;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .doctorImageWrap {
+    height: 390px;
+  }
+
+  .doctorImageTop {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+  }
+
+  .doctorImageBottom {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .doctorImageBottom span {
+    font-size: 17px;
+  }
+}
