@@ -1,746 +1,671 @@
 
 .aboutSection {
+  --aboutTeal: #08B4A5;
+  --aboutTealDark: #078F84;
+  --aboutPink: #E85B7D;
+  --aboutPurple: #50227F;
+
   position: relative;
-  overflow: hidden;
-
   padding: 20px 0;
-
-  background: var(--ivory);
+  overflow: hidden;
+  background: #FFFFFF;
+  color: #24252B;
 }
 
 .aboutContainer {
-  width: min(1280px, calc(100% - 40px));
+  width: min(1280px, calc(100% - 48px));
   margin: 0 auto;
 }
-.aboutFounderVisual {
-  position: relative;
-  min-height: 390px;
-  overflow: hidden;
-  border-radius: 20px;
-  background: var(--plum);
-}
 
-.founderImage {
-  position: absolute;
-  inset: 0;
-  background-image: url(
-    "https://images.pexels.com/photos/20860617/pexels-photo-20860617.jpeg?auto=compress&cs=tinysrgb&w=1400"
-  );
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.8s ease;
-}
-
-.aboutFounderVisual:hover .founderImage {
-  transform: scale(1.04);
-}
-
-.founderOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(59, 24, 56, 0.08),
-    rgba(33, 28, 32, 0.25)
-  );
-}
-
-.founderTop {
-  position: absolute;
-  top: 18px;
-  left: 20px;
-  right: 20px;
-
-  display: flex;
-  justify-content: space-between;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.founderTop span:first-child {
-  color: var(--accent);
-}
-
-.founderInfo {
-  padding-top: 14px;
-}
-
-.founderInfoLabel {
-  display: block;
-  margin-bottom: 5px;
-
-  color: var(--accent);
-
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.founderInfo h3 {
-  margin: 0;
-
-  color: var(--plum);
-
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  font-weight: 600;
-}
-
-.founderInfo p {
-  max-width: 450px;
-  margin: 6px 0 0;
-
-  color: var(--muted);
-
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-/* =========================================
-   INTRO
-========================================= */
+/* Introduction */
 
 .aboutIntro {
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 55px;
-
-  align-items: stretch;
-
-  padding: 20px 0;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 72px);
 }
 
-
-/* =========================================
-   INTRO CONTENT
-========================================= */
-
 .aboutIntroContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 .aboutLabel {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
-
-  margin-bottom: 16px;
-
-  color: var(--plum);
-
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--aboutTealDark);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
-
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .aboutLabelDot {
-  width: 6px;
-  height: 6px;
-
-  flex-shrink: 0;
-
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-
-  background: var(--accent);
-
-  box-shadow:
-    0 0 0 5px rgba(200, 155, 109, 0.12);
+  background: var(--aboutPink);
+  box-shadow: 0 0 0 5px rgba(232, 91, 125, 0.12);
 }
 
-.aboutIntroContent h2 {
-  max-width: 580px;
-
+.aboutHeading {
   margin: 0;
-
-  color: var(--plum);
-
-  font-family: "Playfair Display", serif;
-  font-size: clamp(38px, 5vw, 64px);
-  font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  color: #29242E;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
 }
 
-.aboutIntroContent h2 span {
+.aboutHeading span {
   display: block;
-
-  color: var(--secondary-plum);
-
-  font-style: italic;
+  color: var(--aboutTealDark);
 }
 
 .aboutLead {
-  max-width: 520px;
-
-  margin: 18px 0 0;
-
-  color: var(--muted);
-
-  font-size: 15px;
-  line-height: 1.75;
+  max-width: 460px;
+  margin: 18px 0 22px;
+  color: #686A73;
+  font-size: 14px;
+  line-height: 1.85;
 }
 
-
-/* =========================================
-   ABOUT LINK
-========================================= */
-
 .aboutLink {
-  width: fit-content;
-
+  min-height: 46px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-
-  margin-top: 20px;
-
-  color: var(--plum);
-
-  font-size: 13px;
-  font-weight: 800;
-
+  gap: 14px;
+  padding: 5px 6px 5px 16px;
+  border: 1px solid var(--aboutTeal);
+  border-radius: 8px;
+  background: var(--aboutTeal);
+  color: #FFFFFF;
   text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.aboutLink:hover {
+  background: var(--aboutTealDark);
+  border-color: var(--aboutTealDark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(8, 180, 165, 0.18);
 }
 
 .aboutLinkIcon {
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: var(--plum);
-
-  color: #ffffff;
-
-  transition:
-    transform 0.35s ease,
-    background 0.35s ease;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 16px;
+  transition: transform 0.25s ease;
 }
 
 .aboutLink:hover .aboutLinkIcon {
-  transform: rotate(45deg);
-  background: var(--accent);
+  transform: translate(2px, -2px);
 }
 
-
-/* =========================================
-   FOUNDER VISUAL
-========================================= */
+/* Founder visual */
 
 .aboutFounderVisual {
   position: relative;
-
-  min-height: 390px;
-
+  min-height: 360px;
+  height: clamp(360px, 39vw, 440px);
   overflow: hidden;
-
-  border-radius: 20px;
-
-  background: var(--plum);
+  border-radius: 18px;
+  background: #29242E;
+  isolation: isolate;
 }
 
 .founderImage {
   position: absolute;
   inset: 0;
-
-  background-image:
-    url("https://images.pexels.com/photos/20860617/pexels-photo-20860617.jpeg?auto=compress&cs=tinysrgb&w=1400");
-
-  background-size: cover;
-  background-position: center;
-
-  transform: scale(1.01);
-
-  transition: transform 0.8s ease;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transition: transform 0.7s ease;
 }
 
 .aboutFounderVisual:hover .founderImage {
-  transform: scale(1.045);
+  transform: scale(1.035);
 }
 
 .founderOverlay {
   position: absolute;
   inset: 0;
-
+  z-index: -1;
   background:
     linear-gradient(
       180deg,
-      rgba(59, 24, 56, 0.12) 0%,
-      rgba(59, 24, 56, 0.18) 35%,
-      rgba(33, 28, 32, 0.88) 100%
+      rgba(31, 27, 42, 0.38) 0%,
+      rgba(31, 27, 42, 0.03) 36%,
+      rgba(31, 27, 42, 0.88) 100%
     );
 }
 
-
-/* =========================================
-   FOUNDER TOP
-========================================= */
-
 .founderTop {
   position: absolute;
-
-  top: 18px;
-  left: 20px;
-  right: 20px;
-
+  top: 16px;
+  left: 16px;
+  right: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  color: rgba(255, 255, 255, 0.75);
-
+  gap: 12px;
+  color: #FFFFFF;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
-.founderTop span:first-child {
-  color: var(--accent);
+.founderIndex {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(80, 34, 127, 0.45);
 }
 
-
-/* =========================================
-   FOUNDER CARD
-========================================= */
-
-.founderCard {
+.founderInfo {
   position: absolute;
-
-  left: 20px;
   right: 20px;
   bottom: 20px;
-
-  max-width: 420px;
-
-  padding: 18px 20px;
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-
-  background: rgba(59, 24, 56, 0.76);
-
-  backdrop-filter: blur(10px);
+  left: 20px;
+  padding-left: 15px;
+  border-left: 3px solid var(--aboutTeal);
 }
 
-.founderCardLabel {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: var(--accent);
-
+.founderInfoLabel {
+  color: #83E5DC;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.founderCard h3 {
+.founderInfo h3 {
+  margin: 8px 0;
+  color: #FFFFFF;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(21px, 2.5vw, 29px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.founderInfo p {
+  max-width: 430px;
   margin: 0;
-
-  color: #ffffff;
-
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.founderCard p {
-  max-width: 360px;
-
-  margin: 8px 0 0;
-
-  color: rgba(255, 255, 255, 0.78);
-
+  color: rgba(255, 255, 255, 0.84);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
+.founderAccent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 85px;
+  background: var(--aboutPink);
+}
 
-/* =========================================
-   PHILOSOPHY
-========================================= */
+/* Philosophy */
 
 .aboutPhilosophy {
+  position: relative;
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-
-  gap: 50px;
-
-  padding: 20px 0;
-
-  border-top: 1px solid rgba(59, 24, 56, 0.12);
-  border-bottom: 1px solid rgba(59, 24, 56, 0.12);
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 34px;
+  margin-top: 20px;
+  padding: 24px 28px;
+  overflow: hidden;
+  border: 1px solid #E3EFEC;
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      110deg,
+      #F2FAF8 0%,
+      #FFFFFF 68%,
+      #FBF4F8 100%
+    );
 }
 
-.philosophyTitle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.philosophyTitle,
+.philosophyContent {
+  position: relative;
+  z-index: 1;
 }
 
 .smallLabel {
   display: block;
-
-  margin-bottom: 7px;
-
-  color: var(--accent);
-
+  margin-bottom: 9px;
+  color: var(--aboutPurple);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .philosophyTitle h3 {
   margin: 0;
+  color: #29242E;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+}
 
-  color: var(--plum);
-
-  font-family: "Playfair Display", serif;
-  font-size: clamp(30px, 3.5vw, 46px);
-  font-weight: 600;
-  line-height: 1.05;
+.philosophyTitle h3 span {
+  color: var(--aboutTealDark);
 }
 
 .philosophyContent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  gap: 30px;
-
-  align-items: center;
+  gap: 20px;
 }
 
 .philosophyContent p {
   margin: 0;
-
-  color: var(--muted);
-
-  font-size: 14px;
-  line-height: 1.75;
+  color: #686A73;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
+.philosophyMark {
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  color: rgba(8, 180, 165, 0.07);
+  font-size: 90px;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
 
-/* =========================================
-   STRENGTH CARDS
-========================================= */
+.philosophyMark svg {
+  width: 80px;
+  height: 80px;
+}
+
+/* Strengths heading */
+
+.strengthsHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 22px 0 14px;
+}
+
+.strengthsHeading .smallLabel {
+  margin-bottom: 7px;
+  color: var(--aboutTealDark);
+}
+
+.strengthsHeading h3 {
+  margin: 0;
+  color: #29242E;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(22px, 2.7vw, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.strengthsHeading > p {
+  max-width: 370px;
+  margin: 0;
+  color: #77717B;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Strength cards */
 
 .strengths {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-
-  margin-top: 18px;
 }
 
 .strength {
+  --strengthAccent: #08B4A5;
+
   position: relative;
-
   min-height: 220px;
-
   overflow: hidden;
-
+  border-radius: 14px;
+  background: #302A38;
   isolation: isolate;
-
-  border-radius: 18px;
-
-  background-size: cover;
-  background-position: center;
-
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
 }
 
-.strength:hover {
-  transform: translateY(-5px);
+.strengthImage {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s ease;
+}
 
-  box-shadow:
-    0 18px 40px rgba(59, 24, 56, 0.18);
+.strength:hover .strengthImage {
+  transform: scale(1.06);
+}
+
+.strengthteal {
+  --strengthAccent: #08B4A5;
+}
+
+.strengthpurple {
+  --strengthAccent: #9D77CA;
+}
+
+.strengthpink {
+  --strengthAccent: #E85B7D;
 }
 
 .strengthOverlay {
   position: absolute;
   inset: 0;
-
   z-index: -1;
-
   background:
     linear-gradient(
       180deg,
-      rgba(59, 24, 56, 0.42) 0%,
-      rgba(59, 24, 56, 0.68) 45%,
-      rgba(33, 28, 32, 0.95) 100%
-    );
-
-  transition: background 0.4s ease;
-}
-
-.strength:hover .strengthOverlay {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(59, 24, 56, 0.3) 0%,
-      rgba(59, 24, 56, 0.62) 45%,
-      rgba(33, 28, 32, 0.96) 100%
+      rgba(30, 26, 39, 0.23) 0%,
+      rgba(30, 26, 39, 0.4) 36%,
+      rgba(30, 26, 39, 0.91) 100%
     );
 }
 
 .strengthInner {
-  position: relative;
-  z-index: 2;
-
   min-height: 220px;
-
-  padding: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 15px;
 }
 
 .strengthTop {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .strengthIcon {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.1);
-
-  color: var(--accent);
-
-  backdrop-filter: blur(8px);
-
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  backdrop-filter: blur(5px);
   transition:
-    transform 0.35s ease,
-    background 0.35s ease;
-}
-
-.strength:hover .strengthIcon {
-  transform: translateY(-2px);
-
-  background: rgba(255, 255, 255, 0.16);
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .strengthIcon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+}
+
+.strength:hover .strengthIcon {
+  background: var(--strengthAccent);
+  border-color: var(--strengthAccent);
 }
 
 .strengthNumber {
-  color: rgba(255, 255, 255, 0.68);
-
+  color: var(--strengthAccent);
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.strengthContent {
-  max-width: 230px;
+  font-weight: 800;
 }
 
 .strengthContent h4 {
-  margin: 0 0 7px;
-
-  color: #ffffff;
-
-  font-size: 19px;
-  font-weight: 700;
-  line-height: 1.2;
+  margin: 0 0 8px;
+  color: #FFFFFF;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
 .strengthContent p {
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.78);
-
-  font-size: 13px;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 12px;
+  line-height: 1.65;
 }
 
+/* Tablet */
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1050px) {
-  .aboutIntro {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 30px;
-  }
-
-  .aboutIntroContent h2 {
-    font-size: 48px;
-  }
-
-  .aboutPhilosophy {
-    grid-template-columns: 1fr;
-
-    gap: 16px;
-  }
-
-  .philosophyContent {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .strengths {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-  .aboutSection {
-    padding: 15px 0;
-  }
-
+@media (max-width: 1000px) {
   .aboutContainer {
-    width: min(100% - 28px, 1280px);
+    width: calc(100% - 36px);
   }
 
   .aboutIntro {
-    grid-template-columns: 1fr;
-
-    gap: 20px;
-
-    padding: 15px 0;
-  }
-
-  .aboutIntroContent {
-    padding: 0;
-  }
-
-  .aboutIntroContent h2 {
-    font-size: 38px;
-  }
-
-  .aboutLead {
-    margin-top: 14px;
-
-    font-size: 13px;
-  }
-
-  .aboutLink {
-    margin-top: 14px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px;
   }
 
   .aboutFounderVisual {
-    min-height: 330px;
-
-    border-radius: 16px;
+    min-height: 350px;
+    height: 370px;
   }
 
-  .founderCard {
-    left: 15px;
+  .aboutPhilosophy {
+    gap: 22px;
+    padding: 22px;
+  }
+
+  .philosophyContent {
+    gap: 14px;
+  }
+
+  .strengths {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .strength,
+  .strengthInner {
+    min-height: 205px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .aboutSection {
+    padding: 20px 0;
+  }
+
+  .aboutContainer {
+    width: calc(100% - 30px);
+  }
+
+  .aboutIntro {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .aboutIntroContent {
+    padding: 6px 0;
+  }
+
+  .aboutLabel {
+    margin-bottom: 13px;
+  }
+
+  .aboutHeading {
+    font-size: clamp(30px, 8.5vw, 42px);
+  }
+
+  .aboutLead {
+    margin: 14px 0 18px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .aboutFounderVisual {
+    height: 350px;
+    min-height: 350px;
+    border-radius: 14px;
+  }
+
+  .founderTop {
+    top: 13px;
+    left: 13px;
+    right: 13px;
+  }
+
+  .founderInfo {
     right: 15px;
-    bottom: 15px;
-
-    padding: 15px;
+    bottom: 16px;
+    left: 15px;
+    padding-left: 12px;
   }
 
-  .founderCard h3 {
-    font-size: 24px;
+  .founderInfo h3 {
+    font-size: 23px;
   }
 
   .aboutPhilosophy {
     grid-template-columns: 1fr;
-
-    gap: 14px;
-
-    padding: 15px 0;
+    gap: 15px;
+    margin-top: 18px;
+    padding: 20px 17px;
+    border-radius: 14px;
   }
 
   .philosophyTitle h3 {
-    font-size: 34px;
+    font-size: 27px;
   }
 
   .philosophyContent {
     grid-template-columns: 1fr;
-
-    gap: 10px;
+    gap: 11px;
   }
 
   .philosophyContent p {
     font-size: 13px;
   }
 
+  .philosophyMark {
+    right: 4px;
+    bottom: 8px;
+    font-size: 60px;
+  }
+
+  .philosophyMark svg {
+    width: 58px;
+    height: 58px;
+  }
+
+  .strengthsHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+    margin: 22px 0 13px;
+  }
+
+  .strengthsHeading h3 {
+    font-size: 24px;
+  }
+
+  .strengthsHeading > p {
+    font-size: 13px;
+  }
+
   .strengths {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
 
-    gap: 12px;
-
-    margin-top: 12px;
+  .strength,
+  .strengthInner {
+    min-height: 195px;
   }
 
   .strength {
-    min-height: 200px;
-
-    border-radius: 16px;
+    border-radius: 12px;
   }
 
   .strengthInner {
-    min-height: 200px;
+    padding: 11px;
+  }
 
-    padding: 18px;
+  .strengthIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+
+  .strengthIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .strengthContent h4 {
+    font-size: 14px;
+  }
+
+  .strengthContent p {
+    font-size: 12px;
+    line-height: 1.55;
   }
 }
 
+/* Small phones */
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
+@media (max-width: 380px) {
+  .aboutContainer {
+    width: calc(100% - 24px);
+  }
 
-@media (max-width: 420px) {
-  .aboutIntroContent h2 {
-    font-size: 33px;
+  .aboutHeading {
+    font-size: 29px;
   }
 
   .aboutFounderVisual {
-    min-height: 300px;
+    height: 320px;
+    min-height: 320px;
   }
 
-  .founderCard h3 {
-    font-size: 22px;
+  .strengths {
+    grid-template-columns: 1fr;
   }
 
-  .philosophyTitle h3 {
-    font-size: 30px;
+  .strength,
+  .strengthInner {
+    min-height: 180px;
+  }
+}
+
+/* Motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .founderImage,
+  .aboutLink,
+  .aboutLinkIcon,
+  .strengthImage,
+  .strengthIcon {
+    transition: none;
   }
 }

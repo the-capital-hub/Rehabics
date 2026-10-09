@@ -8,7 +8,7 @@ import {
   FiPhone,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/logo.png";
 import "./Footer.css";
 
 const footerLinks = [
@@ -20,28 +20,25 @@ const footerLinks = [
 ];
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="footerSection">
-
       <div className="footerContainer">
-
-        {/* Main Footer */}
-
         <div className="footerMain">
-
-          {/* Brand */}
-
           <div className="footerBrand">
-
             <Link
               to="/"
               className="footerLogo"
-              aria-label="Rehabics Physiotherapy"
+              aria-label="Rehabics Physiotherapy home"
+              onClick={scrollToTop}
             >
-              <img
-                src={logo}
-                alt="Rehabics Physiotherapy"
-              />
+              <img src={logo} alt="Rehabics Physiotherapy" />
             </Link>
 
             <p className="footerBrandText">
@@ -50,9 +47,10 @@ function Footer() {
             </p>
 
             <div className="footerSocials">
-
               <a
-                href="#"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
                 className="footerSocial"
                 aria-label="Instagram"
               >
@@ -60,55 +58,40 @@ function Footer() {
               </a>
 
               <a
-                href="#"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
                 className="footerSocial"
                 aria-label="Facebook"
               >
                 <FiFacebook />
               </a>
-
             </div>
-
           </div>
 
-          {/* Navigation */}
-
           <div className="footerColumn">
-
-            <span className="footerColumnLabel">
-              Navigation
-            </span>
-
+            <span className="footerColumnLabel">Navigation</span>
             <h3>Explore Rehabics</h3>
 
-            <nav className="footerNav">
-
+            <nav className="footerNav" aria-label="Footer navigation">
               {footerLinks.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
+                  onClick={scrollToTop}
                 >
                   <span>{item.label}</span>
                   <FiArrowUpRight />
                 </Link>
               ))}
-
             </nav>
-
           </div>
 
-          {/* Hours */}
-
           <div className="footerColumn">
-
-            <span className="footerColumnLabel">
-              Clinic Hours
-            </span>
-
+            <span className="footerColumnLabel">Clinic Hours</span>
             <h3>Opening Hours</h3>
 
             <div className="footerHours">
-
               <div className="footerHour">
                 <span>Monday to Friday</span>
                 <strong>8 AM to 9 PM</strong>
@@ -123,19 +106,11 @@ function Footer() {
                 <span>Sunday</span>
                 <strong>Closed</strong>
               </div>
-
             </div>
-
           </div>
 
-          {/* Contact */}
-
           <div className="footerColumn footerContact">
-
-            <span className="footerColumnLabel">
-              Get In Touch
-            </span>
-
+            <span className="footerColumnLabel">Get In Touch</span>
             <h3>Contact Rehabics</h3>
 
             <a
@@ -145,7 +120,6 @@ function Footer() {
               <span className="footerContactIcon">
                 <FiPhone />
               </span>
-
               <span className="footerContactText">
                 <small>Call Us</small>
                 <strong>+91 9535579229</strong>
@@ -159,84 +133,63 @@ function Footer() {
               <span className="footerContactIcon">
                 <FiMail />
               </span>
-
               <span className="footerContactText">
                 <small>Email</small>
                 <strong>architat59@gmail.in</strong>
               </span>
             </a>
 
-            <div className="footerContactItem">
-
+            <Link
+              to="/contact"
+              className="footerContactItem"
+              onClick={scrollToTop}
+            >
               <span className="footerContactIcon">
                 <FiMapPin />
               </span>
-
               <span className="footerContactText">
-                <small>Locations</small>
+                <small>Our Locations</small>
                 <strong>Bengaluru, Karnataka</strong>
               </span>
-
-            </div>
-
+            </Link>
           </div>
-
         </div>
 
-        {/* Appointment CTA */}
-
         <div className="footerCta">
-
           <div className="footerCtaContent">
-
-            <span className="footerCtaLabel">
-              Start Your Recovery
-            </span>
-
+            <span className="footerCtaLabel">Start Your Recovery</span>
             <h2>
               Move better.
               <em>Live better.</em>
             </h2>
-
           </div>
 
           <Link
             to="/contact"
             className="footerCtaButton"
+            onClick={scrollToTop}
           >
             <span>Make An Appointment</span>
-
             <span className="footerCtaIcon">
               <FiArrowUpRight />
             </span>
           </Link>
-
         </div>
 
-        {/* Bottom */}
-
         <div className="footerBottom">
+          <span>© 2026 Rehabics Physiotherapy</span>
+          <span>The New Age Of Physiotherapy</span>
 
-          <span>
-            © 2026 Rehabics Physiotherapy
-          </span>
-
-          <span>
-            The New Age Of Physiotherapy
-          </span>
-
-          <Link
-            to="/"
+          <button
+            type="button"
             className="footerBackTop"
+            onClick={scrollToTop}
           >
             <span>Back To Top</span>
             <FiArrowUpRight />
-          </Link>
-
+          </button>
         </div>
-
       </div>
-
     </footer>
   );
 }

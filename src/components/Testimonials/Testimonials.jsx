@@ -1,8 +1,11 @@
+
 import { motion } from "motion/react";
 import {
   FiArrowUpRight,
   FiMapPin,
   FiStar,
+  FiHeart,
+  FiMessageCircle,
 } from "react-icons/fi";
 import "./Testimonials.css";
 
@@ -14,6 +17,9 @@ const locations = [
     reviews: "300 reviews",
     description:
       "A trusted Rehabics location for personalised physiotherapy and rehabilitation care.",
+    reviewUrl:
+      "https://www.google.com/maps/search/?api=1&query=Rehabics+Physiotherapy+Koramangala+Bengaluru",
+    accent: "teal",
   },
   {
     number: "02",
@@ -22,22 +28,32 @@ const locations = [
     reviews: "58 reviews",
     description:
       "Focused physiotherapy care designed around recovery, movement and everyday confidence.",
+    reviewUrl:
+      "https://www.google.com/maps/search/?api=1&query=Rehabics+Physiotherapy+Haralur+Bengaluru",
+    accent: "purple",
   },
 ];
+
+function StarRating() {
+  return (
+    <div className="stars" aria-label="Five star rating">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <FiStar key={star} />
+      ))}
+    </div>
+  );
+}
 
 function Testimonials() {
   return (
     <section className="testimonialsSection" id="reviews">
       <div className="testimonialsContainer">
-
-        {/* HEADER */}
-
         <motion.div
           className="testimonialsHeader"
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
         >
           <div className="testimonialsHeaderTop">
             <div className="testimonialsLabel">
@@ -46,12 +62,17 @@ function Testimonials() {
             </div>
 
             <span className="testimonialsCount">
+              <FiMapPin />
               02 Bengaluru Clinics
             </span>
           </div>
 
           <div className="testimonialsHeading">
             <div>
+              <span className="testimonialsEyebrow">
+                Your Journey Matters
+              </span>
+
               <h2>
                 Trusted care across
                 <span>Bengaluru.</span>
@@ -59,67 +80,74 @@ function Testimonials() {
             </div>
 
             <p>
-              Our clinics are built around personalised care,
-              professional expertise and a patient experience
-              that keeps movement at the centre.
+              Every recovery journey is different. Our clinics focus on
+              personalised physiotherapy, professional guidance and helping
+              people move with greater confidence.
             </p>
           </div>
         </motion.div>
 
-        {/* REVIEW SUMMARY */}
-
         <motion.div
           className="reviewSummary"
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="reviewSummaryMain">
-            <span className="reviewSummaryLabel">
-              Patient Ratings
-            </span>
-
-            <div className="reviewSummaryRating">
-              <strong>4.9</strong>
-
-              <div className="reviewSummaryStars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <FiStar key={star} />
-                ))}
-              </div>
+            <div className="reviewSummaryIcon">
+              <FiHeart />
             </div>
 
-            <p>
-              Based on reviews across our Bengaluru locations.
-            </p>
+            <div className="reviewSummaryInfo">
+              <span className="reviewSummaryLabel">
+                Patient Ratings
+              </span>
+
+              <div className="reviewSummaryRating">
+                <strong>4.9</strong>
+                <StarRating />
+              </div>
+
+              <p>
+                Ratings displayed for our Bengaluru clinics.
+              </p>
+            </div>
           </div>
 
           <div className="reviewSummaryDivider" />
 
           <div className="reviewSummaryStatement">
-            <span>Our Approach</span>
+            <span className="reviewStatementLabel">
+              The Rehabics Approach
+            </span>
 
             <h3>
               Care that builds
               <em>confidence.</em>
             </h3>
+
+            <span className="reviewStatementNote">
+              Personalised care. Meaningful progress.
+            </span>
+          </div>
+
+          <div className="reviewSummaryDecoration">
+            <FiMessageCircle />
           </div>
         </motion.div>
-
-        {/* LOCATIONS */}
 
         <div className="locationReviews">
           {locations.map((location, index) => (
             <motion.article
-              className="reviewLocation"
+              className={`reviewLocation reviewLocation${location.accent}`}
               key={location.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{
-                duration: 0.65,
-                delay: index * 0.1,
+                duration: 0.55,
+                delay: index * 0.12,
               }}
             >
               <div className="reviewLocationTop">
@@ -134,10 +162,7 @@ function Testimonials() {
 
               <div className="reviewLocationName">
                 <h3>{location.name}</h3>
-
-                <span>
-                  Bengaluru, Karnataka
-                </span>
+                <span>Bengaluru, Karnataka</span>
               </div>
 
               <div className="reviewRating">
@@ -149,25 +174,45 @@ function Testimonials() {
                 <span>{location.reviews}</span>
               </div>
 
-              <div className="stars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <FiStar key={star} />
-                ))}
-              </div>
+              <StarRating />
 
-              <p>{location.description}</p>
+              <p className="reviewLocationDescription">
+                {location.description}
+              </p>
 
-              <div className="reviewLocationFooter">
-                <span>View Patient Experience</span>
+              <a
+                href={location.reviewUrl}
+                className="reviewLocationFooter"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${location.name} reviews on Google Maps`}
+              >
+                <span>Explore Clinic Reviews</span>
 
                 <span className="reviewArrow">
                   <FiArrowUpRight />
                 </span>
-              </div>
+              </a>
             </motion.article>
           ))}
         </div>
 
+        <motion.div
+          className="testimonialsBottomNote"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="testimonialsBottomIcon">
+            <FiHeart />
+          </span>
+
+          <p>
+            At Rehabics, every patient deserves attentive care and a
+            rehabilitation plan shaped around their individual needs.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

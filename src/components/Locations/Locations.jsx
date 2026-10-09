@@ -1,3 +1,4 @@
+
 import { motion } from "motion/react";
 import {
   FiArrowUpRight,
@@ -5,6 +6,7 @@ import {
   FiMail,
   FiMapPin,
   FiPhone,
+  FiNavigation,
 } from "react-icons/fi";
 import "./Locations.css";
 
@@ -14,12 +16,18 @@ const locations = [
     name: "Koramangala",
     address:
       "No 21, Second Floor, 5th Cross, 60 Feet Road, Next To Bombay Dyeing, 5th Block, Koramangala, Bengaluru, Karnataka 560034.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=No+21+Second+Floor+5th+Cross+60+Feet+Road+Koramangala+Bengaluru+560034",
+    accent: "teal",
   },
   {
     number: "02",
     name: "Haralur",
     address:
       "96/3, 2nd Floor, Silver County Road, Apartments, next to Purva Skywood, Kudlu, Bengaluru, Karnataka 560068.",
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=96%2F3+Silver+County+Road+near+Purva+Skywood+Haralur+Bengaluru+560068",
+    accent: "purple",
   },
 ];
 
@@ -27,15 +35,12 @@ function Locations() {
   return (
     <section className="locationsSection" id="contact">
       <div className="locationsContainer">
-
-        {/* HEADER */}
-
         <motion.div
           className="locationsHeader"
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="locationsHeaderTop">
             <div className="locationsLabel">
@@ -44,36 +49,41 @@ function Locations() {
             </div>
 
             <span className="locationsCount">
+              <FiMapPin />
               02 Bengaluru Clinics
             </span>
           </div>
 
           <div className="locationsHeading">
-            <h2>
-              Two clinics,
-              <span>one approach to care.</span>
-            </h2>
+            <div>
+              <span className="locationsEyebrow">
+                We Are Here For You
+              </span>
+
+              <h2>
+                Two clinics,
+                <span>one approach to care.</span>
+              </h2>
+            </div>
 
             <p>
-              Choose the Rehabics location that works best for you
-              and connect with our team for personalised physiotherapy care.
+              Find your nearest Rehabics clinic and connect with our team
+              for personalised physiotherapy and rehabilitation care.
             </p>
           </div>
         </motion.div>
 
-        {/* LOCATION CARDS */}
-
         <div className="locationsGrid">
           {locations.map((location, index) => (
             <motion.article
-              className="locationCard"
+              className={`locationCard locationCard${location.accent}`}
               key={location.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{
-                duration: 0.65,
-                delay: index * 0.1,
+                duration: 0.55,
+                delay: index * 0.12,
               }}
             >
               <div className="locationCardTop">
@@ -96,80 +106,88 @@ function Locations() {
                 <p>{location.address}</p>
               </div>
 
-              <div className="locationCardFooter">
-                <span>Visit This Clinic</span>
+              <a
+                href={location.mapUrl}
+                className="locationCardFooter"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Get directions to Rehabics ${location.name}`}
+              >
+                <span className="locationFooterText">
+                  <FiNavigation />
+                  Get Directions
+                </span>
 
                 <span className="locationArrow">
                   <FiArrowUpRight />
                 </span>
-              </div>
+              </a>
             </motion.article>
           ))}
         </div>
 
-        {/* CONTACT STRIP */}
-
         <motion.div
           className="contactStrip"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.55 }}
         >
-          <div className="contactItem">
-            <div className="contactIcon">
+          <a className="contactItem" href="tel:+919535579229">
+            <div className="contactIcon contactIconTeal">
               <FiPhone />
             </div>
 
             <div className="contactItemContent">
-              <span>Call Us</span>
-              <a href="tel:+919535579229">
-                +91 9535579229
-              </a>
+              <span>Call Our Team</span>
+              <strong>+91 9535579229</strong>
             </div>
-          </div>
 
-          <div className="contactItem">
-            <div className="contactIcon">
+            <FiArrowUpRight className="contactItemArrow" />
+          </a>
+
+          <a
+            className="contactItem"
+            href="mailto:architat59@gmail.in"
+          >
+            <div className="contactIcon contactIconPink">
               <FiMail />
             </div>
 
             <div className="contactItemContent">
-              <span>Email</span>
-              <a href="mailto:architat59@gmail.in">
-                architat59@gmail.in
-              </a>
+              <span>Email Us</span>
+              <strong>architat59@gmail.in</strong>
             </div>
-          </div>
 
-          <div className="contactItem">
-            <div className="contactIcon">
+            <FiArrowUpRight className="contactItemArrow" />
+          </a>
+
+          <div className="contactItem contactHours">
+            <div className="contactIcon contactIconPurple">
               <FiClock />
             </div>
 
             <div className="contactItemContent">
-              <span>Opening Hours</span>
-
-              <strong>
-                Monday to Friday
-                <br />
-                8 AM to 9 PM
-              </strong>
+              <span>Weekday Hours</span>
+              <strong>Monday to Friday</strong>
+              <small>8 AM to 9 PM</small>
             </div>
           </div>
         </motion.div>
 
-        {/* SATURDAY NOTE */}
-
         <div className="locationsBottomNote">
-          <span>Saturday</span>
-          <strong>10 AM to 8 PM</strong>
+          <div className="locationsSaturday">
+            <span className="locationsScheduleDot" />
+            <span>Saturday</span>
+            <strong>10 AM to 8 PM</strong>
+          </div>
 
-          <span className="locationsClosed">
-            Sunday Closed
-          </span>
+          <div className="locationsSunday">
+            <FiClock />
+            <span>Sunday</span>
+            <strong>Closed</strong>
+          </div>
         </div>
-
       </div>
     </section>
   );

@@ -1,30 +1,31 @@
+
 .editorialHero {
+  --heroTeal: #08B4A5;
+  --heroTealDark: #078F84;
+  --heroPink: #E85B7D;
+  --heroPurple: #50227F;
+
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: var(--primary);
-  color: var(--white);
+  padding: 20px 0;
+  background: #FFFFFF;
+  color: #FFFFFF;
+  isolation: isolate;
 }
 
-/* Hero Image */
+/* Background image */
 
 .heroImage {
   position: absolute;
   inset: 0;
   z-index: 0;
-
-  background-image:
-    url("https://images.pexels.com/photos/20860624/pexels-photo-20860624.jpeg?auto=compress&cs=tinysrgb&w=2000");
-
+  background-image: url("https://images.pexels.com/photos/20860624/pexels-photo-20860624.jpeg?auto=compress&cs=tinysrgb&w=2000");
   background-size: cover;
   background-position: center;
-
   transform: scale(1.03);
-
   animation: heroImageReveal 1.4s ease forwards;
 }
 
@@ -40,32 +41,27 @@
   }
 }
 
-/* Overlay */
+/* Brand tinted overlay */
 
 .heroOverlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-
   background:
     linear-gradient(
       90deg,
-      rgba(59, 24, 56, 0.96) 0%,
-      rgba(59, 24, 56, 0.88) 34%,
-      rgba(59, 24, 56, 0.64) 66%,
-      rgba(59, 24, 56, 0.48) 100%
+      rgba(23, 25, 38, 0.94) 0%,
+      rgba(31, 30, 49, 0.86) 35%,
+      rgba(43, 35, 65, 0.67) 67%,
+      rgba(8, 100, 94, 0.48) 100%
     );
 }
-
-/* Subtle Texture */
 
 .heroTexture {
   position: absolute;
   inset: 0;
   z-index: 2;
-
-  opacity: 0.025;
-
+  opacity: 0.035;
   background-image:
     linear-gradient(
       rgba(255, 255, 255, 0.6) 1px,
@@ -76,155 +72,140 @@
       rgba(255, 255, 255, 0.6) 1px,
       transparent 1px
     );
-
   background-size: 80px 80px;
-
   pointer-events: none;
 }
 
-/* Main Container */
+/* Main container */
 
 .heroInner {
   position: relative;
   z-index: 3;
-
-  width: min(100% - 40px, 1380px);
-  min-height: 100vh;
-
+  width: min(100% - 48px, 1280px);
+  min-height: 100svh;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  padding-top: 96px;
-  padding-bottom: 18px;
+  padding-top: 108px;
+  padding-bottom: 20px;
 }
 
-/* Top Line */
+/* Top line */
 
 .heroTopLine {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  padding-bottom: 12px;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  gap: 16px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .heroBrand {
-  color: var(--white);
-
+  color: #FFFFFF;
   font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 0.16em;
+  letter-spacing: 0.13em;
 }
 
 .heroLocation {
-  color: rgba(255, 255, 255, 0.62);
-
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.82);
   font-size: 12px;
   font-weight: 600;
 }
 
-/* Main Content */
+.heroLocationDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--heroTeal);
+  box-shadow: 0 0 0 4px rgba(8, 180, 165, 0.16);
+}
+
+/* Main content */
 
 .heroMain {
   width: 100%;
-
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 25px 0;
 }
-
-/* Eyebrow */
 
 .heroEyebrow {
   display: flex;
   align-items: center;
-
-  color: var(--accent);
-
+  gap: 10px;
+  color: #76E1D7;
   font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 0.1em;
-
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-/* Heading */
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--heroPink);
+  box-shadow: 0 0 0 5px rgba(232, 91, 125, 0.17);
+}
+
+/* Hero heading */
 
 .heroTitleWrapper {
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
 .heroTitle {
   margin: 0;
-
-  font-family: "Playfair Display", serif;
-
-  font-size: clamp(44px, 6vw, 82px);
-
-  font-weight: 500;
-
-  line-height: 0.96;
-
-  letter-spacing: -0.045em;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(42px, 5.5vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
 }
 
 .heroTitleOne {
-  color: var(--white);
+  color: #FFFFFF;
 }
 
 .heroTitleAccent {
-  color: var(--accent);
+  color: #76E1D7;
 }
 
 .heroTitleRow {
   display: flex;
   align-items: center;
-
-  gap: 22px;
+  gap: 20px;
 }
 
-/* Activity Orb */
+/* Activity icon */
 
 .heroOrb {
   position: relative;
-
-  width: 58px;
-  height: 58px;
-
+  width: 54px;
+  height: 54px;
   flex-shrink: 0;
-
   display: grid;
   place-items: center;
-
-  border: 1px solid rgba(200, 155, 109, 0.65);
-
+  border: 1px solid rgba(8, 180, 165, 0.8);
   border-radius: 50%;
-
-  color: var(--accent);
-
-  font-size: 23px;
-
-  background: rgba(59, 24, 56, 0.25);
+  color: #76E1D7;
+  font-size: 22px;
+  background: rgba(8, 180, 165, 0.12);
 }
 
 .heroOrb::after {
   content: "";
-
   position: absolute;
-
-  width: 72px;
-  height: 72px;
-
-  border: 1px dashed rgba(200, 155, 109, 0.35);
-
+  width: 68px;
+  height: 68px;
+  border: 1px dashed rgba(232, 91, 125, 0.7);
   border-radius: 50%;
-
   animation: orbRotate 14s linear infinite;
 }
 
@@ -238,254 +219,202 @@
   }
 }
 
-/* Bottom Content */
+/* Description and actions */
 
 .heroBottom {
   display: grid;
-
-  grid-template-columns: 1fr auto;
-
-  align-items: end;
-
-  gap: 50px;
-
-  margin-top: 20px;
+  grid-template-columns: minmax(0, 440px) auto;
+  align-items: center;
+  gap: 35px;
+  margin-top: 26px;
 }
 
 .heroDescription {
-  max-width: 460px;
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 14px;
-}
-
-.descriptionLine {
-  width: 30px;
-  height: 1px;
-
-  flex-shrink: 0;
-
-  margin-top: 8px;
-
-  background: var(--accent);
+  max-width: 440px;
 }
 
 .heroDescription p {
   margin: 0;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  font-size: 13px;
-
-  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.8;
 }
-
-/* Actions */
 
 .heroActionArea {
   display: flex;
   align-items: center;
-
-  gap: 18px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .heroAppointment {
-  min-height: 46px;
-
+  min-height: 47px;
   display: inline-flex;
   align-items: center;
-
+  justify-content: center;
   gap: 12px;
-
   padding: 7px 8px 7px 17px;
-
-  border-radius: 999px;
-
-  background: var(--accent);
-
-  color: var(--primary);
-
+  border: 1px solid var(--heroTeal);
+  border-radius: 8px;
+  background: var(--heroTeal);
+  color: #FFFFFF;
+  text-decoration: none;
   font-size: 12px;
   font-weight: 800;
-
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .heroAppointment:hover {
+  background: var(--heroTealDark);
+  border-color: var(--heroTealDark);
   transform: translateY(-2px);
-
-  box-shadow:
-    0 14px 30px rgba(200, 155, 109, 0.25);
+  box-shadow: 0 10px 24px rgba(8, 180, 165, 0.2);
 }
 
 .appointmentIcon {
-  width: 31px;
-  height: 31px;
-
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-
-  border-radius: 50%;
-
-  background: var(--primary);
-
-  color: var(--accent);
-
-  font-size: 15px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.17);
+  color: #FFFFFF;
+  font-size: 16px;
 }
 
 .heroScroll {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-
-  gap: 7px;
-
-  color: rgba(255, 255, 255, 0.72);
-
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
   font-size: 12px;
   font-weight: 700;
+  transition: color 0.25s ease;
+}
 
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+.heroScroll svg {
+  color: #76E1D7;
+  transition: transform 0.25s ease;
 }
 
 .heroScroll:hover {
-  color: var(--white);
-
-  transform: translateY(2px);
+  color: #FFFFFF;
 }
 
-/* Focus Areas */
+.heroScroll:hover svg {
+  transform: translateY(3px);
+}
+
+/* Focus areas */
 
 .heroFocusBar {
   display: grid;
-
-  grid-template-columns: 130px 1fr;
-
+  grid-template-columns: 125px minmax(0, 1fr);
   align-items: center;
-
-  gap: 20px;
-
-  padding-top: 12px;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  gap: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .focusLabel {
-  color: rgba(255, 255, 255, 0.48);
-
+  color: #76E1D7;
   font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 0.1em;
-
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .focusItems {
   display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .focusArea {
   display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  min-height: 28px;
-
-  padding: 5px 13px;
-
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-
-  color: rgba(255, 255, 255, 0.72);
-
+  align-items: flex-start;
+  gap: 9px;
+  min-height: 38px;
+  padding: 7px 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 12px;
-  font-weight: 700;
-
-  transition:
-    color 0.3s ease,
-    background 0.3s ease;
+  font-weight: 600;
+  line-height: 1.5;
+  transition: background 0.25s ease;
 }
 
 .focusArea:hover {
-  color: var(--white);
-
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .focusNumber {
-  color: var(--accent);
-
+  flex-shrink: 0;
+  color: #F58AA2;
   font-size: 12px;
   font-weight: 800;
 }
 
-/* Side Text */
+/* Side label */
 
 .heroSideText {
   position: absolute;
-
   z-index: 4;
-
   top: 50%;
-  right: 15px;
-
-  transform:
-    translateY(-50%)
-    rotate(90deg);
-
-  color: rgba(255, 255, 255, 0.2);
-
+  right: 12px;
+  transform: translateY(-50%) rotate(90deg);
+  color: rgba(255, 255, 255, 0.38);
   font-size: 12px;
   font-weight: 800;
-
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
+  pointer-events: none;
 }
 
 /* Tablet */
 
 @media (max-width: 1000px) {
   .heroInner {
-    width: min(100% - 30px, 1380px);
-
-    padding-top: 90px;
+    width: calc(100% - 36px);
+    padding-top: 95px;
   }
 
   .heroOverlay {
     background:
       linear-gradient(
         90deg,
-        rgba(59, 24, 56, 0.94),
-        rgba(59, 24, 56, 0.65)
+        rgba(23, 25, 38, 0.94),
+        rgba(43, 35, 65, 0.76)
       );
   }
 
   .heroTitle {
-    font-size: clamp(40px, 7vw, 68px);
+    font-size: clamp(40px, 6.5vw, 64px);
   }
 
   .heroBottom {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
 
-    gap: 15px;
+  .heroActionArea {
+    gap: 16px;
   }
 
   .heroFocusBar {
     grid-template-columns: 1fr;
-
-    gap: 8px;
+    gap: 10px;
   }
 
   .focusItems {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .focusArea {
+    padding-left: 10px;
   }
 }
 
@@ -494,6 +423,7 @@
 @media (max-width: 650px) {
   .editorialHero {
     min-height: 100svh;
+    min-height: 100vh;
   }
 
   .heroImage {
@@ -504,18 +434,26 @@
     background:
       linear-gradient(
         180deg,
-        rgba(59, 24, 56, 0.94),
-        rgba(59, 24, 56, 0.74)
+        rgba(23, 25, 38, 0.88) 0%,
+        rgba(31, 30, 49, 0.86) 55%,
+        rgba(39, 32, 57, 0.92) 100%
       );
   }
 
   .heroInner {
+    width: calc(100% - 32px);
     min-height: 100svh;
+    padding-top: 88px;
+    padding-bottom: 18px;
+  }
 
-    width: min(100% - 30px, 1380px);
+  .heroTopLine {
+    padding-bottom: 11px;
+  }
 
-    padding-top: 86px;
-    padding-bottom: 15px;
+  .heroBrand {
+    font-size: 12px;
+    letter-spacing: 0.07em;
   }
 
   .heroLocation {
@@ -524,77 +462,87 @@
 
   .heroMain {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
-
-    flex: 1;
+    padding: 22px 0;
   }
 
   .heroEyebrow {
     font-size: 12px;
-
-    letter-spacing: 0.07em;
+    letter-spacing: 0.035em;
   }
 
   .heroTitleWrapper {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   .heroTitle {
-    font-size: clamp(38px, 11.5vw, 58px);
-
-    line-height: 0.98;
+    font-size: clamp(38px, 10.5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.05em;
   }
 
   .heroTitleRow {
-    gap: 12px;
+    gap: 11px;
   }
 
   .heroOrb {
-    width: 43px;
-    height: 43px;
-
-    font-size: 17px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .heroOrb::after {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
   }
 
-  .heroDescription {
-    margin-top: 20px;
+  .heroBottom {
+    margin-top: 22px;
+    gap: 19px;
   }
 
   .heroDescription p {
-    font-size: 12px;
-
-    line-height: 1.65;
+    max-width: 380px;
+    font-size: 13px;
+    line-height: 1.7;
   }
 
   .heroActionArea {
-    flex-wrap: wrap;
+    gap: 15px;
+  }
 
-    margin-top: 15px;
+  .heroAppointment {
+    min-height: 45px;
+    padding-left: 12px;
+    gap: 8px;
+  }
+
+  .heroScroll {
+    gap: 6px;
   }
 
   .heroFocusBar {
-    padding-top: 9px;
+    gap: 9px;
+    padding-top: 12px;
   }
 
   .focusItems {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6px;
   }
 
   .focusArea {
-    padding: 7px 0;
-
+    min-height: 38px;
+    padding: 7px 4px;
+    gap: 7px;
     border-left: 0;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    font-size: 12px;
   }
 
-  .focusArea:last-child {
+  .focusArea:nth-last-child(-n + 2) {
     border-bottom: 0;
   }
 
@@ -602,31 +550,58 @@
     display: none;
   }
 }
-.heroEyebrow {
-  display: flex;
-  align-items: center;
-  gap: 9px;
 
-  color: var(--accent);
+/* Small phones */
 
-  font-size: 12px;
-  font-weight: 800;
+@media (max-width: 380px) {
+  .heroInner {
+    width: calc(100% - 26px);
+    padding-top: 82px;
+  }
 
-  letter-spacing: 0.1em;
+  .heroTitle {
+    font-size: 36px;
+  }
 
-  text-transform: uppercase;
+  .heroTitleRow {
+    gap: 8px;
+  }
+
+  .heroOrb {
+    width: 34px;
+    height: 34px;
+  }
+
+  .heroOrb::after {
+    width: 44px;
+    height: 44px;
+  }
+
+  .heroActionArea {
+    gap: 12px;
+  }
+
+  .heroAppointment {
+    font-size: 12px;
+  }
+
+  .focusArea {
+    font-size: 12px;
+  }
 }
 
-.eyebrowDot {
-  width: 6px;
-  height: 6px;
+/* Reduced motion accessibility */
 
-  flex-shrink: 0;
+@media (prefers-reduced-motion: reduce) {
+  .heroImage,
+  .heroOrb::after {
+    animation: none;
+  }
 
-  border-radius: 50%;
-
-  background: var(--accent);
-
-  box-shadow:
-    0 0 0 5px rgba(200, 155, 109, 0.12);
+  .heroAppointment,
+  .heroScroll,
+  .heroScroll svg,
+  .focusArea {
+    transition: none;
+  }
 }

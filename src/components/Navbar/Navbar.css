@@ -1,387 +1,251 @@
 
-/* =========================================
-   NAVBAR
-========================================= */
-
 .navbar {
+  --nav-teal: #08B4A5;
+  --nav-teal-dark: #078F84;
+  --nav-pink: #E85B7D;
+  --nav-purple: #50227F;
+
   position: fixed;
   top: 0;
   left: 0;
-
-  width: 100%;
   z-index: 1000;
-
-  padding: 10px 0;
-
-
-  border-bottom: 1px solid transparent;
-
-  transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    padding 0.35s ease;
-}
-
-/* =========================================
-   NAVBAR
-========================================= */
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-
   width: 100%;
-  z-index: 1000;
-
-  padding: 9px 0;
-
-  background: #f8f5f1;
-
-  border-bottom: 1px solid rgba(59, 24, 56, 0.08);
-
-  box-shadow: 0 5px 22px rgba(33, 28, 32, 0.06);
-
+  padding: 8px 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E5ECEA;
+  box-shadow: 0 4px 18px rgba(29, 61, 57, 0.045);
   transition:
+    padding 0.3s ease,
     box-shadow 0.3s ease,
-    padding 0.3s ease;
+    border-color 0.3s ease;
 }
 
 .navbarScrolled {
-  padding: 7px 0;
-
-  background: #f8f5f1;
-
-  border-bottom-color: rgba(59, 24, 56, 0.1);
-
-  box-shadow:
-    0 8px 28px rgba(33, 28, 32, 0.09);
+  padding: 5px 0;
+  border-bottom-color: rgba(8, 180, 165, 0.18);
+  box-shadow: 0 7px 25px rgba(29, 61, 57, 0.09);
 }
-
-
-/* =========================================
-   CONTAINER
-========================================= */
 
 .navbarContainer {
-  width: min(1280px, calc(100% - 40px));
-
-  min-height: 58px;
-
+  width: min(1280px, calc(100% - 48px));
+  min-height: 66px;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
-
-  gap: 30px;
+  gap: 28px;
 }
 
-
-/* =========================================
-   LOGO
-========================================= */
-
 .navbarLogo {
+  width: 150px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-
-  width: 160px;
-
-  flex-shrink: 0;
-
   text-decoration: none;
 }
 
-.navbarLogo img {
+.navbarLogoImage {
   display: block;
-
-  width: 180px;
-  height: 70px;
-
-  max-height: 55px;
-
+  width: 100%;
+  height: auto;
+  max-height: 62px;
   object-fit: contain;
   object-position: left center;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.navbarLogo:hover img {
-  transform: scale(1.02);
+.navbarLogo:hover .navbarLogoImage {
+  transform: scale(1.025);
 }
 
-
-/* =========================================
-   DESKTOP NAVIGATION
-========================================= */
+/* Desktop navigation */
 
 .desktopNav {
   display: flex;
   align-items: center;
-
-  gap: 30px;
-
+  justify-content: center;
+  gap: clamp(18px, 2.2vw, 31px);
   margin-left: auto;
 }
 
 .navLink {
   position: relative;
-
-  display: inline-flex;
-  align-items: center;
-
-  color: var(--primary);
-
+  padding: 11px 0;
+  color: #41454B;
   text-decoration: none;
-
-  font-family: "Manrope", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 13px;
   font-weight: 700;
-
   white-space: nowrap;
-
-  transition:
-    color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
-.navLink::after {
+.navLink::before {
   content: "";
-
   position: absolute;
-
   left: 0;
-  bottom: -6px;
-
+  bottom: 3px;
   width: 0;
-  height: 1px;
-
-  background: var(--accent);
-
-  transition:
-    width 0.3s ease;
+  height: 2px;
+  border-radius: 10px;
+  background: var(--nav-teal);
+  transition: width 0.25s ease;
 }
 
 .navLink:hover,
 .navLinkActive {
-  color: var(--accent);
+  color: var(--nav-teal-dark);
 }
 
-.navLink:hover::after,
-.navLinkActive::after {
+.navLink:hover::before,
+.navLinkActive::before {
   width: 100%;
 }
 
-
-/* =========================================
-   RIGHT ACTIONS
-========================================= */
+/* Right side actions */
 
 .navbarActions {
   display: flex;
   align-items: center;
-
-  gap: 11px;
-
-  margin-left: 5px;
-
+  gap: 14px;
+  margin-left: 8px;
   flex-shrink: 0;
 }
-
-
-/* =========================================
-   SOCIAL LINKS
-========================================= */
 
 .navbarSocials {
   display: flex;
   align-items: center;
-
-  gap: 6px;
+  gap: 7px;
 }
 
 .socialLink {
-  width: 32px;
-  height: 32px;
-
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid rgba(59, 24, 56, 0.16);
-
+  border: 1px solid #E2E9E7;
   border-radius: 50%;
-
-  background: transparent;
-
-  color: var(--primary);
-
+  background: #FFFFFF;
+  color: var(--nav-purple);
   text-decoration: none;
-
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .socialLink svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
 }
 
-.socialLink:hover {
-  background: var(--primary);
-
-  border-color: var(--primary);
-
-  color: var(--white);
-
+.instagramLink:hover {
+  color: #FFFFFF;
+  background: var(--nav-pink);
+  border-color: var(--nav-pink);
   transform: translateY(-2px);
 }
 
+.facebookLink:hover {
+  color: #FFFFFF;
+  background: var(--nav-purple);
+  border-color: var(--nav-purple);
+  transform: translateY(-2px);
+}
 
-/* =========================================
-   APPOINTMENT BUTTON
-========================================= */
+/* Appointment button */
 
 .navbarCta {
-  min-height: 40px;
-
-  padding: 0 15px;
-
+  min-height: 43px;
+  padding: 0 17px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  gap: 8px;
-
-  border: 1px solid var(--primary);
-
-  border-radius: 999px;
-
-  background: var(--primary);
-
-  color: var(--white);
-
+  gap: 9px;
+  border: 1px solid var(--nav-teal);
+  border-radius: 8px;
+  background: var(--nav-teal);
+  color: #FFFFFF;
   text-decoration: none;
-
-  font-family: "Manrope", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 12px;
   font-weight: 800;
-
   white-space: nowrap;
-
+  box-shadow: 0 5px 14px rgba(8, 180, 165, 0.13);
   transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .navbarCta svg {
-  width: 15px;
-  height: 15px;
-
-  transition:
-    transform 0.3s ease;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
 }
 
 .navbarCta:hover {
-  background: var(--accent);
-
-  border-color: var(--accent);
-
-  color: var(--primary);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 20px rgba(200, 155, 109, 0.2);
+  background: var(--nav-teal-dark);
+  border-color: var(--nav-teal-dark);
+  box-shadow: 0 7px 18px rgba(8, 143, 132, 0.2);
+  transform: translateY(-1px);
 }
 
 .navbarCta:hover svg {
   transform: translate(2px, -2px);
 }
 
-
-/* =========================================
-   MOBILE MENU BUTTON
-========================================= */
+/* Mobile menu toggle */
 
 .mobileMenuButton {
-  width: 40px;
-  height: 40px;
-
+  width: 42px;
+  height: 42px;
   display: none;
   align-items: center;
   justify-content: center;
-
   padding: 0;
-
-  border: 1px solid rgba(59, 24, 56, 0.16);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: var(--primary);
-
+  border: 1px solid #DCE8E5;
+  border-radius: 9px;
+  background: #F7FAF9;
+  color: var(--nav-purple);
   cursor: pointer;
-
   transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .mobileMenuButton svg {
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
 }
 
 .mobileMenuButton:hover,
 .mobileMenuButton.menuButtonActive {
-  background: var(--primary);
-
-  border-color: var(--primary);
-
-  color: var(--white);
+  background: var(--nav-purple);
+  border-color: var(--nav-purple);
+  color: #FFFFFF;
 }
 
-
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* Mobile dropdown */
 
 .mobileMenu {
   position: absolute;
-
   top: 100%;
   left: 0;
-
   width: 100%;
-
   overflow: hidden;
-
-  background: var(--ivory);
-
-  border-top: 1px solid rgba(59, 24, 56, 0.08);
-
-  box-shadow:
-    0 18px 40px rgba(33, 28, 32, 0.09);
+  background: #FFFFFF;
+  border-top: 1px solid #E5ECEA;
+  box-shadow: 0 16px 30px rgba(36, 37, 43, 0.1);
 }
 
 .mobileMenuInner {
-  width: min(1280px, calc(100% - 40px));
-
+  width: min(1280px, calc(100% - 36px));
   margin: 0 auto;
-
-  padding: 5px 0 20px;
+  padding: 8px 0 18px;
 }
 
 .mobileNav {
@@ -390,41 +254,32 @@
 }
 
 .mobileNavLink {
-  min-height: 54px;
-
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border-bottom: 1px solid rgba(59, 24, 56, 0.09);
-
-  color: var(--primary);
-
+  gap: 12px;
+  border-bottom: 1px solid #EDF1F0;
+  color: #35383F;
   text-decoration: none;
-
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
-  font-weight: 500;
-
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   transition:
-    color 0.3s ease,
-    padding-left 0.3s ease;
+    color 0.2s ease,
+    padding 0.2s ease;
 }
 
 .mobileNavLink svg {
   width: 17px;
   height: 17px;
-
-  color: var(--accent);
-
-  transition:
-    transform 0.3s ease;
+  color: var(--nav-teal);
+  transition: transform 0.2s ease;
 }
 
 .mobileNavLink:hover {
-  color: var(--accent);
-
   padding-left: 5px;
+  color: var(--nav-teal-dark);
 }
 
 .mobileNavLink:hover svg {
@@ -432,112 +287,94 @@
 }
 
 .mobileNavActive {
-  color: var(--accent);
+  color: var(--nav-teal-dark);
 }
 
-
-/* =========================================
-   MOBILE APPOINTMENT
-========================================= */
-
 .mobileAppointment {
-  min-height: 44px;
-
-  margin-top: 16px;
-
+  min-height: 46px;
+  margin-top: 15px;
   padding: 0 16px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  gap: 8px;
-
-  border-radius: 999px;
-
-  background: var(--primary);
-
-  color: var(--white);
-
+  gap: 9px;
+  border-radius: 8px;
+  background: var(--nav-teal);
+  color: #FFFFFF;
   text-decoration: none;
-
-  font-family: "Manrope", sans-serif;
-  font-size: 12px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
   font-weight: 800;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 .mobileAppointment svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
 }
 
 .mobileAppointment:hover {
-  background: var(--accent);
-
-  color: var(--primary);
-
-  transform: translateY(-1px);
+  background: var(--nav-teal-dark);
 }
 
+.mobileMenuNote {
+  margin: 15px 0 0;
+  color: #77717D;
+  font-size: 12px;
+  text-align: center;
+}
 
-/* =========================================
-   TABLET
-========================================= */
+/* Responsive layouts */
 
-@media (max-width: 1100px) {
+@media (max-width: 1120px) {
   .navbarContainer {
     gap: 20px;
-  }
-
-  .desktopNav {
-    gap: 21px;
+    width: calc(100% - 36px);
   }
 
   .navbarLogo {
-    width: 145px;
+    width: 132px;
   }
 
-  .navbarLogo img {
-    width: 135px;
+  .desktopNav {
+    gap: 18px;
+  }
+
+  .navbarActions {
+    gap: 9px;
+    margin-left: 0;
   }
 
   .navbarSocials {
     display: none;
   }
+
+  .navbarCta {
+    padding: 0 13px;
+  }
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 820px) {
+@media (max-width: 850px) {
   .navbar {
-    padding: 8px 0;
+    padding: 6px 0;
   }
 
   .navbarScrolled {
-    padding: 7px 0;
+    padding: 5px 0;
   }
 
   .navbarContainer {
-    min-height: 52px;
-
-    width: calc(100% - 30px);
+    width: calc(100% - 32px);
+    min-height: 54px;
+    gap: 12px;
   }
 
   .navbarLogo {
-    width: auto;
+    width: 116px;
   }
 
-  .navbarLogo img {
-    width: 125px;
-
-    max-height: 48px;
+  .navbarLogoImage {
+    max-height: 52px;
   }
 
   .desktopNav,
@@ -555,34 +392,41 @@
   }
 }
 
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 520px) {
+@media (max-width: 480px) {
   .navbarContainer {
-    width: calc(100% - 30px);
+    width: calc(100% - 28px);
+    min-height: 50px;
   }
 
-  .navbarLogo img {
-    width: 115px;
+  .navbarLogo {
+    width: 105px;
+  }
 
-    max-height: 44px;
+  .navbarLogoImage {
+    max-height: 48px;
   }
 
   .mobileMenuButton {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
   }
 
   .mobileMenuInner {
-    width: calc(100% - 30px);
+    width: calc(100% - 28px);
   }
+}
 
-  .mobileNavLink {
-    min-height: 52px;
-
-    font-size: 20px;
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbarLogoImage,
+  .navLink,
+  .socialLink,
+  .navbarCta,
+  .navbarCta svg,
+  .mobileMenuButton,
+  .mobileNavLink,
+  .mobileNavLink svg,
+  .mobileAppointment {
+    transition: none;
   }
 }

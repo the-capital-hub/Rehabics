@@ -1,9 +1,11 @@
+
 import { motion } from "motion/react";
 import {
   FiActivity,
   FiArrowUpRight,
   FiAward,
   FiHeart,
+  FiCheckCircle,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./Doctor.css";
@@ -30,14 +32,12 @@ function Doctor() {
   return (
     <section className="doctorSection" id="doctor">
       <div className="doctorContainer">
-
-        {/* LEFT CONTENT */}
         <motion.div
           className="doctorContent"
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -24 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
         >
           <div className="doctorHeaderTop">
             <div className="doctorLabel">
@@ -45,12 +45,12 @@ function Doctor() {
               <span>Founder And Director</span>
             </div>
 
-            <span className="doctorCount">
-              Rehabics Leadership
-            </span>
+            <span className="doctorCount">Rehabics Leadership</span>
           </div>
 
           <div className="doctorHeading">
+            <span className="doctorEyebrow">Meet Your Physiotherapist</span>
+
             <h2>
               Dr. Archita
               <span>Tiwari</span>
@@ -63,15 +63,15 @@ function Doctor() {
 
           <div className="doctorDescription">
             <p>
-              Dr. Archita Tiwari leads Rehabics Physiotherapy with a focus
-              on personalised rehabilitation, sports injuries,
-              musculoskeletal care, spine care and women’s health.
+              Dr. Archita Tiwari leads Rehabics Physiotherapy with a focus on
+              personalised rehabilitation, sports injuries, musculoskeletal
+              care, spine care and women’s health.
             </p>
 
             <p>
-              Her approach combines clinical experience, education and
-              practical movement based rehabilitation around each patient’s
-              personal and professional goals.
+              Her approach brings together clinical experience, patient
+              education and practical movement based rehabilitation, with care
+              tailored to individual needs and everyday goals.
             </p>
           </div>
 
@@ -83,11 +83,11 @@ function Doctor() {
                 <motion.div
                   className="doctorHighlight"
                   key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{
-                    duration: 0.5,
+                    duration: 0.45,
                     delay: index * 0.1,
                   }}
                 >
@@ -99,51 +99,76 @@ function Doctor() {
                     <span>{item.number}</span>
                     <strong>{item.title}</strong>
                   </div>
+
+                  <FiCheckCircle className="doctorHighlightCheck" />
                 </motion.div>
               );
             })}
           </div>
 
-          <Link to="/about" className="doctorLink">
-            <span>Meet Dr. Archita</span>
+          <div className="doctorActions">
+            <Link to="/about" className="doctorLink">
+              <span>Meet Dr. Archita</span>
+              <span className="doctorLinkIcon">
+                <FiArrowUpRight />
+              </span>
+            </Link>
 
-            <span className="doctorLinkIcon">
-              <FiArrowUpRight />
+            <span className="doctorActionNote">
+              Personalised care, centred on you
             </span>
-          </Link>
+          </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
         <motion.div
           className="doctorVisual"
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 24 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <div className="doctorImageWrap">
-
             <img
               src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1400"
-              alt="Physiotherapist at Rehabics"
+              alt="Physiotherapy professional in a clinical setting"
               className="doctorImage"
+              loading="lazy"
             />
 
             <div className="doctorImageOverlay" />
 
             <div className="doctorImageTop">
               <span>Founder And Director</span>
-              <span>01</span>
+              <span className="doctorImageNumber">01</span>
             </div>
+
+            <div className="doctorImageAccent" />
 
             <div className="doctorImageBottom">
               <span>Rehabics Physiotherapy</span>
               <strong>Bengaluru</strong>
             </div>
-
           </div>
-        </motion.div>
+{/* 
+          <motion.div
+            className="doctorFloatingCard"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+          >
+            <span className="doctorFloatingIcon">
+              <FiHeart />
+            </span>
 
+            <div>
+              <strong>Care With Purpose</strong>
+              <span>Focused on your movement goals</span>
+            </div>
+          </motion.div> */}
+
+          <div className="doctorImageCorner" />
+        </motion.div>
       </div>
     </section>
   );

@@ -1,3 +1,4 @@
+
 import { motion } from "motion/react";
 import {
   FiCheckCircle,
@@ -6,6 +7,7 @@ import {
   FiShield,
   FiArrowUpRight,
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import "./WhyRehabics.css";
 
 const strengths = [
@@ -14,24 +16,28 @@ const strengths = [
     number: "01",
     title: "Holistic Approach",
     text: "We consider the body as a connected system rather than treating one symptom in isolation.",
+    accent: "teal",
   },
   {
     icon: FiUsers,
     number: "02",
     title: "Multidisciplinary Team",
-    text: "A collaborative approach helps keep your rehabilitation focused and complete.",
+    text: "A collaborative approach helps keep your rehabilitation focused on your individual needs.",
+    accent: "pink",
   },
   {
     icon: FiShield,
     number: "03",
     title: "Experienced Physiotherapists",
-    text: "Licensed and experienced professionals guide your care with attention to your goals.",
+    text: "Our physiotherapy team guides your care with attention to your concerns and goals.",
+    accent: "purple",
   },
   {
     icon: FiBookOpen,
     number: "04",
     title: "Evidence Based Practice",
-    text: "Assessment, education and procedures are aligned with practical rehabilitation needs.",
+    text: "Assessment, education and treatment are guided by your rehabilitation requirements.",
+    accent: "teal",
   },
 ];
 
@@ -39,45 +45,70 @@ function WhyRehabics() {
   return (
     <section className="whySection" id="why-rehabics">
       <div className="whyContainer">
-
-        {/* VISUAL */}
-
         <motion.div
           className="whyVisual"
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.65 }}
         >
           <div className="whyImageWrap">
             <img
               src="https://images.pexels.com/photos/6111581/pexels-photo-6111581.jpeg?auto=compress&cs=tinysrgb&w=1400"
-              alt="Physiotherapy treatment"
+              alt="Physiotherapy session"
               className="whyImage"
+              loading="lazy"
             />
 
             <div className="whyImageOverlay" />
 
             <div className="whyImageTop">
-              <span>Rehabics Physiotherapy</span>
-              <span>01</span>
+              <span>REHABICS PHYSIOTHERAPY</span>
+              <span className="whyImageIndex">01</span>
             </div>
 
+            <div className="whyImageAccent" />
+
             <div className="whyQuote">
-              <span>Our Approach</span>
-              <strong>Body As Whole</strong>
+              <span className="whyQuoteLabel">
+                OUR PHILOSOPHY
+              </span>
+
+              <h3>
+                Body As
+                <span>Whole.</span>
+              </h3>
+
+              <p>
+                Understanding movement is part of understanding
+                the person.
+              </p>
             </div>
+
+            <div className="whyVisualBadge">
+              <span className="whyBadgeIcon">
+                <FiHeartIcon />
+              </span>
+
+              <span>
+                <strong>Care that listens</strong>
+                <small>Focused on your goals</small>
+              </span>
+            </div>
+          </div>
+
+          <div className="whyVisualCaption">
+            <span className="whyCaptionDot" />
+            <span>Personalised care. Meaningful progress.</span>
           </div>
         </motion.div>
 
-        {/* CONTENT */}
-
         <motion.div
           className="whyContent"
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.65 }}
         >
           <div className="whyHeaderTop">
             <div className="whyLabel">
@@ -89,15 +120,19 @@ function WhyRehabics() {
           </div>
 
           <div className="whyHeading">
+            <span className="whyEyebrow">
+              A thoughtful approach to recovery
+            </span>
+
             <h2>
-              Recovery should make
-              <span>you more independent.</span>
+              Your recovery.
+              <span>Your independence.</span>
             </h2>
 
             <p className="whyLead">
-              Our approach combines clinical expertise, education
-              and personalised care to help you understand your body
-              and become confident in your movement.
+              We bring together clinical assessment, patient
+              education and individualised care to support
+              your movement and everyday wellbeing.
             </p>
           </div>
 
@@ -106,42 +141,54 @@ function WhyRehabics() {
               const Icon = item.icon;
 
               return (
-                <motion.div
-                  className="whyItem"
+                <motion.article
+                  className={`whyItem whyItem${item.accent}`}
                   key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.15 }}
                   transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
+                    duration: 0.45,
+                    delay: index * 0.07,
                   }}
                 >
-                  <div className="whyItemNumber">
+                  <span className="whyItemNumber">
                     {item.number}
-                  </div>
+                  </span>
 
-                  <div className="whyItemIcon">
+                  <span className="whyItemIcon">
                     <Icon />
-                  </div>
+                  </span>
 
-                  <div className="whyItemContent">
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
+                  <span className="whyItemContent">
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </span>
 
                   <span className="whyItemArrow">
                     <FiArrowUpRight />
                   </span>
-                </motion.div>
+                </motion.article>
               );
             })}
           </div>
-        </motion.div>
 
+          <div className="whyFooter">
+            <p>Have questions about your care?</p>
+
+            <Link to="/contact" className="whyContactLink">
+              Talk to Our Team
+              <FiArrowUpRight />
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
+}
+
+function FiHeartIcon() {
+  return <FiCheckCircle />;
 }
 
 export default WhyRehabics;

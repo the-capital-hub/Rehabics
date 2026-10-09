@@ -21,7 +21,7 @@ function App() {
         <Services/>
         <Conditions/>
         <WhyRehabics/>
-        {/* <Doctor/> */}
+        <Doctor/>
         <Testimonials/>
         <Locations/>
         <Appointment/>

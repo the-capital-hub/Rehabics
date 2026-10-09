@@ -10,7 +10,6 @@ import {
 } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-
 import logo from "../../assets/logo.png";
 
 const navItems = [
@@ -24,17 +23,17 @@ const navItems = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 35);
+      setScrolled(window.scrollY > 20);
     };
 
     handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -45,24 +44,37 @@ function Navbar() {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [menuOpen]);
+
   return (
     <motion.header
       className={`navbar ${scrolled ? "navbarScrolled" : ""}`}
-      initial={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.6,
+        duration: 0.45,
         ease: [0.22, 1, 0.36, 1],
       }}
     >
       <div className="navbarContainer">
-
-        {/* Logo */}
-
         <Link
           to="/"
           className="navbarLogo"
-          aria-label="Rehabics Physiotherapy"
+          aria-label="Rehabics Physiotherapy Home"
         >
           <img
             src={logo}
@@ -70,8 +82,6 @@ function Navbar() {
             className="navbarLogoImage"
           />
         </Link>
-
-        {/* Desktop Navigation */}
 
         <nav className="desktopNav" aria-label="Main navigation">
           {navItems.map((item) => {
@@ -81,9 +91,8 @@ function Navbar() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`navLink ${
-                  active ? "navLinkActive" : ""
-                }`}
+                className={`navLink ${active ? "navLinkActive" : ""}`}
+                aria-current={active ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -91,32 +100,30 @@ function Navbar() {
           })}
         </nav>
 
-        {/* Right Actions */}
-
         <div className="navbarActions">
-
           <div className="navbarSocials">
             <a
-              href="#"
-              className="socialLink"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="socialLink instagramLink"
               aria-label="Instagram"
             >
               <FiInstagram />
             </a>
 
             <a
-              href="#"
-              className="socialLink"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="socialLink facebookLink"
               aria-label="Facebook"
             >
               <FiFacebook />
             </a>
           </div>
 
-          <Link
-            to="/contact"
-            className="navbarCta"
-          >
+          <Link to="/contact" className="navbarCta">
             <span>Book Appointment</span>
             <FiArrowUpRight />
           </Link>
@@ -126,47 +133,36 @@ function Navbar() {
             className={`mobileMenuButton ${
               menuOpen ? "menuButtonActive" : ""
             }`}
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label={
-              menuOpen ? "Close menu" : "Open menu"
-            }
+            onClick={() => setMenuOpen((previous) => !previous)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
+            aria-controls="mobileNavigation"
           >
             {menuOpen ? <FiX /> : <FiMenu />}
           </button>
-
         </div>
       </div>
 
-      {/* Mobile Menu */}
-
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {menuOpen && (
           <motion.div
+            id="mobileNavigation"
             className="mobileMenu"
-            initial={{
-              opacity: 0,
-              height: 0,
-            }}
-            animate={{
-              opacity: 1,
-              height: "auto",
-            }}
-            exit={{
-              opacity: 0,
-              height: 0,
-            }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{
-              duration: 0.3,
+              duration: 0.25,
               ease: [0.22, 1, 0.36, 1],
             }}
           >
             <div className="mobileMenuInner">
-
-              <nav className="mobileNav">
+              <nav
+                className="mobileNav"
+                aria-label="Mobile navigation"
+              >
                 {navItems.map((item) => {
-                  const active =
-                    location.pathname === item.path;
+                  const active = location.pathname === item.path;
 
                   return (
                     <Link
@@ -175,6 +171,7 @@ function Navbar() {
                       className={`mobileNavLink ${
                         active ? "mobileNavActive" : ""
                       }`}
+                      aria-current={active ? "page" : undefined}
                       onClick={() => setMenuOpen(false)}
                     >
                       <span>{item.label}</span>
@@ -193,6 +190,9 @@ function Navbar() {
                 <FiArrowUpRight />
               </Link>
 
+              <p className="mobileMenuNote">
+                The New Age Of Physiotherapy
+              </p>
             </div>
           </motion.div>
         )}
