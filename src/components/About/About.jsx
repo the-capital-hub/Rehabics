@@ -1,4 +1,3 @@
-
 import { motion } from "motion/react";
 import {
   FiActivity,
@@ -6,9 +5,12 @@ import {
   FiHeart,
   FiUsers,
   FiArrowUpRight,
+  FiCheckCircle,
+  FiBookOpen,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./About.css";
+import docotor from "../../assets/docotor.png";
 
 const strengths = [
   {
@@ -16,15 +18,14 @@ const strengths = [
     title: "Holistic Approach",
     text: "Understanding the body as a connected system.",
     image:
-      "https://images.pexels.com/photos/6111581/pexels-photo-6111581.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "https://images.pexels.com/photos/6931773/pexels-photo-6931773.jpeg",
     accent: "teal",
   },
   {
     icon: FiAward,
     title: "Experienced Care",
-    text: "Licensed and experienced physiotherapy care.",
-    image:
-      "https://images.pexels.com/photos/7659561/pexels-photo-7659561.jpeg?auto=compress&cs=tinysrgb&w=1000",
+    text: "Physiotherapy care focused on individual needs.",
+    image: "https://images.pexels.com/photos/14346824/pexels-photo-14346824.jpeg",
     accent: "purple",
   },
   {
@@ -32,7 +33,7 @@ const strengths = [
     title: "Team Approach",
     text: "Multidisciplinary care focused on your goals.",
     image:
-      "https://images.pexels.com/photos/7088526/pexels-photo-7088526.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "https://images.pexels.com/photos/7551180/pexels-photo-7551180.jpeg",
     accent: "pink",
   },
   {
@@ -40,28 +41,38 @@ const strengths = [
     title: "Patient First",
     text: "Education, communication and comfortable care.",
     image:
-      "https://images.pexels.com/photos/7089629/pexels-photo-7089629.jpeg?auto=compress&cs=tinysrgb&w=1000",
+      "https://images.pexels.com/photos/6753348/pexels-photo-6753348.jpeg",
     accent: "teal",
   },
+];
+
+const qualifications = [
+  "Bachelor of Physiotherapy completed in 2017",
+  "The Oxford College of Physiotherapy, Bengaluru",
+  "Affiliated with Rajiv Gandhi University of Health Sciences, Karnataka",
+];
+
+const certifications = [
+  "Cupping Therapy",
+  "Dry Needling Therapy",
+  "Kinesio Taping",
 ];
 
 function About() {
   return (
     <section className="aboutSection" id="about">
       <div className="aboutContainer">
-        {/* Introduction */}
-
         <div className="aboutIntro">
           <motion.div
             className="aboutIntroContent"
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.65 }}
           >
             <div className="aboutLabel">
               <span className="aboutLabelDot" />
-              <span>About Rehabics</span>
+              <span>Welcome to Rehabics Physiotherapy</span>
             </div>
 
             <h2 className="aboutHeading">
@@ -69,21 +80,63 @@ function About() {
               <span>beyond the pain.</span>
             </h2>
 
-            <p className="aboutLead">
-              At Rehabics Physiotherapy, we believe recovery
-              begins with understanding how the body moves,
-              adapts and works as a whole.
-            </p>
+            <div className="aboutFounderText">
+              <span className="aboutEyebrow">Founder and Director</span>
+              <h3>Dr. Archita Tiwari</h3>
+
+              <p className="aboutLead">
+                Dr. Archita Tiwari is the Founder and Director of
+                Rehabics Physiotherapy and Rehabilitation Centre
+                in Koramangala, Bengaluru. Her approach focuses
+                on understanding the body and supporting
+                personalised rehabilitation.
+              </p>
+
+              <p className="aboutBodyText">
+                She completed her Bachelor of Physiotherapy at
+                The Oxford College of Physiotherapy, Bengaluru,
+                affiliated with Rajiv Gandhi University of Health
+                Sciences, Karnataka, in 2017. The original
+                Rehabics website also identifies her with the
+                Indian Association of Physiotherapy.
+              </p>
+            </div>
+
+            <div className="aboutQualification">
+              <div className="aboutQualificationIcon">
+                <FiBookOpen />
+              </div>
+              <div>
+                <h4>Education and Qualifications</h4>
+                <ul>
+                  {qualifications.map((item) => (
+                    <li key={item}>
+                      <FiCheckCircle />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="aboutCertifications">
+              <span className="aboutCertLabel">
+                Certified Practitioner
+              </span>
+              <div className="aboutCertTags">
+                {certifications.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
+            </div>
 
             <Link to="/about" className="aboutLink">
-              <span>Know More About Rehabics</span>
+              <span>Read More About Us</span>
               <span className="aboutLinkIcon">
                 <FiArrowUpRight />
               </span>
             </Link>
           </motion.div>
-
-          {/* Founder visual */}
 
           <motion.div
             className="aboutFounderVisual"
@@ -94,8 +147,8 @@ function About() {
           >
             <img
               className="founderImage"
-              src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Physiotherapy consultation"
+              src={docotor}
+              alt="Dr. Archita Tiwari, Founder and Director of Rehabics Physiotherapy"
               loading="lazy"
             />
 
@@ -110,9 +163,7 @@ function About() {
               <span className="founderInfoLabel">
                 Founder and Director
               </span>
-
               <h3>Dr. Archita Tiwari</h3>
-
               <p>
                 Personalised physiotherapy care with a holistic
                 approach to movement and recovery.
@@ -122,8 +173,6 @@ function About() {
             <span className="founderAccent" aria-hidden="true" />
           </motion.div>
         </div>
-
-        {/* Philosophy */}
 
         <motion.div
           className="aboutPhilosophy"
@@ -145,7 +194,6 @@ function About() {
               understanding how different parts of the body
               work together throughout recovery.
             </p>
-
             <p>
               Our goal is to educate, guide and support every
               patient through a personalised rehabilitation
@@ -158,11 +206,11 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Strengths */}
-
         <div className="strengthsHeading">
           <div>
-            <span className="smallLabel">The Rehabics Difference</span>
+            <span className="smallLabel">
+              The Rehabics Difference
+            </span>
             <h3>Care built around you.</h3>
           </div>
 
@@ -202,7 +250,6 @@ function About() {
                     <div className="strengthIcon">
                       <Icon />
                     </div>
-
                     <span className="strengthNumber">
                       0{index + 1}
                     </span>

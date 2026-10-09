@@ -6,6 +6,7 @@ import {
   FiShield,
   FiUserCheck,
   FiArrowUpRight,
+  FiCheckCircle,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./Services.css";
@@ -16,9 +17,9 @@ const serviceGroups = [
     icon: FiActivity,
     title: "Rehabilitation",
     description:
-      "Personalised support to improve mobility, restore function and help you move with confidence.",
+      "Individualised rehabilitation to restore movement, improve function and support recovery at every stage of life.",
     image:
-      "https://images.pexels.com/photos/6111581/pexels-photo-6111581.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/patient-doing-exercise-using-sports-equipment-with-therapist-1024x683.jpg",
     accent: "teal",
     services: [
       "Online Physiotherapy",
@@ -26,7 +27,10 @@ const serviceGroups = [
       "Pre and Post Operative Rehab",
       "Neuro Physiotherapy",
       "Geriatric Physiotherapy",
+      "Geriatric Home Care",
       "Pediatric Physiotherapy",
+      "Physiotherapy at Home",
+      "Psychological Rehabilitation",
     ],
   },
   {
@@ -34,9 +38,9 @@ const serviceGroups = [
     icon: FiHeart,
     title: "Pain and Movement",
     description:
-      "Assessment and treatment tailored to your pain, posture and everyday movement needs.",
+      "Assessment and treatment focused on pain relief, posture, mobility and comfortable everyday movement.",
     image:
-      "https://images.pexels.com/photos/7659561/pexels-photo-7659561.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/young-businesswoman-suffering-from-neckache-massaging-her-neck-while-sitting-her-working-place-home-office-1024x683.jpg",
     accent: "pink",
     services: [
       "Musculoskeletal Assessment",
@@ -45,6 +49,8 @@ const serviceGroups = [
       "Posture Correction",
       "Myofascial and Trigger Point Release",
       "Tailored Exercise Therapy",
+      "Deep Tissue Massage",
+      "Ergonomic Advice",
     ],
   },
   {
@@ -52,9 +58,9 @@ const serviceGroups = [
     icon: FiShield,
     title: "Specialised Care",
     description:
-      "Targeted physiotherapy techniques selected according to individual assessment and needs.",
+      "Specialised physiotherapy techniques chosen according to your assessment, condition and recovery needs.",
     image:
-      "https://images.pexels.com/photos/7088526/pexels-photo-7088526.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/closeup-shirtless-man-receiving-dry-needling-therapy-from-doctor-clinic-1024x683.jpg",
     accent: "purple",
     services: [
       "Dry Needling Therapy",
@@ -62,7 +68,9 @@ const serviceGroups = [
       "Kinesio Taping",
       "Traction",
       "Ultrasound Therapy",
+      "IFT, TENS and Electrical Stimulation",
       "Pre and Postnatal Training",
+      "Women’s Wellness",
     ],
   },
   {
@@ -70,17 +78,18 @@ const serviceGroups = [
     icon: FiUserCheck,
     title: "Wellness and Performance",
     description:
-      "Build strength, improve physical fitness and work towards your personal performance goals.",
+      "Build strength, support physical wellness and improve performance with care designed around your goals.",
     image:
-      "https://images.pexels.com/photos/7089629/pexels-photo-7089629.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/pexels-andrea-piacquadio-3836878-1024x683.jpg",
     accent: "teal",
     services: [
       "Fitness Training",
       "Strength Training",
       "Sports Specific Training",
       "Corporate Wellness",
-      "Psychological Rehab",
       "Sports Nutrition",
+      "Women’s Wellness",
+      "Online Wellness Guidance",
     ],
   },
 ];
@@ -103,7 +112,7 @@ function Services() {
             </div>
 
             <span className="servicesCount">
-              04 Care Categories
+              {String(serviceGroups.length).padStart(2, "0")} Care Categories
             </span>
           </div>
 
@@ -120,9 +129,9 @@ function Services() {
             </div>
 
             <p>
-              Explore physiotherapy and wellness services
-              designed around your movement, recovery and
-              individual goals.
+              Discover physiotherapy, rehabilitation and wellness
+              services designed around your movement, recovery and
+              individual needs.
             </p>
           </div>
         </motion.div>
@@ -134,10 +143,10 @@ function Services() {
             return (
               <motion.article
                 className={`serviceCard serviceCard${group.accent}`}
-                key={group.title}
+                key={group.number}
                 initial={{ opacity: 0, y: 26 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
+                viewport={{ once: true, amount: 0.08 }}
                 transition={{
                   duration: 0.55,
                   delay: index * 0.08,
@@ -146,7 +155,7 @@ function Services() {
                 <div className="serviceImageWrap">
                   <img
                     src={group.image}
-                    alt={`${group.title} physiotherapy care`}
+                    alt={`${group.title} at Rehabics Physiotherapy`}
                     className="serviceImage"
                     loading="lazy"
                   />
@@ -185,7 +194,7 @@ function Services() {
                   <div className="serviceList">
                     {group.services.map((service) => (
                       <div className="serviceItem" key={service}>
-                        <span className="serviceItemDot" />
+                        <FiCheckCircle className="serviceCheck" />
                         <span>{service}</span>
                       </div>
                     ))}

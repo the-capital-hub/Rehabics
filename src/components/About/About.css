@@ -669,3 +669,154 @@
     transition: none;
   }
 }
+
+
+/* Founder profile details */
+
+.aboutEyebrow {
+  display: inline-block;
+  margin: 0 0 6px;
+  color: var(--aboutPink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.aboutFounderText h3 {
+  margin: 0;
+  color: #29242e;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(24px, 2.7vw, 34px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.aboutFounderText .aboutLead {
+  margin: 12px 0;
+  max-width: 560px;
+}
+
+.aboutBodyText {
+  max-width: 560px;
+  margin: 0 0 15px;
+  color: #686a73;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.aboutQualification {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 14px 0;
+  padding: 14px;
+  border: 1px solid #e3efec;
+  border-radius: 12px;
+  background: #f5faf9;
+}
+
+.aboutQualificationIcon {
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(8, 180, 165, 0.12);
+  color: var(--aboutTealDark);
+  font-size: 18px;
+}
+
+.aboutQualification h4 {
+  margin: 2px 0 9px;
+  color: #29242e;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.aboutQualification ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aboutQualification li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #686a73;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.aboutQualification li svg {
+  flex: 0 0 14px;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  color: var(--aboutTealDark);
+}
+
+.aboutCertifications {
+  margin: 14px 0 18px;
+}
+
+.aboutCertLabel {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--aboutPurple);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.aboutCertTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.aboutCertTags span {
+  padding: 7px 10px;
+  border: 1px solid #eadff3;
+  border-radius: 7px;
+  background: #faf7fd;
+  color: #50227f;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 650px) {
+  .aboutFounderText h3 {
+    font-size: 25px;
+  }
+
+  .aboutBodyText {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .aboutQualification {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .aboutQualification h4 {
+    font-size: 13px;
+  }
+
+  .aboutQualification li {
+    font-size: 12px;
+  }
+
+  .aboutCertTags {
+    gap: 6px;
+  }
+
+  .aboutCertTags span {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+}

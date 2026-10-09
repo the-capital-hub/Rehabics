@@ -5,7 +5,9 @@ import Doctor from "./components/Doctor/Doctor";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Locations from "./components/Locations/Locations";
+import MarketingPartner from "./components/MarketingPartner/MarketingPartner";
 import Navbar from "./components/Navbar/Navbar";
+import OurTeam from "./components/OurTeam/OurTeam";
 import Services from "./components/Services/Services";
 import Testimonials from "./components/Testimonials/Testimonials";
 import WhyRehabics from "./components/WhyRehabics/WhyRehabics";
@@ -21,6 +23,8 @@ function App() {
         <Services/>
         <Conditions/>
         <WhyRehabics/>
+        <OurTeam/>
+        <MarketingPartner/>
         <Doctor/>
         <Testimonials/>
         <Locations/>

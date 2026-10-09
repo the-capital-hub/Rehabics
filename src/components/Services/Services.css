@@ -14,21 +14,27 @@
   padding: 20px 0;
   background:
     radial-gradient(
-      circle at 4% 10%,
-      rgba(8, 180, 165, 0.055),
-      transparent 25%
+      circle at 5% 8%,
+      rgba(8, 180, 165, 0.07),
+      transparent 27%
     ),
     radial-gradient(
-      circle at 96% 55%,
-      rgba(80, 34, 127, 0.045),
-      transparent 25%
+      circle at 96% 60%,
+      rgba(80, 34, 127, 0.06),
+      transparent 27%
     ),
     #ffffff;
   color: var(--servicesInk);
 }
 
+.servicesSection *,
+.servicesSection *::before,
+.servicesSection *::after {
+  box-sizing: border-box;
+}
+
 .servicesContainer {
-  width: min(1200px, calc(100% - 48px));
+  width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -41,7 +47,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .servicesLabel {
@@ -51,7 +57,7 @@
   color: var(--servicesTealDark);
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
@@ -61,21 +67,21 @@
   flex: 0 0 8px;
   border-radius: 50%;
   background: var(--servicesTeal);
-  box-shadow: 0 0 0 5px rgba(8, 180, 165, 0.11);
+  box-shadow: 0 0 0 5px rgba(8, 180, 165, 0.12);
 }
 
 .servicesCount {
   color: var(--servicesMuted);
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
 }
 
 .servicesHeaderContent {
   display: grid;
-  grid-template-columns: 1.15fr 0.65fr;
+  grid-template-columns: 1.15fr 0.7fr;
   align-items: end;
-  gap: 32px;
+  gap: 28px;
 }
 
 .servicesEyebrow {
@@ -92,10 +98,10 @@
   max-width: 650px;
   margin: 0;
   color: var(--servicesInk);
-  font-size: clamp(32px, 4.2vw, 54px);
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1.8px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
 }
 
 .servicesHeadingWrap h2 span {
@@ -104,10 +110,10 @@
 }
 
 .servicesHeaderContent > p {
-  max-width: 380px;
+  max-width: 390px;
   margin: 0 0 4px;
   color: var(--servicesMuted);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -119,12 +125,15 @@
 }
 
 .serviceCard {
+  position: relative;
+  display: flex;
   min-width: 0;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--servicesBorder);
-  border-radius: 17px;
+  border-radius: 18px;
   background: #ffffff;
-  box-shadow: 0 7px 25px rgba(43, 31, 61, 0.045);
+  box-shadow: 0 6px 22px rgba(43, 31, 61, 0.05);
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
@@ -133,15 +142,16 @@
 
 .serviceCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(8, 180, 165, 0.35);
-  box-shadow: 0 17px 38px rgba(43, 31, 61, 0.1);
+  border-color: rgba(8, 180, 165, 0.4);
+  box-shadow: 0 16px 36px rgba(43, 31, 61, 0.11);
 }
 
 .serviceImageWrap {
   position: relative;
   height: 180px;
+  flex: 0 0 180px;
   overflow: hidden;
-  background: #e9e6ed;
+  background: #eeebf2;
 }
 
 .serviceImage {
@@ -150,11 +160,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.65s ease;
+  object-position: center;
+  transition: transform 0.6s ease;
 }
 
 .serviceCard:hover .serviceImage {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
 .serviceImageOverlay {
@@ -162,30 +173,32 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(25, 18, 39, 0.25) 0%,
-    rgba(25, 18, 39, 0.03) 40%,
-    rgba(25, 18, 39, 0.72) 100%
+    rgba(25, 18, 39, 0.28) 0%,
+    rgba(25, 18, 39, 0.04) 38%,
+    rgba(25, 18, 39, 0.78) 100%
   );
 }
 
 .serviceCardTop {
   position: absolute;
-  top: 13px;
-  right: 13px;
-  left: 13px;
+  top: 12px;
+  right: 12px;
+  left: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .serviceNumber {
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--servicesPurple);
   font-size: 12px;
   font-weight: 800;
@@ -194,12 +207,13 @@
 
 .serviceIcon {
   display: grid;
-  width: 39px;
-  height: 39px;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   color: var(--servicesTealDark);
   font-size: 19px;
   transition:
@@ -224,22 +238,23 @@
 
 .serviceImageTitle {
   position: absolute;
-  right: 15px;
+  right: 14px;
   bottom: 13px;
-  left: 15px;
+  left: 14px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.94);
-  font-size: 10px;
+  gap: 9px;
+  color: #ffffff;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.7px;
 }
 
 .serviceImageLine {
-  width: 28px;
-  height: 2px;
-  border-radius: 4px;
+  width: 25px;
+  height: 3px;
+  flex: 0 0 25px;
+  border-radius: 5px;
   background: var(--servicesTeal);
 }
 
@@ -248,14 +263,15 @@
 }
 
 .serviceCardpurple .serviceImageLine {
-  background: #bba0ed;
+  background: #c7a8f2;
 }
 
 .serviceCardContent {
   display: flex;
-  height: calc(100% - 180px);
+  height: 100%;
+  flex: 1;
   flex-direction: column;
-  padding: 16px 14px 14px;
+  padding: 15px 14px;
 }
 
 .serviceTitleRow {
@@ -268,22 +284,22 @@
 .serviceTitleRow h3 {
   margin: 0;
   color: var(--servicesInk);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
-  line-height: 1.3;
-  letter-spacing: -0.45px;
+  line-height: 1.4;
+  letter-spacing: -0.35px;
 }
 
 .serviceArrow {
   display: grid;
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
   place-items: center;
   border-radius: 50%;
   background: rgba(8, 180, 165, 0.1);
   color: var(--servicesTealDark);
-  font-size: 17px;
+  font-size: 16px;
   transition:
     transform 0.3s ease,
     background 0.3s ease,
@@ -307,8 +323,7 @@
 }
 
 .serviceDescription {
-  min-height: 68px;
-  margin: 9px 0 14px;
+  margin: 9px 0 12px;
   color: var(--servicesMuted);
   font-size: 12px;
   line-height: 1.75;
@@ -317,35 +332,33 @@
 .serviceList {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 13px 0;
+  gap: 9px;
+  padding: 12px 0;
   border-top: 1px solid #f0edf3;
 }
 
 .serviceItem {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
+  gap: 8px;
   color: #514c5a;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-.serviceItemDot {
-  width: 6px;
-  height: 6px;
-  flex: 0 0 6px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: var(--servicesTeal);
+.serviceCheck {
+  flex: 0 0 14px;
+  margin-top: 2px;
+  color: var(--servicesTealDark);
+  font-size: 14px;
 }
 
-.serviceCardpink .serviceItemDot {
-  background: var(--servicesPink);
+.serviceCardpink .serviceCheck {
+  color: var(--servicesPink);
 }
 
-.serviceCardpurple .serviceItemDot {
-  background: var(--servicesPurple);
+.serviceCardpurple .serviceCheck {
+  color: var(--servicesPurple);
 }
 
 .serviceCardFooter {
@@ -354,7 +367,7 @@
   justify-content: space-between;
   gap: 8px;
   margin-top: auto;
-  padding-top: 13px;
+  padding-top: 12px;
   border-top: 1px solid #f0edf3;
   color: var(--servicesTealDark);
   font-size: 12px;
@@ -372,7 +385,8 @@
 }
 
 .serviceCardFooter svg {
-  font-size: 17px;
+  flex: 0 0 auto;
+  font-size: 16px;
   transition: transform 0.25s ease;
 }
 
@@ -383,15 +397,15 @@
 .servicesBottom {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 22px;
-  padding: 17px 20px;
-  border: 1px solid rgba(8, 180, 165, 0.19);
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid rgba(8, 180, 165, 0.2);
   border-radius: 15px;
   background: linear-gradient(
     105deg,
     rgba(8, 180, 165, 0.07),
-    rgba(80, 34, 127, 0.035)
+    rgba(80, 34, 127, 0.04)
   );
 }
 
@@ -410,6 +424,7 @@
 
 .servicesBottomText {
   flex: 1;
+  min-width: 0;
 }
 
 .servicesBottomText h3 {
@@ -417,64 +432,71 @@
   color: var(--servicesInk);
   font-size: 15px;
   font-weight: 800;
+  line-height: 1.4;
 }
 
 .servicesBottomText p {
   margin: 0;
   color: var(--servicesMuted);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .servicesContactLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 8px;
   min-height: 42px;
   padding: 10px 15px;
+  border: 1px solid transparent;
   border-radius: 10px;
   background: var(--servicesPurple);
   color: #ffffff;
   font-size: 12px;
   font-weight: 800;
+  text-align: center;
   text-decoration: none;
   transition:
     background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .servicesContactLink:hover {
   transform: translateY(-2px);
   background: var(--servicesTealDark);
+  box-shadow: 0 7px 18px rgba(8, 180, 165, 0.2);
 }
 
 .servicesContactLink svg {
+  flex: 0 0 auto;
   font-size: 16px;
+}
+
+.servicesContactLink:focus-visible,
+.serviceCardFooter:focus-visible {
+  outline: 2px solid var(--servicesTealDark);
+  outline-offset: 4px;
 }
 
 @media (max-width: 1100px) {
   .servicesGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 16px;
   }
 
   .serviceImageWrap {
-    height: 220px;
+    height: 210px;
+    flex-basis: 210px;
   }
 
   .serviceCardContent {
-    height: auto;
-    min-height: 350px;
-    padding: 18px;
+    padding: 16px;
   }
 
   .serviceTitleRow h3 {
-    font-size: 20px;
-  }
-
-  .serviceDescription {
-    min-height: 0;
+    font-size: 18px;
   }
 }
 
@@ -488,70 +510,49 @@
   }
 
   .servicesHeader {
-    margin-bottom: 20px;
-  }
-
-  .servicesHeaderTop {
-    margin-bottom: 13px;
+    margin-bottom: 18px;
   }
 
   .servicesHeaderContent {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .servicesHeadingWrap h2 {
-    font-size: clamp(31px, 8vw, 43px);
-    letter-spacing: -1.2px;
+    font-size: clamp(30px, 7.5vw, 42px);
+    letter-spacing: -1px;
   }
 
   .servicesHeaderContent > p {
-    max-width: 520px;
+    max-width: 540px;
     font-size: 13px;
     line-height: 1.7;
   }
 
   .servicesGrid {
-    gap: 13px;
+    gap: 14px;
   }
 
   .serviceImageWrap {
-    height: 165px;
+    height: 185px;
+    flex-basis: 185px;
   }
 
   .serviceCardContent {
-    min-height: 0;
-    padding: 13px 12px;
+    padding: 14px;
   }
 
   .serviceTitleRow h3 {
-    font-size: 16px;
-  }
-
-  .serviceArrow {
-    width: 27px;
-    height: 27px;
-    flex-basis: 27px;
+    font-size: 17px;
   }
 
   .serviceDescription {
     margin: 8px 0 10px;
-    font-size: 12px;
   }
 
   .serviceList {
     gap: 9px;
     padding: 11px 0;
-  }
-
-  .serviceItem {
-    gap: 7px;
-    font-size: 12px;
-  }
-
-  .serviceImageTitle {
-    font-size: 9px;
-    letter-spacing: 0.8px;
   }
 
   .servicesBottom {
@@ -561,7 +562,8 @@
   }
 
   .servicesBottomText {
-    min-width: calc(100% - 60px);
+    flex: 1;
+    min-width: calc(100% - 58px);
   }
 
   .servicesContactLink {
@@ -574,20 +576,31 @@
     width: calc(100% - 28px);
   }
 
+  .servicesHeaderTop {
+    align-items: flex-start;
+  }
+
+  .servicesLabel {
+    font-size: 12px;
+    letter-spacing: 0.8px;
+  }
+
   .servicesGrid {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .serviceImageWrap {
-    height: 200px;
+    height: 205px;
+    flex-basis: 205px;
   }
 
   .serviceCardContent {
-    padding: 16px;
+    padding: 15px;
   }
 
   .serviceTitleRow h3 {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .serviceDescription {
@@ -605,12 +618,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .serviceCard,
-  .serviceImage,
-  .serviceIcon,
-  .serviceArrow,
-  .serviceCardFooter svg,
-  .servicesContactLink {
-    transition: none;
+  .servicesSection *,
+  .servicesSection *::before,
+  .servicesSection *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

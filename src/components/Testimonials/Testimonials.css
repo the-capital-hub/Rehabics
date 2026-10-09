@@ -632,3 +632,225 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Patient feedback cards */
+
+.patientFeedbackHeader,
+.clinicReviewHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 20px 0 14px;
+}
+
+.patientFeedbackHeader h3,
+.clinicReviewHeading h3 {
+  margin: 0;
+  color: var(--review-ink);
+  font-size: 25px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.patientFeedbackHeader > p {
+  max-width: 370px;
+  margin: 0;
+  color: var(--review-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.patientFeedbackGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.patientFeedbackCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 19px;
+  overflow: hidden;
+  border: 1px solid var(--review-border);
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 7px 25px rgba(37, 34, 56, 0.035);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.patientFeedbackCard::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--review-teal);
+  content: "";
+}
+
+.patientFeedbackpurple::before {
+  background: var(--review-purple);
+}
+
+.patientFeedbackpink::before {
+  background: var(--review-pink);
+}
+
+.patientFeedbackCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(8, 180, 165, 0.35);
+  box-shadow: 0 14px 35px rgba(37, 34, 56, 0.075);
+}
+
+.patientFeedbackTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.patientFeedbackIcon {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(8, 180, 165, 0.1);
+  color: var(--review-dark-teal);
+  font-size: 20px;
+}
+
+.patientFeedbackpurple .patientFeedbackIcon {
+  background: rgba(80, 34, 127, 0.09);
+  color: var(--review-purple);
+}
+
+.patientFeedbackpink .patientFeedbackIcon {
+  background: rgba(232, 91, 125, 0.1);
+  color: var(--review-pink);
+}
+
+.patientFeedbackCategory {
+  color: var(--review-muted);
+  font-size: 12px;
+  font-weight: 650;
+  text-align: right;
+}
+
+.patientFeedbackStars {
+  margin-bottom: 11px;
+}
+
+.patientFeedbackStars .stars {
+  gap: 3px;
+}
+
+.patientFeedbackStars .stars svg {
+  width: 14px;
+  height: 14px;
+}
+
+.patientFeedbackCard h4 {
+  margin: 0 0 9px;
+  color: var(--review-ink);
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.patientFeedbackCard > p {
+  flex: 1;
+  margin: 0 0 17px;
+  color: var(--review-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.patientFeedbackFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--review-border);
+  color: var(--review-dark-teal);
+}
+
+.patientFeedbackpurple .patientFeedbackFooter {
+  color: var(--review-purple);
+}
+
+.patientFeedbackpink .patientFeedbackFooter {
+  color: var(--review-pink);
+}
+
+.patientFeedbackNote {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.patientFeedbackFooter svg {
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+@media (max-width: 850px) {
+  .patientFeedbackGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .patientFeedbackCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .patientFeedbackHeader,
+  .clinicReviewHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 18px;
+  }
+
+  .patientFeedbackHeader h3,
+  .clinicReviewHeading h3 {
+    font-size: 23px;
+  }
+
+  .patientFeedbackHeader > p {
+    font-size: 13px;
+  }
+
+  .patientFeedbackGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .patientFeedbackCard:last-child {
+    grid-column: auto;
+  }
+
+  .patientFeedbackCard {
+    padding: 16px;
+    border-radius: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patientFeedbackCard {
+    transition: none;
+  }
+
+  .patientFeedbackCard:hover {
+    transform: none;
+  }
+}

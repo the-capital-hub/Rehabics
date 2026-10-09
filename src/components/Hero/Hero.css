@@ -1,4 +1,3 @@
-
 .editorialHero {
   --heroTeal: #08B4A5;
   --heroTealDark: #078F84;
@@ -6,167 +5,186 @@
   --heroPurple: #50227F;
 
   position: relative;
-  min-height: 100svh;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  min-height: min(760px, 100svh);
   padding: 20px 0;
-  background: #FFFFFF;
-  color: #FFFFFF;
+  overflow: hidden;
   isolation: isolate;
+  background: #171926;
+  color: #FFFFFF;
 }
 
-/* Background image */
+.heroBackgrounds,
+.heroOverlay,
+.heroTexture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroBackgrounds {
+  z-index: 0;
+  overflow: hidden;
+  background: #171926;
+}
 
 .heroImage {
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background-image: url("https://images.pexels.com/photos/20860624/pexels-photo-20860624.jpeg?auto=compress&cs=tinysrgb&w=2000");
   background-size: cover;
   background-position: center;
-  transform: scale(1.03);
-  animation: heroImageReveal 1.4s ease forwards;
+  opacity: 0;
+  transform: scale(1.055);
+  transition:
+    opacity 0.9s ease,
+    transform 6s ease;
 }
 
-@keyframes heroImageReveal {
-  from {
-    opacity: 0;
-    transform: scale(1.08);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1.03);
-  }
+.heroImageActive {
+  opacity: 1;
+  transform: scale(1);
 }
-
-/* Brand tinted overlay */
 
 .heroOverlay {
-  position: absolute;
-  inset: 0;
   z-index: 1;
   background:
     linear-gradient(
       90deg,
-      rgba(23, 25, 38, 0.94) 0%,
-      rgba(31, 30, 49, 0.86) 35%,
-      rgba(43, 35, 65, 0.67) 67%,
-      rgba(8, 100, 94, 0.48) 100%
+      rgba(20, 24, 37, 0.94) 0%,
+      rgba(25, 27, 42, 0.87) 38%,
+      rgba(36, 31, 54, 0.65) 70%,
+      rgba(29, 38, 54, 0.46) 100%
     );
 }
 
 .heroTexture {
-  position: absolute;
-  inset: 0;
   z-index: 2;
-  opacity: 0.035;
+  opacity: 0.06;
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.6) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.6) 1px,
-      transparent 1px
-    );
-  background-size: 80px 80px;
-  pointer-events: none;
+    linear-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.45) 1px, transparent 1px);
+  background-size: 75px 75px;
 }
-
-/* Main container */
 
 .heroInner {
   position: relative;
   z-index: 3;
-  width: min(100% - 48px, 1280px);
-  min-height: 100svh;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 108px;
-  padding-bottom: 20px;
+  width: min(1280px, calc(100% - 64px));
+  min-height: min(680px, calc(100svh - 40px));
+  margin: 0 auto;
+  padding-top: 82px;
+  padding-bottom: 30px;
 }
-
-/* Top line */
 
 .heroTopLine {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 13px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .heroBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
   color: #FFFFFF;
-  font-size: 12px;
+  text-decoration: none;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.13em;
 }
 
+.heroBrand small {
+  display: block;
+  margin-top: 4px;
+  color: #76E1D7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.heroBrandIcon {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(8, 180, 165, 0.7);
+  border-radius: 11px;
+  background: rgba(8, 180, 165, 0.14);
+  color: #76E1D7;
+  font-size: 21px;
+}
+
 .heroLocation {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
   font-size: 12px;
   font-weight: 600;
+}
+
+.heroLocation > svg {
+  color: #76E1D7;
 }
 
 .heroLocationDot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--heroTeal);
   box-shadow: 0 0 0 4px rgba(8, 180, 165, 0.16);
 }
 
-/* Main content */
-
 .heroMain {
   width: 100%;
-  padding: 25px 0;
+  padding: 28px 0;
+}
+
+.heroSlideContent {
+  width: 100%;
 }
 
 .heroEyebrow {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #76E1D7;
+  gap: 12px;
+  color: #83E4DA;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .eyebrowDot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--heroPink);
-  box-shadow: 0 0 0 5px rgba(232, 91, 125, 0.17);
+  box-shadow: 0 0 0 5px rgba(232, 91, 125, 0.15);
 }
 
-/* Hero heading */
-
 .heroTitleWrapper {
-  margin-top: 18px;
+  margin-top: 19px;
 }
 
 .heroTitle {
+  max-width: 900px;
   margin: 0;
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(42px, 5.5vw, 76px);
+  font-family: "Manrope", "Arial", sans-serif;
+  font-size: clamp(48px, 6vw, 80px);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -0.055em;
-  overflow-wrap: break-word;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
 }
 
 .heroTitleOne {
@@ -180,79 +198,80 @@
 .heroTitleRow {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 21px;
 }
-
-/* Activity icon */
 
 .heroOrb {
   position: relative;
-  width: 54px;
-  height: 54px;
-  flex-shrink: 0;
+  width: 47px;
+  height: 47px;
   display: grid;
+  flex-shrink: 0;
   place-items: center;
-  border: 1px solid rgba(8, 180, 165, 0.8);
+  border: 1px solid rgba(8, 180, 165, 0.85);
   border-radius: 50%;
+  background: rgba(8, 180, 165, 0.13);
   color: #76E1D7;
-  font-size: 22px;
-  background: rgba(8, 180, 165, 0.12);
+  font-size: 21px;
 }
 
 .heroOrb::after {
-  content: "";
   position: absolute;
-  width: 68px;
-  height: 68px;
-  border: 1px dashed rgba(232, 91, 125, 0.7);
+  inset: -7px;
+  border: 1px dashed rgba(232, 91, 125, 0.75);
   border-radius: 50%;
-  animation: orbRotate 14s linear infinite;
+  content: "";
+  animation: heroOrbRotate 16s linear infinite;
 }
 
-@keyframes orbRotate {
-  from {
-    transform: rotate(0deg);
-  }
-
+@keyframes heroOrbRotate {
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Description and actions */
-
 .heroBottom {
   display: grid;
-  grid-template-columns: minmax(0, 440px) auto;
+  grid-template-columns: minmax(0, 430px) auto;
   align-items: center;
-  gap: 35px;
-  margin-top: 26px;
+  gap: 32px;
+  margin-top: 25px;
 }
 
 .heroDescription {
-  max-width: 440px;
+  display: flex;
+  align-items: stretch;
+  gap: 13px;
+}
+
+.heroDescriptionLine {
+  width: 3px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--heroPink);
 }
 
 .heroDescription p {
+  max-width: 420px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.86);
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .heroActionArea {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 19px;
 }
 
 .heroAppointment {
-  min-height: 47px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 13px;
   padding: 7px 8px 7px 17px;
   border: 1px solid var(--heroTeal);
   border-radius: 8px;
@@ -263,16 +282,14 @@
   font-weight: 800;
   transition:
     background 0.25s ease,
-    border-color 0.25s ease,
     transform 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .heroAppointment:hover {
-  background: var(--heroTealDark);
-  border-color: var(--heroTealDark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(8, 180, 165, 0.2);
+  background: var(--heroTealDark);
+  box-shadow: 0 9px 25px rgba(8, 180, 165, 0.23);
 }
 
 .appointmentIcon {
@@ -281,20 +298,18 @@
   display: grid;
   place-items: center;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.17);
-  color: #FFFFFF;
-  font-size: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 17px;
 }
 
 .heroScroll {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
   font-size: 12px;
   font-weight: 700;
-  transition: color 0.25s ease;
 }
 
 .heroScroll svg {
@@ -302,30 +317,24 @@
   transition: transform 0.25s ease;
 }
 
-.heroScroll:hover {
-  color: #FFFFFF;
-}
-
 .heroScroll:hover svg {
-  transform: translateY(3px);
+  transform: translateY(4px);
 }
-
-/* Focus areas */
 
 .heroFocusBar {
   display: grid;
-  grid-template-columns: 125px minmax(0, 1fr);
+  grid-template-columns: 135px minmax(0, 1fr);
   align-items: center;
   gap: 18px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .focusLabel {
-  color: #76E1D7;
+  color: #83E4DA;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -338,18 +347,12 @@
   display: flex;
   align-items: flex-start;
   gap: 9px;
-  min-height: 38px;
-  padding: 7px 12px;
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.88);
+  padding: 8px 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.19);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.5;
-  transition: background 0.25s ease;
-}
-
-.focusArea:hover {
-  background: rgba(255, 255, 255, 0.07);
 }
 
 .focusNumber {
@@ -359,49 +362,116 @@
   font-weight: 800;
 }
 
-/* Side label */
-
 .heroSideText {
   position: absolute;
-  z-index: 4;
+  z-index: 3;
   top: 50%;
-  right: 12px;
+  right: 13px;
   transform: translateY(-50%) rotate(90deg);
   color: rgba(255, 255, 255, 0.38);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   pointer-events: none;
 }
 
-/* Tablet */
+.heroSliderControls {
+  position: absolute;
+  z-index: 5;
+  right: max(32px, calc((100% - 1280px) / 2));
+  bottom: 17px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.heroSlideCounter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.heroSlideCounter strong {
+  color: #76E1D7;
+  font-size: 13px;
+}
+
+.heroSlideCounter span {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.heroArrow {
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-size: 17px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.heroArrow:hover {
+  border-color: var(--heroTeal);
+  background: var(--heroTeal);
+}
+
+.heroDots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.heroDot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.52);
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.heroDotActive {
+  width: 23px;
+  background: var(--heroPink);
+}
+
+.heroArrow:focus-visible,
+.heroDot:focus-visible,
+.heroAppointment:focus-visible,
+.heroScroll:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 4px;
+}
 
 @media (max-width: 1000px) {
   .heroInner {
-    width: calc(100% - 36px);
-    padding-top: 95px;
-  }
-
-  .heroOverlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(23, 25, 38, 0.94),
-        rgba(43, 35, 65, 0.76)
-      );
+    width: calc(100% - 40px);
+    padding-top: 90px;
   }
 
   .heroTitle {
-    font-size: clamp(40px, 6.5vw, 64px);
+    font-size: clamp(43px, 6.5vw, 66px);
   }
 
   .heroBottom {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 19px;
   }
 
-  .heroActionArea {
-    gap: 16px;
+  .heroDescription p {
+    max-width: 520px;
   }
 
   .heroFocusBar {
@@ -416,35 +486,40 @@
   .focusArea {
     padding-left: 10px;
   }
-}
 
-/* Mobile */
+  .heroSideText {
+    display: none;
+  }
+
+  .heroSliderControls {
+    right: 20px;
+  }
+}
 
 @media (max-width: 650px) {
   .editorialHero {
-    min-height: 100svh;
-    min-height: 100vh;
+    min-height: max(680px, 100svh);
+    padding: 15px 0 68px;
   }
 
   .heroImage {
-    background-position: 62% center;
+    background-position: center;
   }
 
   .heroOverlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(23, 25, 38, 0.88) 0%,
-        rgba(31, 30, 49, 0.86) 55%,
-        rgba(39, 32, 57, 0.92) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(22, 25, 38, 0.81) 0%,
+      rgba(27, 27, 43, 0.87) 53%,
+      rgba(27, 27, 43, 0.96) 100%
+    );
   }
 
   .heroInner {
     width: calc(100% - 32px);
-    min-height: 100svh;
-    padding-top: 88px;
-    padding-bottom: 18px;
+    min-height: calc(100svh - 100px);
+    padding-top: 78px;
+    padding-bottom: 9px;
   }
 
   .heroTopLine {
@@ -453,7 +528,12 @@
 
   .heroBrand {
     font-size: 12px;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.1em;
+  }
+
+  .heroBrandIcon {
+    width: 35px;
+    height: 35px;
   }
 
   .heroLocation {
@@ -465,48 +545,51 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    padding: 22px 0;
+    padding: 24px 0;
   }
 
   .heroEyebrow {
+    gap: 10px;
     font-size: 12px;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.045em;
   }
 
   .heroTitleWrapper {
-    margin-top: 16px;
+    margin-top: 17px;
   }
 
   .heroTitle {
-    font-size: clamp(38px, 10.5vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -0.05em;
+    font-size: clamp(37px, 9.6vw, 54px);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
   }
 
   .heroTitleRow {
-    gap: 11px;
+    gap: 12px;
   }
 
   .heroOrb {
-    width: 38px;
-    height: 38px;
-    font-size: 16px;
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
   }
 
   .heroOrb::after {
-    width: 50px;
-    height: 50px;
+    inset: -5px;
   }
 
   .heroBottom {
-    margin-top: 22px;
+    margin-top: 21px;
     gap: 19px;
   }
 
+  .heroDescription {
+    gap: 11px;
+  }
+
   .heroDescription p {
-    max-width: 380px;
     font-size: 13px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .heroActionArea {
@@ -515,12 +598,12 @@
 
   .heroAppointment {
     min-height: 45px;
+    gap: 9px;
     padding-left: 12px;
-    gap: 8px;
   }
 
   .heroScroll {
-    gap: 6px;
+    font-size: 12px;
   }
 
   .heroFocusBar {
@@ -529,16 +612,14 @@
   }
 
   .focusItems {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 6px;
+    column-gap: 7px;
   }
 
   .focusArea {
-    min-height: 38px;
-    padding: 7px 4px;
     gap: 7px;
+    padding: 7px 3px;
     border-left: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     font-size: 12px;
   }
 
@@ -546,43 +627,33 @@
     border-bottom: 0;
   }
 
-  .heroSideText {
-    display: none;
+  .heroSliderControls {
+    right: 50%;
+    bottom: 17px;
+    transform: translateX(50%);
+    gap: 10px;
   }
 }
-
-/* Small phones */
 
 @media (max-width: 380px) {
   .heroInner {
     width: calc(100% - 26px);
-    padding-top: 82px;
   }
 
   .heroTitle {
-    font-size: 36px;
+    font-size: 35px;
   }
 
   .heroTitleRow {
     gap: 8px;
   }
 
-  .heroOrb {
-    width: 34px;
-    height: 34px;
-  }
-
-  .heroOrb::after {
-    width: 44px;
-    height: 44px;
-  }
-
   .heroActionArea {
     gap: 12px;
   }
 
-  .heroAppointment {
-    font-size: 12px;
+  .heroFocusBar {
+    gap: 7px;
   }
 
   .focusArea {
@@ -590,18 +661,14 @@
   }
 }
 
-/* Reduced motion accessibility */
-
 @media (prefers-reduced-motion: reduce) {
   .heroImage,
-  .heroOrb::after {
-    animation: none;
-  }
-
+  .heroOrb::after,
   .heroAppointment,
-  .heroScroll,
   .heroScroll svg,
-  .focusArea {
-    transition: none;
+  .heroDot,
+  .heroArrow {
+    animation: none !important;
+    transition: none !important;
   }
 }

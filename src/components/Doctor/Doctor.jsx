@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./Doctor.css";
+import docotor from '../../assets/docotor.png'
 
 const highlights = [
   {
@@ -129,7 +130,7 @@ function Doctor() {
         >
           <div className="doctorImageWrap">
             <img
-              src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=1400"
+              src={docotor}
               alt="Physiotherapy professional in a clinical setting"
               className="doctorImage"
               loading="lazy"
@@ -149,23 +150,7 @@ function Doctor() {
               <strong>Bengaluru</strong>
             </div>
           </div>
-{/* 
-          <motion.div
-            className="doctorFloatingCard"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-          >
-            <span className="doctorFloatingIcon">
-              <FiHeart />
-            </span>
 
-            <div>
-              <strong>Care With Purpose</strong>
-              <span>Focused on your movement goals</span>
-            </div>
-          </motion.div> */}
 
           <div className="doctorImageCorner" />
         </motion.div>

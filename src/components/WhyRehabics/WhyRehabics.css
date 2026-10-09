@@ -9,19 +9,18 @@
   --whyBorder: #eae7ee;
 
   position: relative;
-  isolation: isolate;
   overflow: hidden;
   padding: 20px 0;
   background:
     radial-gradient(
-      circle at 5% 20%,
-      rgba(8, 180, 165, 0.055),
-      transparent 25%
+      circle at 0% 10%,
+      rgba(8, 180, 165, 0.06),
+      transparent 28%
     ),
     radial-gradient(
-      circle at 96% 70%,
+      circle at 100% 90%,
       rgba(80, 34, 127, 0.045),
-      transparent 25%
+      transparent 28%
     ),
     #ffffff;
   color: var(--whyInk);
@@ -29,12 +28,14 @@
 
 .whyContainer {
   display: grid;
-  width: min(1200px, calc(100% - 48px));
-  grid-template-columns: 0.88fr 1.12fr;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: 44px;
+  gap: 42px;
+  width: min(1200px, calc(100% - 48px));
   margin: 0 auto;
 }
+
+/* Image panel */
 
 .whyVisual {
   min-width: 0;
@@ -42,20 +43,23 @@
 
 .whyImageWrap {
   position: relative;
-  min-height: 530px;
+  min-height: 570px;
   overflow: hidden;
-  border-radius: 20px;
-  background: #e9e6ed;
-  box-shadow: 0 18px 48px rgba(43, 31, 61, 0.12);
+  isolation: isolate;
+  border-radius: 22px;
+  background: #eae6ef;
+  box-shadow: 0 18px 50px rgba(43, 31, 61, 0.12);
 }
 
 .whyImage {
   position: absolute;
   inset: 0;
+  z-index: -2;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  object-position: center;
+  transition: transform 0.8s ease;
 }
 
 .whyImageWrap:hover .whyImage {
@@ -65,131 +69,133 @@
 .whyImageOverlay {
   position: absolute;
   inset: 0;
+  z-index: -1;
   background: linear-gradient(
     180deg,
-    rgba(35, 20, 49, 0.24) 0%,
-    rgba(35, 20, 49, 0.02) 35%,
-    rgba(35, 20, 49, 0.84) 100%
+    rgba(27, 20, 39, 0.37) 0%,
+    rgba(27, 20, 39, 0.02) 35%,
+    rgba(27, 20, 39, 0.18) 53%,
+    rgba(27, 20, 39, 0.85) 100%
   );
 }
 
 .whyImageTop {
   position: absolute;
-  top: 17px;
-  right: 17px;
-  left: 17px;
+  top: 19px;
+  right: 19px;
+  left: 19px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.2px;
 }
 
 .whyImageIndex {
   display: grid;
-  width: 37px;
-  height: 37px;
-  flex: 0 0 37px;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.14);
   font-size: 12px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .whyImageAccent {
   position: absolute;
-  top: 100px;
+  top: 88px;
   left: 0;
   width: 5px;
-  height: 100px;
+  height: 70px;
   border-radius: 0 5px 5px 0;
   background: var(--whyTeal);
 }
 
 .whyQuote {
   position: absolute;
-  right: 24px;
-  bottom: 65px;
-  left: 24px;
+  right: 25px;
+  bottom: 105px;
+  left: 25px;
   color: #ffffff;
 }
 
 .whyQuoteLabel {
   display: inline-block;
   margin-bottom: 13px;
-  color: #baf6ed;
-  font-size: 11px;
+  color: #b9fff5;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
 }
 
 .whyQuote h3 {
   margin: 0;
-  font-size: clamp(34px, 3.5vw, 49px);
+  font-size: clamp(39px, 4vw, 55px);
   font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: -1.4px;
+  line-height: 1.04;
+  letter-spacing: -1.8px;
 }
 
 .whyQuote h3 span {
   display: block;
-  color: #9be9de;
+  color: #83e9de;
 }
 
 .whyQuote p {
-  max-width: 320px;
-  margin: 13px 0 0;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 13px;
+  max-width: 310px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 14px;
   line-height: 1.8;
 }
 
 .whyVisualBadge {
   position: absolute;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
+  right: 17px;
+  bottom: 17px;
+  left: 17px;
   display: flex;
   align-items: center;
-  gap: 11px;
-  padding: 13px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 13px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 24px rgba(20, 12, 30, 0.13);
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(12px);
 }
 
 .whyBadgeIcon {
   display: grid;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
   place-items: center;
-  border-radius: 11px;
-  background: rgba(8, 180, 165, 0.1);
-  color: var(--whyTealDark);
-  font-size: 19px;
+  border-radius: 13px;
+  background: rgba(232, 91, 125, 0.11);
+  color: var(--whyPink);
+  font-size: 21px;
 }
 
-.whyVisualBadge > span:last-child {
+.whyBadgeText {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
 }
 
-.whyVisualBadge strong {
+.whyBadgeText strong {
   color: var(--whyInk);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
-.whyVisualBadge small {
+.whyBadgeText small {
   color: var(--whyMuted);
   font-size: 12px;
 }
@@ -198,19 +204,22 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  margin-top: 13px;
+  margin-top: 14px;
   color: var(--whyMuted);
   font-size: 12px;
   font-weight: 700;
 }
 
 .whyCaptionDot {
-  width: 7px;
-  height: 7px;
-  flex: 0 0 7px;
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
   border-radius: 50%;
-  background: var(--whyPink);
+  background: var(--whyTeal);
+  box-shadow: 0 0 0 4px rgba(8, 180, 165, 0.1);
 }
+
+/* Text and principles */
 
 .whyContent {
   min-width: 0;
@@ -221,7 +230,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .whyLabel {
@@ -241,32 +250,37 @@
   flex: 0 0 8px;
   border-radius: 50%;
   background: var(--whyTeal);
-  box-shadow: 0 0 0 5px rgba(8, 180, 165, 0.11);
+  box-shadow: 0 0 0 5px rgba(8, 180, 165, 0.1);
 }
 
 .whyCount {
   color: var(--whyMuted);
   font-size: 12px;
   font-weight: 700;
+  white-space: nowrap;
+}
+
+.whyHeading {
+  margin-bottom: 21px;
 }
 
 .whyEyebrow {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   color: var(--whyPink);
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.1px;
   text-transform: uppercase;
 }
 
 .whyHeading h2 {
   margin: 0;
   color: var(--whyInk);
-  font-size: clamp(32px, 3.5vw, 46px);
+  font-size: clamp(31px, 3.2vw, 44px);
   font-weight: 800;
-  line-height: 1.13;
-  letter-spacing: -1.6px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
 }
 
 .whyHeading h2 span {
@@ -275,53 +289,55 @@
 }
 
 .whyLead {
-  max-width: 540px;
-  margin: 14px 0 21px;
+  max-width: 490px;
+  margin: 13px 0 0;
   color: var(--whyMuted);
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 1.8;
 }
 
 .whyList {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--whyBorder);
+  gap: 10px;
 }
 
 .whyItem {
   display: grid;
-  grid-template-columns: 29px 42px minmax(0, 1fr) 28px;
+  grid-template-columns: 34px 43px minmax(0, 1fr) 20px;
   align-items: center;
   gap: 12px;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--whyBorder);
-  transition: padding 0.25s ease;
+  padding: 14px;
+  border: 1px solid var(--whyBorder);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .whyItem:hover {
-  padding-right: 5px;
-  padding-left: 5px;
+  transform: translateX(4px);
+  border-color: rgba(8, 180, 165, 0.4);
+  box-shadow: 0 8px 20px rgba(43, 31, 61, 0.06);
 }
 
 .whyItemNumber {
-  color: #a29ca9;
+  color: #a09aa8;
   font-size: 12px;
   font-weight: 800;
 }
 
 .whyItemIcon {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 43px;
+  height: 43px;
   place-items: center;
   border-radius: 12px;
   background: rgba(8, 180, 165, 0.1);
   color: var(--whyTealDark);
   font-size: 19px;
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
 }
 
 .whyItempink .whyItemIcon {
@@ -332,12 +348,6 @@
 .whyItempurple .whyItemIcon {
   background: rgba(80, 34, 127, 0.1);
   color: var(--whyPurple);
-}
-
-.whyItem:hover .whyItemIcon {
-  transform: translateY(-2px);
-  background: var(--whyTeal);
-  color: #ffffff;
 }
 
 .whyItemContent {
@@ -357,16 +367,16 @@
 .whyItemContent > span {
   color: var(--whyMuted);
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .whyItemArrow {
   display: grid;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   place-items: center;
   border-radius: 50%;
-  background: #f6f4f8;
+  background: #f5f3f8;
   color: var(--whyPurple);
   font-size: 16px;
   transition:
@@ -377,7 +387,7 @@
 
 .whyItem:hover .whyItemArrow {
   transform: translate(2px, -2px);
-  background: var(--whyPurple);
+  background: var(--whyTeal);
   color: #ffffff;
 }
 
@@ -387,6 +397,8 @@
   justify-content: space-between;
   gap: 12px;
   margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--whyBorder);
 }
 
 .whyFooter p {
@@ -402,7 +414,7 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  padding: 10px 15px;
+  padding: 10px 14px;
   border-radius: 10px;
   background: var(--whyPurple);
   color: #ffffff;
@@ -411,8 +423,8 @@
   text-decoration: none;
   white-space: nowrap;
   transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .whyContactLink:hover {
@@ -424,19 +436,23 @@
   font-size: 16px;
 }
 
+/* Tablet */
+
 @media (max-width: 1050px) {
   .whyContainer {
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 28px;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 25px;
+    width: min(100% - 36px, 900px);
   }
 
   .whyImageWrap {
-    min-height: 500px;
+    min-height: 540px;
   }
 
   .whyItem {
-    grid-template-columns: 25px 38px minmax(0, 1fr) 25px;
+    grid-template-columns: 28px 38px minmax(0, 1fr) 18px;
     gap: 9px;
+    padding: 12px;
   }
 
   .whyItemIcon {
@@ -444,10 +460,16 @@
     height: 38px;
   }
 
+  .whyHeading h2 {
+    font-size: 35px;
+  }
+
   .whyItemContent strong {
     font-size: 13px;
   }
 }
+
+/* Mobile */
 
 @media (max-width: 760px) {
   .whySection {
@@ -455,79 +477,100 @@
   }
 
   .whyContainer {
-    width: calc(100% - 32px);
     grid-template-columns: 1fr;
-    gap: 27px;
+    gap: 26px;
+    width: calc(100% - 32px);
   }
 
   .whyImageWrap {
-    min-height: 390px;
+    min-height: 450px;
   }
 
   .whyQuote {
     right: 20px;
-    bottom: 65px;
+    bottom: 105px;
     left: 20px;
   }
 
   .whyQuote h3 {
-    font-size: 39px;
+    font-size: 45px;
   }
 
   .whyHeaderTop {
-    margin-bottom: 13px;
+    margin-bottom: 15px;
   }
 
   .whyHeading h2 {
-    font-size: clamp(32px, 7.5vw, 43px);
-    letter-spacing: -1.2px;
+    font-size: clamp(31px, 7vw, 42px);
   }
 
   .whyLead {
-    margin: 12px 0 18px;
     font-size: 13px;
   }
 
   .whyItem {
-    grid-template-columns: 25px 38px minmax(0, 1fr) 25px;
-    gap: 9px;
-    padding: 14px 0;
+    grid-template-columns: 30px 42px minmax(0, 1fr) 20px;
+    gap: 10px;
+    padding: 13px;
   }
 
-  .whyItemContent > span {
-    font-size: 12px;
+  .whyItemIcon {
+    width: 42px;
+    height: 42px;
   }
 }
+
+/* Small phones */
 
 @media (max-width: 430px) {
   .whyContainer {
     width: calc(100% - 28px);
+    gap: 23px;
   }
 
   .whyImageWrap {
-    min-height: 350px;
-    border-radius: 16px;
+    min-height: 410px;
+    border-radius: 17px;
+  }
+
+  .whyImageTop {
+    top: 15px;
+    right: 14px;
+    left: 14px;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+  }
+
+  .whyQuote {
+    right: 17px;
+    bottom: 105px;
+    left: 17px;
   }
 
   .whyQuote h3 {
-    font-size: 35px;
+    font-size: 40px;
+  }
+
+  .whyQuote p {
+    font-size: 13px;
   }
 
   .whyVisualBadge {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
-    padding: 10px;
+    right: 11px;
+    bottom: 11px;
+    left: 11px;
+    padding: 11px;
   }
 
   .whyItem {
-    grid-template-columns: 22px 34px minmax(0, 1fr) 23px;
-    gap: 7px;
+    grid-template-columns: 25px 36px minmax(0, 1fr) 18px;
+    gap: 8px;
+    padding: 11px;
   }
 
   .whyItemIcon {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     font-size: 17px;
   }
 
@@ -537,12 +580,6 @@
 
   .whyItemContent > span {
     font-size: 12px;
-  }
-
-  .whyItemArrow {
-    width: 23px;
-    height: 23px;
-    font-size: 14px;
   }
 
   .whyFooter {
@@ -555,10 +592,11 @@
   }
 }
 
+/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
   .whyImage,
   .whyItem,
-  .whyItemIcon,
   .whyItemArrow,
   .whyContactLink {
     transition: none;

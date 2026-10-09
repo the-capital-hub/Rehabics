@@ -17,7 +17,7 @@ const conditions = [
     title: "Sports Injuries",
     text: "Individualised rehabilitation to support recovery, mobility and a confident return to physical activity.",
     image:
-      "https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/9519544/pexels-photo-9519544.jpeg",
     accent: "teal",
     tag: "Active Recovery",
   },
@@ -27,7 +27,7 @@ const conditions = [
     title: "Spine Care",
     text: "Personalised care for back and neck concerns, posture and movement related difficulties.",
     image:
-      "https://images.pexels.com/photos/6111616/pexels-photo-6111616.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/19440815/pexels-photo-19440815.jpeg",
     accent: "purple",
     tag: "Movement Support",
   },
@@ -37,7 +37,7 @@ const conditions = [
     title: "Women's Health",
     text: "Support tailored to individual women's health, pelvic wellness and rehabilitation needs.",
     image:
-      "https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/3822351/pexels-photo-3822351.jpeg",
     accent: "pink",
     tag: "Personalised Care",
   },
@@ -47,7 +47,7 @@ const conditions = [
     title: "Muscle and Joint Pain",
     text: "Assessment focused on movement, strength and everyday activities that matter to you.",
     image:
-      "https://images.pexels.com/photos/4506109/pexels-photo-4506109.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "https://images.pexels.com/photos/5793895/pexels-photo-5793895.jpeg",
     accent: "teal",
     tag: "Everyday Mobility",
   },

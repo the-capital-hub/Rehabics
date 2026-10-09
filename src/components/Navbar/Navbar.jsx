@@ -16,7 +16,7 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
-  { label: "Conditions", path: "/conditions" },
+  { label: "Instagram Feed", path: "/instagram-feed" },
   { label: "Contact", path: "/contact" },
 ];
 

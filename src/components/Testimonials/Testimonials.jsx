@@ -6,8 +6,37 @@ import {
   FiStar,
   FiHeart,
   FiMessageCircle,
+  FiActivity,
+  FiCheckCircle,
 } from "react-icons/fi";
 import "./Testimonials.css";
+
+const patientReviews = [
+  {
+    category: "Spine Care",
+    title: "Personalised Pain Management",
+    description:
+      "Feedback highlights personalised treatment, strengthening exercises and supportive guidance for cervical and lower back pain.",
+    accent: "teal",
+    icon: FiActivity,
+  },
+  {
+    category: "Post Surgery Recovery",
+    title: "Support Throughout Recovery",
+    description:
+      "A rehabilitation experience that highlights home visits, compassionate support and guidance throughout recovery after ACL surgery.",
+    accent: "purple",
+    icon: FiHeart,
+  },
+  {
+    category: "Shoulder Rehabilitation",
+    title: "A Plan Built Around the Patient",
+    description:
+      "Feedback highlights a personalised rehabilitation plan, exercise guidance and manual therapy for shoulder related concerns.",
+    accent: "pink",
+    icon: FiCheckCircle,
+  },
+];
 
 const locations = [
   {
@@ -16,7 +45,7 @@ const locations = [
     rating: "4.9",
     reviews: "300 reviews",
     description:
-      "A trusted Rehabics location for personalised physiotherapy and rehabilitation care.",
+      "Explore the clinic profile and read patient feedback about physiotherapy and rehabilitation care.",
     reviewUrl:
       "https://www.google.com/maps/search/?api=1&query=Rehabics+Physiotherapy+Koramangala+Bengaluru",
     accent: "teal",
@@ -27,7 +56,7 @@ const locations = [
     rating: "5.0",
     reviews: "58 reviews",
     description:
-      "Focused physiotherapy care designed around recovery, movement and everyday confidence.",
+      "Explore the clinic profile and read patient feedback about recovery, movement and rehabilitation.",
     reviewUrl:
       "https://www.google.com/maps/search/?api=1&query=Rehabics+Physiotherapy+Haralur+Bengaluru",
     accent: "purple",
@@ -36,7 +65,7 @@ const locations = [
 
 function StarRating() {
   return (
-    <div className="stars" aria-label="Five star rating">
+    <div className="stars" aria-label="Five star visual rating">
       {[1, 2, 3, 4, 5].map((star) => (
         <FiStar key={star} />
       ))}
@@ -58,31 +87,31 @@ function Testimonials() {
           <div className="testimonialsHeaderTop">
             <div className="testimonialsLabel">
               <span className="testimonialsLabelDot" />
-              <span>Patient Experience</span>
+              <span>Patient Experiences</span>
             </div>
 
             <span className="testimonialsCount">
               <FiMapPin />
-              02 Bengaluru Clinics
+              Two Bengaluru Clinics
             </span>
           </div>
 
           <div className="testimonialsHeading">
             <div>
               <span className="testimonialsEyebrow">
-                Your Journey Matters
+                Every Recovery Matters
               </span>
 
               <h2>
-                Trusted care across
-                <span>Bengaluru.</span>
+                Care that puts
+                <span>you first.</span>
               </h2>
             </div>
 
             <p>
-              Every recovery journey is different. Our clinics focus on
-              personalised physiotherapy, professional guidance and helping
-              people move with greater confidence.
+              Every recovery journey is different. Discover the care
+              experiences and rehabilitation services that help patients
+              work towards better movement and everyday confidence.
             </p>
           </div>
         </motion.div>
@@ -101,7 +130,7 @@ function Testimonials() {
 
             <div className="reviewSummaryInfo">
               <span className="reviewSummaryLabel">
-                Patient Ratings
+                Clinic Ratings
               </span>
 
               <div className="reviewSummaryRating">
@@ -110,7 +139,7 @@ function Testimonials() {
               </div>
 
               <p>
-                Ratings displayed for our Bengaluru clinics.
+                See individual clinic profiles for patient reviews.
               </p>
             </div>
           </div>
@@ -136,6 +165,73 @@ function Testimonials() {
             <FiMessageCircle />
           </div>
         </motion.div>
+
+        <div className="patientFeedbackHeader">
+          <div>
+            <span className="testimonialsEyebrow">
+              Rehabilitation Experiences
+            </span>
+            <h3>Patient feedback</h3>
+          </div>
+
+          <p>
+            Explore experiences across different rehabilitation needs.
+          </p>
+        </div>
+
+        <div className="patientFeedbackGrid">
+          {patientReviews.map((review, index) => {
+            const ReviewIcon = review.icon;
+
+            return (
+              <motion.article
+                className={`patientFeedbackCard patientFeedback${review.accent}`}
+                key={review.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+              >
+                <div className="patientFeedbackTop">
+                  <span className="patientFeedbackIcon">
+                    <ReviewIcon />
+                  </span>
+
+                  <span className="patientFeedbackCategory">
+                    {review.category}
+                  </span>
+                </div>
+
+                <div className="patientFeedbackStars">
+                  <StarRating />
+                </div>
+
+                <h4>{review.title}</h4>
+
+                <p>{review.description}</p>
+
+                <div className="patientFeedbackFooter">
+                  <span className="patientFeedbackNote">
+                    Patient experience summary
+                  </span>
+                  <FiArrowUpRight />
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <div className="clinicReviewHeading">
+          <div>
+            <span className="testimonialsEyebrow">
+              Find Your Nearest Clinic
+            </span>
+            <h3>Our Bengaluru clinics</h3>
+          </div>
+        </div>
 
         <div className="locationReviews">
           {locations.map((location, index) => (
@@ -185,9 +281,9 @@ function Testimonials() {
                 className="reviewLocationFooter"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`View ${location.name} reviews on Google Maps`}
+                aria-label={`Explore ${location.name} clinic reviews`}
               >
-                <span>Explore Clinic Reviews</span>
+                <span>Read Clinic Reviews</span>
 
                 <span className="reviewArrow">
                   <FiArrowUpRight />
@@ -209,8 +305,8 @@ function Testimonials() {
           </span>
 
           <p>
-            At Rehabics, every patient deserves attentive care and a
-            rehabilitation plan shaped around their individual needs.
+            Every patient deserves attentive care and a rehabilitation
+            plan shaped around their individual needs.
           </p>
         </motion.div>
       </div>

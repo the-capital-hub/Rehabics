@@ -6,6 +6,7 @@ import {
   FiUsers,
   FiShield,
   FiArrowUpRight,
+  FiHeart,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import "./WhyRehabics.css";
@@ -54,8 +55,8 @@ function WhyRehabics() {
         >
           <div className="whyImageWrap">
             <img
-              src="https://images.pexels.com/photos/6111581/pexels-photo-6111581.jpeg?auto=compress&cs=tinysrgb&w=1400"
-              alt="Physiotherapy session"
+              src="https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/sport-outdoor-1-scaled.jpg"
+              alt="Physiotherapy and physical activity"
               className="whyImage"
               loading="lazy"
             />
@@ -87,10 +88,10 @@ function WhyRehabics() {
 
             <div className="whyVisualBadge">
               <span className="whyBadgeIcon">
-                <FiHeartIcon />
+                <FiHeart />
               </span>
 
-              <span>
+              <span className="whyBadgeText">
                 <strong>Care that listens</strong>
                 <small>Focused on your goals</small>
               </span>
@@ -185,10 +186,6 @@ function WhyRehabics() {
       </div>
     </section>
   );
-}
-
-function FiHeartIcon() {
-  return <FiCheckCircle />;
 }
 
 export default WhyRehabics;
