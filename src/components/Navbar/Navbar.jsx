@@ -18,6 +18,7 @@ const navItems = [
   { label: "Services", path: "/services" },
   { label: "Instagram Feed", path: "/instagram-feed" },
   { label: "Contact", path: "/contact" },
+  
 ];
 
 function Navbar() {
@@ -123,7 +124,7 @@ function Navbar() {
             </a>
           </div>
 
-          <Link to="/contact" className="navbarCta">
+          <Link to="/appointment" className="navbarCta">
             <span>Book Appointment</span>
             <FiArrowUpRight />
           </Link>

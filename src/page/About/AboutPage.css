@@ -1,0 +1,1436 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+.rehabAboutPage {
+  --rap-navy: #102c3b;
+  --rap-navy-light: #183d4c;
+  --rap-teal: #159b91;
+  --rap-teal-dark: #087c75;
+  --rap-mint: #e8f7f4;
+  --rap-pink: #f4e4e9;
+  --rap-text: #263e49;
+  --rap-muted: #6d7e86;
+  --rap-white: #ffffff;
+  --rap-border: #e3ecee;
+  color: var(--rap-text);
+  background: var(--rap-white);
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+.rehabAboutPage * {
+  box-sizing: border-box;
+}
+
+.rehabAboutPage img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.rehabAboutPage h1,
+.rehabAboutPage h2,
+.rehabAboutPage h3,
+.rehabAboutPage h4 {
+  font-family: "Manrope", sans-serif;
+  margin-top: 0;
+}
+
+.rehabAboutPage p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--rap-muted);
+  margin: 0 0 16px;
+}
+
+.rapContainer {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.rapSection {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.rapEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--rap-teal-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.rapHero {
+  position: relative;
+  isolation: isolate;
+  background: var(--rap-navy);
+  color: var(--rap-white);
+  padding: 75px 0;
+}
+
+.rapHeroPattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.16;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #8bd9cf 1px,
+    transparent 0
+  );
+  background-size: 27px 27px;
+  mask-image: linear-gradient(90deg, black, transparent 85%);
+}
+
+.rapHeroGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.rapHeroEyebrow {
+  color: #a9e5dc;
+}
+
+.rapEyebrowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #65d1c1;
+  box-shadow: 0 0 0 5px rgb(101 209 193 / 13%);
+}
+
+.rapHeroCopy h1 {
+  max-width: 650px;
+  color: var(--rap-white);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.rapHeroCopy h1 span,
+.rapStoryCopy h2 span,
+.rapFounderContent h2 span {
+  display: block;
+  color: #65d1c1;
+}
+
+.rapHeroCopy > p {
+  max-width: 510px;
+  color: #d0dce1;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.rapHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.rapButton {
+  min-height: 48px;
+  padding: 12px 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.rapButton:hover {
+  transform: translateY(-3px);
+}
+
+.rapButtonPrimary {
+  background: var(--rap-teal);
+  color: var(--rap-white);
+}
+
+.rapButtonPrimary:hover {
+  background: #20b1a4;
+}
+
+.rapButtonGhost {
+  color: var(--rap-white);
+  border-color: rgb(255 255 255 / 28%);
+  background: rgb(255 255 255 / 4%);
+}
+
+.rapButtonGhost:hover {
+  background: rgb(255 255 255 / 10%);
+}
+
+.rapHeroChecks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.rapHeroChecks span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d7e6e9;
+  font-size: 12px;
+}
+
+.rapHeroChecks svg {
+  color: #65d1c1;
+  font-size: 16px;
+}
+
+.rapHeroVisual {
+  position: relative;
+  padding: 0 12px 16px 0;
+}
+
+.rapHeroVisual > img {
+  height: 440px;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+  object-position: center;
+  box-shadow: 0 25px 65px rgb(0 0 0 / 22%);
+}
+
+.rapHeroAccent {
+  position: absolute;
+  width: 52%;
+  height: 45%;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  background: var(--rap-teal);
+}
+
+.rapHeroFloat {
+  position: absolute;
+  z-index: 2;
+  left: -30px;
+  bottom: 45px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--rap-white);
+  box-shadow: 0 15px 40px rgb(0 0 0 / 15%);
+}
+
+.rapFloatIcon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 9px;
+  color: var(--rap-teal-dark);
+  background: var(--rap-mint);
+  font-size: 21px;
+}
+
+.rapHeroFloat strong,
+.rapHeroFloat small {
+  display: block;
+}
+
+.rapHeroFloat strong {
+  color: var(--rap-navy);
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.rapHeroFloat small {
+  color: var(--rap-muted);
+  font-size: 12px;
+}
+
+/* Story */
+
+.rapStoryGrid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.rapStoryVisual {
+  position: relative;
+}
+
+.rapStoryVisual > img {
+  height: 440px;
+  border-radius: 13px;
+}
+
+.rapImageCaption {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--rap-white);
+  color: var(--rap-navy);
+  padding: 12px 15px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 10%);
+}
+
+.rapImageCaption svg {
+  color: var(--rap-teal);
+  font-size: 17px;
+}
+
+.rapStoryCopy h2,
+.rapSectionHeading h2,
+.rapFounderContent h2 {
+  color: var(--rap-navy);
+  font-size: clamp(30px, 3.4vw, 43px);
+  line-height: 1.22;
+  letter-spacing: -1.2px;
+  margin-bottom: 22px;
+}
+
+.rapStoryCopy h2 span,
+.rapFounderContent h2 span {
+  color: var(--rap-teal);
+}
+
+.rapStoryPoints {
+  display: grid;
+  gap: 13px;
+  margin: 25px 0;
+}
+
+.rapStoryPoints div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rap-navy);
+}
+
+.rapStoryPoints svg {
+  color: var(--rap-teal);
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.rapTextLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--rap-teal-dark);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rapTextLink:hover {
+  gap: 14px;
+}
+
+/* Founder */
+
+.rapFounder {
+  background: #f5f9f9;
+}
+
+.rapFounderGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 65px;
+}
+
+.rapFounderImage {
+  position: sticky;
+  top: 25px;
+}
+
+.rapFounderImage > img {
+  height: 490px;
+  border-radius: 13px;
+  object-position: center top;
+  background: var(--rap-pink);
+}
+
+.rapFounderBadge {
+  position: relative;
+  width: fit-content;
+  max-width: 90%;
+  margin: -28px auto 0;
+  padding: 15px 19px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--rap-white);
+  color: var(--rap-navy);
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgb(16 44 59 / 10%);
+}
+
+.rapFounderBadge svg {
+  color: var(--rap-teal);
+  font-size: 20px;
+}
+
+.rapFounderContent h2 {
+  margin-bottom: 10px;
+}
+
+.rapFounderContent h3 {
+  color: var(--rap-teal-dark);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.rapCredentials {
+  padding: 18px;
+  background: var(--rap-white);
+  border: 1px solid var(--rap-border);
+  border-radius: 10px;
+  margin-top: 17px;
+}
+
+.rapCredentialTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.rapCredentialTitle > svg {
+  color: var(--rap-teal);
+  font-size: 19px;
+}
+
+.rapCredentialTitle h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--rap-navy);
+}
+
+.rapCredentialItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--rap-muted);
+}
+
+.rapCredentialItem svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 15px;
+  color: var(--rap-teal);
+}
+
+/* Shared section heading */
+
+.rapSectionHeading {
+  max-width: 680px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.rapSectionHeading h2 {
+  margin-bottom: 15px;
+}
+
+.rapSectionHeading p {
+  max-width: 590px;
+  margin: 0 auto;
+}
+
+.rapHeadingLight h2,
+.rapHeadingLight p {
+  color: var(--rap-white);
+}
+
+/* Values */
+
+.rapValues {
+  background: var(--rap-white);
+}
+
+.rapValueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.rapValueCard {
+  padding: 25px;
+  border: 1px solid var(--rap-border);
+  border-radius: 11px;
+  background: var(--rap-white);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.rapValueCard:hover {
+  transform: translateY(-6px);
+  border-color: #b8e4de;
+  box-shadow: 0 18px 40px rgb(16 44 59 / 8%);
+}
+
+.rapCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.rapCardIcon,
+.rapServiceIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--rap-teal-dark);
+  background: var(--rap-mint);
+  font-size: 22px;
+}
+
+.rapCardNumber {
+  color: #b6c7cc;
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.rapValueCard h3,
+.rapServiceCard h3 {
+  color: var(--rap-navy);
+  font-size: 17px;
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.rapValueCard p,
+.rapServiceCard p {
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Services */
+
+.rapServices {
+  background: #f5f9f9;
+}
+
+.rapServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.rapServiceCard {
+  padding: 23px;
+  border-radius: 10px;
+  border: 1px solid var(--rap-border);
+  background: var(--rap-white);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rapServiceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgb(16 44 59 / 8%);
+}
+
+.rapServiceIcon {
+  margin-bottom: 22px;
+}
+
+/* Locations */
+
+.rapLocationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.rapLocationCard {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 24px;
+  border: 1px solid var(--rap-border);
+  border-radius: 10px;
+  background: var(--rap-white);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.rapLocationCard:hover {
+  border-color: #a8ded6;
+  transform: translateY(-3px);
+}
+
+.rapLocationIcon {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--rap-mint);
+  color: var(--rap-teal-dark);
+  font-size: 22px;
+}
+
+.rapLocationCard h3 {
+  color: var(--rap-navy);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.rapLocationCard p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.rapLocationArrow {
+  margin-left: auto;
+  color: var(--rap-teal);
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+/* CTA */
+
+.rapCTA {
+  padding: 50px 0;
+  background: var(--rap-navy);
+}
+
+.rapCTAGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.rapCTAeyebrow {
+  color: #a9e5dc;
+  margin-bottom: 12px;
+}
+
+.rapCTA h2 {
+  max-width: 690px;
+  color: var(--rap-white);
+  font-size: clamp(27px, 3.5vw, 40px);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.rapCTA p {
+  color: #d0dce1;
+  margin: 0;
+}
+
+.rapButtonLight {
+  flex-shrink: 0;
+  background: var(--rap-white);
+  color: var(--rap-navy);
+}
+
+.rapButtonLight:hover {
+  background: #dff6f2;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .rapHeroGrid {
+    gap: 35px;
+  }
+
+  .rapStoryGrid,
+  .rapFounderGrid {
+    gap: 38px;
+  }
+
+  .rapServiceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rapHeroVisual > img {
+    height: 380px;
+  }
+
+  .rapFounderImage > img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .rapContainer {
+    width: min(100% - 32px, 520px);
+  }
+
+  .rapSection {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .rapHero {
+    padding: 48px 0 55px;
+  }
+
+  .rapHeroGrid,
+  .rapStoryGrid,
+  .rapFounderGrid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .rapHeroCopy h1 {
+    font-size: clamp(37px, 10vw, 51px);
+    letter-spacing: -1.5px;
+  }
+
+  .rapHeroCopy > p {
+    font-size: 14px;
+  }
+
+  .rapHeroVisual {
+    margin-left: 10px;
+  }
+
+  .rapHeroVisual > img {
+    height: 320px;
+  }
+
+  .rapHeroFloat {
+    left: -10px;
+    bottom: 25px;
+    padding: 12px;
+  }
+
+  .rapStoryVisual > img {
+    height: 310px;
+  }
+
+  .rapStoryCopy h2,
+  .rapSectionHeading h2,
+  .rapFounderContent h2 {
+    font-size: 32px;
+  }
+
+  .rapFounderImage {
+    position: relative;
+    top: auto;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .rapFounderImage > img {
+    height: 390px;
+  }
+
+  .rapValueGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rapValueCard {
+    padding: 21px;
+  }
+
+  .rapServiceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rapServiceCard {
+    padding: 21px;
+  }
+
+  .rapLocationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rapLocationCard {
+    padding: 18px;
+  }
+
+  .rapCTAGrid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rapCTA {
+    padding: 40px 0;
+  }
+
+  .rapCTA h2 {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 380px) {
+  .rapContainer {
+    width: calc(100% - 26px);
+  }
+
+  .rapHeroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rapButton {
+    width: 100%;
+  }
+
+  .rapHeroChecks {
+    gap: 12px;
+  }
+
+  .rapHeroVisual > img {
+    height: 270px;
+  }
+
+  .rapFounderImage > img {
+    height: 320px;
+  }
+
+  .rapCredentials {
+    padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rehabAboutPage *,
+  .rehabAboutPage *::before,
+  .rehabAboutPage *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ABOUT PAGE JSX COMPATIBILITY AND DESIGN POLISH */
+
+.rehabAboutPage {
+  --rap-teal: #08b4a5;
+  --rap-teal-dark: #078f84;
+}
+
+.rehabAboutPage .rapSection {
+  padding-block: 48px;
+}
+
+/* Hero */
+
+.rehabAboutPage .rapHeroGrid {
+  padding-block: 42px;
+  gap: 42px;
+}
+
+.rehabAboutPage .rapHeroVisual {
+  min-height: 390px;
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  background: #252939;
+}
+
+.rehabAboutPage .rapHeroVisual > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: inherit;
+  transition: transform .6s ease;
+}
+
+.rehabAboutPage .rapHeroVisual:hover > img {
+  transform: scale(1.035);
+}
+
+.rehabAboutPage .rapHeroFloat {
+  position: absolute;
+  left: -15px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 12px;
+  background: #fff;
+  color: #29242e;
+  box-shadow: 0 14px 35px rgba(0,0,0,.18);
+}
+
+.rehabAboutPage .rapFloatIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 11px;
+  background: #e2f8f4;
+  color: #078f84;
+  font-size: 20px;
+}
+
+.rehabAboutPage .rapHeroFloat strong,
+.rehabAboutPage .rapHeroFloat small {
+  display: block;
+}
+
+.rehabAboutPage .rapHeroFloat strong {
+  font-size: 13px;
+}
+
+.rehabAboutPage .rapHeroFloat small {
+  margin-top: 5px;
+  color: #686a73;
+  font-size: 12px;
+}
+
+.rehabAboutPage .rapHeroAccent {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 65px;
+  height: 65px;
+  z-index: -1;
+  border-top: 3px solid var(--rap-teal);
+  border-right: 3px solid var(--rap-teal);
+  border-radius: 0 12px 0 0;
+}
+
+/* Section headings */
+
+.rehabAboutPage .rapSectionHeading {
+  margin-bottom: 28px;
+}
+
+.rehabAboutPage .rapSectionHeading h2 {
+  margin: 0 0 14px;
+  font-size: clamp(29px, 3.5vw, 42px);
+  line-height: 1.17;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.rehabAboutPage .rapSectionHeading > p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.rehabAboutPage .rapSectionHeading.rapHeadingLight h2 {
+  color: #fff;
+}
+
+/* Story */
+
+.rehabAboutPage .rapStoryGrid {
+  grid-template-columns: .95fr 1fr;
+  gap: 48px;
+}
+
+.rehabAboutPage .rapStoryVisual {
+  min-width: 0;
+  height: 390px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #eef4f4;
+  box-shadow: 0 16px 38px rgba(23,25,38,.09);
+}
+
+.rehabAboutPage .rapStoryVisual > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.rehabAboutPage .rapStoryVisual:hover > img {
+  transform: scale(1.04);
+}
+
+.rehabAboutPage .rapImageCaption {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255,255,255,.6);
+  border-radius: 10px;
+  background: rgba(23,25,38,.88);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.rehabAboutPage .rapImageCaption svg {
+  flex: 0 0 auto;
+  color: #6de0d5;
+  font-size: 18px;
+}
+
+.rehabAboutPage .rapStoryCopy h2,
+.rehabAboutPage .rapFounderContent h2 {
+  margin: 0 0 17px;
+  font-size: clamp(30px, 3.5vw, 42px);
+  line-height: 1.17;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.rehabAboutPage .rapStoryCopy h2 span,
+.rehabAboutPage .rapFounderContent h2 span {
+  display: block;
+  color: var(--rap-teal-dark);
+}
+
+.rehabAboutPage .rapStoryPoints > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rehabAboutPage .rapStoryPoints > div svg {
+  flex: 0 0 17px;
+  margin-top: 2px;
+  color: var(--rap-teal-dark);
+}
+
+/* Founder */
+
+.rehabAboutPage .rapFounderGrid {
+  grid-template-columns: .8fr 1.2fr;
+  gap: 48px;
+}
+
+.rehabAboutPage .rapFounderImage {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 18px;
+  background: #242838;
+  box-shadow: 0 18px 42px rgba(23,25,38,.12);
+}
+
+.rehabAboutPage .rapFounderImage > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform .6s ease;
+}
+
+.rehabAboutPage .rapFounderImage:hover > img {
+  transform: scale(1.035);
+}
+
+.rehabAboutPage .rapFounderBadge {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 11px;
+  background: rgba(23,25,38,.9);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  backdrop-filter: blur(9px);
+}
+
+.rehabAboutPage .rapFounderBadge svg {
+  color: #72e1d6;
+  font-size: 21px;
+}
+
+.rehabAboutPage .rapFounderContent > h3 {
+  margin: -5px 0 16px;
+  color: #078f84;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.rehabAboutPage .rapCredentials {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--rap-line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.rehabAboutPage .rapCredentialTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.rehabAboutPage .rapCredentialTitle > svg {
+  color: var(--rap-teal-dark);
+  font-size: 19px;
+}
+
+.rehabAboutPage .rapCredentialTitle h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.rehabAboutPage .rapCredentialItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 9px;
+  color: #686a73;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.rehabAboutPage .rapCredentialItem svg {
+  flex: 0 0 15px;
+  margin-top: 3px;
+  color: var(--rap-teal-dark);
+}
+
+/* Values */
+
+.rehabAboutPage .rapValueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.rehabAboutPage .rapValueCard {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--rap-line);
+  border-radius: 14px;
+  background: #fff;
+  transition: transform .25s ease, border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.rehabAboutPage .rapValueCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(8,180,165,.55);
+  box-shadow: 0 14px 30px rgba(23,25,38,.07);
+}
+
+.rehabAboutPage .rapValueCard h3 {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.rehabAboutPage .rapValueCard p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Services */
+
+.rehabAboutPage .rapServiceGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.rehabAboutPage .rapServiceCard {
+  min-width: 0;
+  min-height: 215px;
+  padding: 21px;
+  border: 1px solid var(--rap-line);
+  border-radius: 14px;
+  background: #fff;
+  transition: transform .25s ease, border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.rehabAboutPage .rapServiceCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--rap-teal);
+  box-shadow: 0 13px 28px rgba(23,25,38,.07);
+}
+
+.rehabAboutPage .rapServiceIcon {
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #e1f7f3;
+  color: var(--rap-teal-dark);
+  font-size: 22px;
+}
+
+.rehabAboutPage .rapServiceCard h3 {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.rehabAboutPage .rapServiceCard p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Locations */
+
+.rehabAboutPage .rapLocationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rehabAboutPage .rapLocationCard {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 21px;
+  border: 1px solid var(--rap-line);
+  border-radius: 13px;
+  background: #fff;
+  transition: transform .25s ease, border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.rehabAboutPage .rapLocationCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--rap-teal);
+  box-shadow: 0 12px 28px rgba(23,25,38,.06);
+}
+
+.rehabAboutPage .rapLocationIcon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border-radius: 12px;
+  background: #e1f7f3;
+  color: var(--rap-teal-dark);
+  font-size: 21px;
+}
+
+.rehabAboutPage .rapLocationCard > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.rehabAboutPage .rapLocationCard h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.rehabAboutPage .rapLocationCard p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.rehabAboutPage .rapLocationArrow {
+  flex: 0 0 auto;
+  color: var(--rap-teal-dark);
+  font-size: 19px;
+}
+
+/* CTA */
+
+.rehabAboutPage .rapCTA {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: 42px;
+  color: #fff;
+  background: #171926;
+}
+
+.rehabAboutPage .rapCTAGrid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+}
+
+.rehabAboutPage .rapCTA .rapCTAeyebrow {
+  color: #8ce9df;
+}
+
+.rehabAboutPage .rapCTA h2 {
+  max-width: 720px;
+  margin: 0 0 13px;
+  color: #fff;
+  font-size: clamp(29px, 3.5vw, 43px);
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+.rehabAboutPage .rapCTA p {
+  color: #c7c9d3;
+  font-size: 14px;
+}
+
+.rehabAboutPage .rapButtonLight {
+  flex-shrink: 0;
+  color: #171926;
+  background: #fff;
+}
+
+.rehabAboutPage .rapButtonLight:hover {
+  color: #fff;
+  background: var(--rap-teal-dark);
+}
+
+/* Responsive */
+
+@media (max-width: 950px) {
+  .rehabAboutPage .rapHeroGrid {
+    gap: 26px;
+  }
+
+  .rehabAboutPage .rapStoryGrid,
+  .rehabAboutPage .rapFounderGrid {
+    gap: 28px;
+  }
+
+  .rehabAboutPage .rapServiceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .rehabAboutPage .rapSection {
+    padding-block: 32px;
+  }
+
+  .rehabAboutPage .rapHeroGrid,
+  .rehabAboutPage .rapStoryGrid,
+  .rehabAboutPage .rapFounderGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-block: 30px;
+  }
+
+  .rehabAboutPage .rapHeroVisual {
+    min-height: 320px;
+    aspect-ratio: 4 / 3;
+    margin-left: 8px;
+  }
+
+  .rehabAboutPage .rapHeroFloat {
+    left: -8px;
+    bottom: 14px;
+  }
+
+  .rehabAboutPage .rapStoryVisual {
+    height: 300px;
+  }
+
+  .rehabAboutPage .rapFounderImage {
+    min-height: 360px;
+  }
+
+  .rehabAboutPage .rapValueGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rehabAboutPage .rapServiceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .rehabAboutPage .rapServiceCard {
+    min-height: 210px;
+    padding: 16px;
+  }
+
+  .rehabAboutPage .rapLocationGrid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .rehabAboutPage .rapCTAGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .rehabAboutPage .rapButtonLight {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 400px) {
+  .rehabAboutPage .rapContainer {
+    width: calc(100% - 28px);
+  }
+
+  .rehabAboutPage .rapHero h1 {
+    font-size: 35px;
+  }
+
+  .rehabAboutPage .rapServiceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rehabAboutPage .rapServiceCard {
+    min-height: 0;
+  }
+
+  .rehabAboutPage .rapLocationCard {
+    padding: 15px;
+  }
+}
