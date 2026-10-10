@@ -854,3 +854,357 @@
     transform: none;
   }
 }
+/* Patient profile and Google review styling */
+
+.patientReviewIdentity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.patientReviewAvatar,
+.patientReviewAvatarFallback {
+  width: 49px;
+  height: 49px;
+  flex: 0 0 49px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(8, 143, 132, 0.18);
+}
+
+.patientReviewAvatarFallback {
+  display: grid;
+  place-items: center;
+  color: #078f84;
+  background: #e5f7f4;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.patientReviewPerson {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.patientReviewPerson h4 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--review-ink);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.patientReviewPerson > span {
+  color: var(--review-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.patientGoogleMark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--review-border);
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.patientGoogleMark > span {
+  color: #4285f4;
+}
+
+.patientFeedbackTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.patientReviewVerified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--review-dark-teal);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.patientReviewVerified svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.patientFeedbackTitle {
+  margin: 0 0 9px;
+  color: var(--review-ink);
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.patientFeedbackCard > p {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .patientReviewIdentity {
+    gap: 9px;
+  }
+
+  .patientReviewAvatar,
+  .patientReviewAvatarFallback {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .patientGoogleMark {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+    font-size: 20px;
+  }
+}
+/* Patient testimonial carousel */
+
+.patientCarouselSection {
+  width: 100%;
+  min-width: 0;
+}
+
+.patientCarouselTrack {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 2px 14px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.patientCarouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.patientCarouselTrack .patientFeedbackCard {
+  display: flex;
+  flex: 0 0 calc((100% - 36px) / 3);
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.patientReviewIdentity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  margin-bottom: 16px;
+}
+
+.patientReviewAvatar,
+.patientReviewAvatarFallback {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(8, 143, 132, 0.2);
+}
+
+.patientReviewAvatarFallback {
+  display: none;
+  place-items: center;
+  color: #087f77;
+  background: #e7f6f3;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.patientReviewPerson {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.patientReviewPerson h4 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.patientReviewPerson > span {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+.patientGoogleMark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e6eaf0;
+  color: #4285f4;
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.patientFeedbackStars {
+  margin: 0 0 12px;
+}
+
+.patientFeedbackStars .stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.patientFeedbackStars .stars svg {
+  width: 15px;
+  height: 15px;
+  color: #f5a623;
+  fill: #f5a623;
+  stroke: #f5a623;
+}
+
+.patientFeedbackTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.patientCarouselTrack .patientFeedbackCard > p {
+  flex: 1;
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.patientReviewNoText {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.patientCarouselTrack .patientFeedbackFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.patientCarouselControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.patientCarouselHint {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.patientCarouselButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patientCarouselButtons button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #dce6e5;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #087f77;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.patientCarouselButtons button:hover {
+  color: #ffffff;
+  background: #087f77;
+  transform: translateY(-2px);
+}
+
+.patientCarouselButtons button svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 900px) {
+  .patientCarouselTrack .patientFeedbackCard {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .patientCarouselTrack {
+    gap: 12px;
+  }
+
+  .patientCarouselTrack .patientFeedbackCard {
+    flex-basis: 100%;
+  }
+
+  .patientReviewAvatar,
+  .patientReviewAvatarFallback {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+
+  .patientCarouselButtons button {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patientCarouselTrack {
+    scroll-behavior: auto;
+  }
+
+  .patientCarouselButtons button {
+    transition: none;
+  }
+}

@@ -4,14 +4,6 @@ import {
   FiArrowUpRight,
   FiInstagram,
   FiPlay,
-  FiHeart,
-  FiActivity,
-  FiMove,
-  FiShield,
-  FiRefreshCw,
-  FiUserCheck,
-  FiTrendingUp,
-  FiUsers,
 } from "react-icons/fi";
 
 import "./InstagramFeed.css";
@@ -19,75 +11,51 @@ import "./InstagramFeed.css";
 const instagramPosts = [
   {
     id: 1,
+    url: "https://www.instagram.com/reel/DBdsPWRp1uW/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/463770279_518552960946275_739341859288785897_nlow.jpg",
+    alt: "Rehabics physiotherapy and movement",
     type: "Reel",
-    category: "Pain Education",
-    title: "Understand the root cause of pain",
-    image: "/images/instagram/pain-education.jpg",
-    url: "https://www.instagram.com/reel/DC1Zgv7Srjz/",
-    icon: FiActivity,
   },
   {
     id: 2,
+    url: "https://www.instagram.com/reel/DCVxXvsp76X/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/466854987_18035418170462293_176485695394525492_nlow.jpg",
+    alt: "Rehabics movement and recovery",
     type: "Reel",
-    category: "Physiotherapy",
-    title: "Movement, recovery and better everyday function",
-    image: "/images/instagram/physiotherapy.jpg",
-    url: "https://www.instagram.com/reel/DCgoTT-JPRo/",
-    icon: FiMove,
   },
   {
     id: 3,
+    url: "https://www.instagram.com/reel/DB8lucySGKO/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/464669964_1632756120922508_4171501616072475235_nlow.jpg",
+    alt: "Rehabics patient recovery journey",
     type: "Reel",
-    category: "Movement Health",
-    title: "Small movement habits that can make a difference",
-    image: "/images/instagram/movement-health.jpg",
-    url: "https://www.instagram.com/reel/DCVxXvsp76X/",
-    icon: FiTrendingUp,
   },
   {
     id: 4,
+    url: "https://www.instagram.com/reel/DB0bUVBIq5-/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/465088158_956674526285821_2522979061285852980_nlow.jpg",
+    alt: "Rehabics physiotherapy education",
     type: "Reel",
-    category: "Recovery Stories",
-    title: "A closer look at the recovery journey",
-    image: "/images/instagram/recovery.jpg",
-    url: "https://www.instagram.com/reel/DB8lucySGKO/",
-    icon: FiRefreshCw,
   },
   {
     id: 5,
-    type: "Reel",
-    category: "Posture and Mobility",
-    title: "Build awareness of your posture and movement",
-    image: "/images/instagram/posture.jpg",
-    url: "https://www.instagram.com/reel/DBjG2Q2yZ5I/",
-    icon: FiUserCheck,
+    url: "https://www.instagram.com/p/DCeuVlYy_OJ/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/467524621_18035796335462293_3847401145778703917_nlow.jpg",
+    alt: "Rehabics patient community",
+    type: "Post",
   },
   {
     id: 6,
+    url: "https://www.instagram.com/reel/DC1Zgv7Srjz/",
+    image:
+      "https://rehabicsphysiotherapy.in/wp-content/uploads/sb-instagram-feed-images/467043204_18035633564462293_4329998035285165351_nlow.jpg",
+    alt: "Rehabics recovery and wellness",
     type: "Reel",
-    category: "Injury Support",
-    title: "Get to know physiotherapy based recovery",
-    image: "/images/instagram/injury-support.jpg",
-    url: "https://www.instagram.com/reel/DB0bUVBIq5-/",
-    icon: FiShield,
-  },
-  {
-    id: 7,
-    type: "Reel",
-    category: "Active Living",
-    title: "Move with more confidence in daily life",
-    image: "/images/instagram/active-living.jpg",
-    url: "https://www.instagram.com/reel/DBdsPWRp1uW/",
-    icon: FiHeart,
-  },
-  {
-    id: 8,
-    type: "Post",
-    category: "Community",
-    title: "More from the Rehabics community",
-    image: "/images/instagram/community.jpg",
-    url: "https://www.instagram.com/p/DCeuVlYy_OJ/",
-    icon: FiUsers,
   },
 ];
 
@@ -95,18 +63,17 @@ const InstagramFeed = () => {
   return (
     <section className="rifSection" id="instagram">
       <div className="rifContainer">
-
         <motion.div
           className="rifHero"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.65 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="rifHeroContent">
             <span className="rifEyebrow">
               <FiInstagram />
-              <span>REHABICS ON INSTAGRAM</span>
+              REHABICS ON INSTAGRAM
             </span>
 
             <h2>
@@ -116,15 +83,15 @@ const InstagramFeed = () => {
             </h2>
 
             <p>
-              Explore physiotherapy insights, movement education,
-              recovery inspiration and everyday wellness from our community.
+              Discover movement education, physiotherapy
+              insights and recovery inspiration from Rehabics.
             </p>
 
             <a
               className="rifProfileButton"
               href="https://www.instagram.com/rehabics/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FiInstagram />
               Follow @rehabics
@@ -136,10 +103,12 @@ const InstagramFeed = () => {
                 <strong>Movement</strong>
                 <span>Made meaningful</span>
               </div>
+
               <div>
                 <strong>Recovery</strong>
-                <span>Built with guidance</span>
+                <span>Guided with care</span>
               </div>
+
               <div>
                 <strong>Community</strong>
                 <span>Growing together</span>
@@ -152,7 +121,7 @@ const InstagramFeed = () => {
 
             <div className="rifVisualCard">
               <div className="rifVisualIcon">
-                <FiActivity />
+                <FiInstagram />
               </div>
 
               <span className="rifVisualLabel">
@@ -166,13 +135,14 @@ const InstagramFeed = () => {
               </h3>
 
               <div className="rifVisualLine">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
+                {[30, 48, 39, 70, 58, 88, 100].map(
+                  (height, index) => (
+                    <span
+                      key={index}
+                      style={{ height: `${height}%` }}
+                    />
+                  )
+                )}
               </div>
 
               <div className="rifVisualBottom">
@@ -182,20 +152,28 @@ const InstagramFeed = () => {
             </div>
 
             <div className="rifFloatingTag">
-              <FiHeart />
+              <FiInstagram />
               <span>Every step counts</span>
             </div>
           </div>
         </motion.div>
 
-        <div className="rifFeedHeader">
+        <motion.div
+          className="rifFeedHeader"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div>
             <span className="rifSectionEyebrow">
               FROM OUR COMMUNITY
             </span>
+
             <h2>Latest from Instagram</h2>
+
             <p>
-              Discover ideas to help you move, recover and feel better.
+              Explore real posts from the Rehabics community.
             </p>
           </div>
 
@@ -203,79 +181,56 @@ const InstagramFeed = () => {
             className="rifTextLink"
             href="https://www.instagram.com/rehabics/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             View Instagram
             <FiArrowUpRight />
           </a>
-        </div>
+        </motion.div>
 
         <div className="rifPostsGrid">
-          {instagramPosts.map((post, index) => {
-            const PostIcon = post.icon;
+          {instagramPosts.map((post, index) => (
+            <motion.a
+              className="rifPostCard"
+              key={post.id}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open Rehabics Instagram ${post.type} ${post.id}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{
+                duration: 0.45,
+                delay: (index % 3) * 0.08,
+              }}
+            >
+              <div className="rifPostMedia">
+                <img
+                  src={post.image}
+                  alt={post.alt}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
 
-            return (
-              <motion.a
-                className="rifPostCard"
-                href={post.url}
-                target="_blank"
-                rel="noreferrer"
-                key={post.id}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.12 }}
-                transition={{
-                  duration: 0.45,
-                  delay: (index % 4) * 0.08,
-                }}
-              >
-                <div className="rifPostMedia">
-                  <img
-                    className="rifPostImage"
-                    src={post.image}
-                    alt={post.title}
-                    loading="lazy"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                      event.currentTarget.nextElementSibling.style.display =
-                        "flex";
-                    }}
-                  />
+                <span className="rifImageInstagramIcon">
+                  <FiInstagram />
+                </span>
 
-                  <div className={`rifPostFallback rifTheme${post.id}`}>
-                    <div className="rifFallbackOrb" />
-                    <div className="rifFallbackIcon">
-                      <PostIcon />
-                    </div>
-                    <span className="rifFallbackBrand">REHABICS</span>
-                    <strong>{post.category}</strong>
-                    <span className="rifFallbackText">
-                      Move better. Feel better.
-                    </span>
-                  </div>
-
-                  <span className="rifPostType">
-                    {post.type === "Reel" ? <FiPlay /> : <FiInstagram />}
-                    {post.type}
+                {post.type === "Reel" && (
+                  <span className="rifPlayIcon">
+                    <FiPlay />
                   </span>
+                )}
 
-                  <span className="rifPostOpen">
-                    <FiArrowUpRight />
-                  </span>
-                </div>
-
-                <div className="rifPostInfo">
-                  <span className="rifPostCategory">{post.category}</span>
-                  <h3>{post.title}</h3>
-
-                  <span className="rifPostLink">
-                    Watch on Instagram
-                    <FiArrowUpRight />
-                  </span>
-                </div>
-              </motion.a>
-            );
-          })}
+                <span className="rifImageOpenIcon">
+                  <FiArrowUpRight />
+                </span>
+              </div>
+            </motion.a>
+          ))}
         </div>
 
         <div className="rifBottomCta">
@@ -283,25 +238,23 @@ const InstagramFeed = () => {
             <FiInstagram />
           </div>
 
-          <div>
+          <div className="rifBottomContent">
             <h3>Be part of the Rehabics community</h3>
             <p>
-              Follow us for more movement tips, recovery insights and
-              physiotherapy education.
+              Follow us for more movement and recovery inspiration.
             </p>
           </div>
 
           <a
             href="https://www.instagram.com/rehabics/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="rifBottomButton"
           >
             Follow us
             <FiArrowUpRight />
           </a>
         </div>
-
       </div>
     </section>
   );

@@ -1,25 +1,19 @@
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
-
 .rifSection {
-  
-  --rif-teal: #08b4a5;
-  --rif-teal-dark: #078f84;
-  --rif-ink: #29242e;
-  --rif-muted: #686a73;
-  --rif-line: #e4e9ed;
+  --rif-primary: #173f46;
+  --rif-accent: #54c5b5;
+  --rif-text: #183b40;
+  --rif-muted: #687d80;
 
   width: 100%;
   padding: 20px 0;
-  background: #ffffff;
-  color: var(--rif-ink);
-  font-family: "DM Sans", sans-serif;
   overflow: hidden;
+  background: #f7faf9;
+  color: var(--rif-text);
+  font-family: inherit;
 }
 
-.rifSection *,
-.rifSection *::before,
-.rifSection *::after {
+.rifSection * {
   box-sizing: border-box;
 }
 
@@ -28,36 +22,24 @@
   margin: 0 auto;
 }
 
-.rifSection h2,
-.rifSection h3,
-.rifSection p {
-  margin-top: 0;
-}
-
-.rifSection a {
-  text-decoration: none;
-}
-
 .rifHero {
-  
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 0.88fr;
-  gap: 35px;
+  grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
+  gap: 28px;
+  min-height: 400px;
   padding: 30px;
-  min-height: 410px;
+  overflow: hidden;
   border-radius: 24px;
   background:
     radial-gradient(
-      circle at 90% 10%,
-      rgba(8, 180, 165, 0.18),
+      circle at 85% 20%,
+      rgba(84, 197, 181, 0.22),
       transparent 35%
     ),
-    #171926;
-  color: #ffffff;
-  position: relative;
-  overflow: hidden;
-  padding-top: 90px;
+    linear-gradient(135deg, #12383e, #20545a);
+  color: #fff;
 }
 
 .rifHeroContent {
@@ -72,74 +54,67 @@
   gap: 9px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.5px;
 }
 
 .rifEyebrow {
-  color: #8be9df;
-  margin-bottom: 18px;
-}
-
-.rifEyebrow svg {
-  font-size: 18px;
+  color: #8de2d4;
 }
 
 .rifHeroContent h2 {
-  font-family: "Manrope", sans-serif;
+  margin: 18px 0 14px;
   font-size: clamp(30px, 4vw, 48px);
-  font-weight: 800;
   line-height: 1.12;
-  letter-spacing: -1.8px;
-  margin-bottom: 16px;
+  letter-spacing: -1.4px;
+  font-weight: 750;
 }
 
 .rifHeroContent h2 span {
-  color: #61ddd1;
+  color: #83dfd0;
 }
 
 .rifHeroContent > p {
-  color: #c4c7d2;
-  font-size: 14px;
+  max-width: 440px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
   line-height: 1.8;
-  max-width: 460px;
-  margin-bottom: 22px;
 }
 
 .rifProfileButton,
 .rifBottomButton {
-  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 10px 17px;
-  border-radius: 9px;
-  background: var(--rif-teal);
-  color: #ffffff;
+  min-height: 46px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #8de2d4;
+  color: #153d42;
   font-size: 13px;
   font-weight: 700;
+  text-decoration: none;
   transition:
-    background 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.rifProfileButton {
+  margin-top: 22px;
 }
 
 .rifProfileButton:hover,
 .rifBottomButton:hover {
-  background: var(--rif-teal-dark);
-  transform: translateY(-2px);
-}
-
-.rifProfileButton svg,
-.rifBottomButton svg {
-  font-size: 17px;
+  transform: translateY(-3px);
+  background: #b0f1e7;
 }
 
 .rifHeroStats {
   display: flex;
-  gap: 24px;
-  margin-top: 30px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 28px;
 }
 
 .rifHeroStats div {
@@ -149,156 +124,135 @@
 }
 
 .rifHeroStats strong {
-  color: #ffffff;
-  font-size: 12px;
+  font-size: 13px;
+  color: #fff;
 }
 
 .rifHeroStats span {
-  color: #a8adbd;
   font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .rifHeroVisual {
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 310px;
 }
 
 .rifVisualGlow {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: rgba(8, 180, 165, 0.19);
-  filter: blur(45px);
+  background: rgba(84, 197, 181, 0.2);
+  filter: blur(35px);
 }
 
 .rifVisualCard {
-  width: min(100%, 350px);
-  min-height: 270px;
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 20px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.13),
-    rgba(255, 255, 255, 0.035)
-  );
-  backdrop-filter: blur(12px);
   position: relative;
   z-index: 1;
+  width: min(100%, 330px);
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(12px);
   transform: rotate(2deg);
+  animation: rifFloat 5s ease-in-out infinite;
 }
 
 .rifVisualIcon {
-  width: 47px;
-  height: 47px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  background: rgba(8, 180, 165, 0.19);
-  color: #77eee3;
-  font-size: 25px;
-  margin-bottom: 23px;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: #8de2d4;
+  color: #153d42;
+  font-size: 21px;
 }
 
 .rifVisualLabel {
   display: block;
-  color: #a5eee7;
+  margin-top: 26px;
+  color: #a1e8dd;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  letter-spacing: 1.4px;
 }
 
 .rifVisualCard h3 {
-  font-family: "Manrope", sans-serif;
+  margin: 12px 0 20px;
   font-size: 25px;
   line-height: 1.3;
-  margin-bottom: 20px;
 }
 
 .rifVisualLine {
-  height: 45px;
   display: flex;
   align-items: end;
-  gap: 7px;
+  gap: 8px;
+  height: 58px;
 }
 
 .rifVisualLine span {
   flex: 1;
-  border-radius: 5px 5px 0 0;
-  background: linear-gradient(180deg, #63e8dc, #078f84);
+  min-height: 8px;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, #9ae9dc, #54c5b5);
 }
-
-.rifVisualLine span:nth-child(1) { height: 30%; }
-.rifVisualLine span:nth-child(2) { height: 48%; }
-.rifVisualLine span:nth-child(3) { height: 39%; }
-.rifVisualLine span:nth-child(4) { height: 70%; }
-.rifVisualLine span:nth-child(5) { height: 58%; }
-.rifVisualLine span:nth-child(6) { height: 88%; }
-.rifVisualLine span:nth-child(7) { height: 100%; }
 
 .rifVisualBottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  color: #c9d1db;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
   font-size: 12px;
-  margin-top: 17px;
 }
 
 .rifFloatingTag {
   position: absolute;
+  right: 0;
+  bottom: 14px;
   z-index: 2;
-  bottom: 22px;
-  right: -5px;
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   padding: 12px 15px;
   border-radius: 12px;
-  background: #ffffff;
-  color: var(--rif-ink);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: var(--rif-primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   font-size: 12px;
   font-weight: 700;
 }
 
-.rifFloatingTag svg {
-  color: var(--rif-teal-dark);
-  font-size: 18px;
-}
-
 .rifFeedHeader {
   display: flex;
-  justify-content: space-between;
   align-items: end;
+  justify-content: space-between;
   gap: 20px;
-  margin: 35px 0 22px;
+  margin: 28px 0 20px;
 }
 
 .rifSectionEyebrow {
-  color: var(--rif-teal-dark);
-  margin-bottom: 9px;
+  color: #258c7e;
 }
 
 .rifFeedHeader h2 {
-  font-family: "Manrope", sans-serif;
+  margin: 8px 0;
   font-size: clamp(24px, 3vw, 34px);
-  font-weight: 800;
-  letter-spacing: -0.8px;
-  margin-bottom: 8px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
 }
 
 .rifFeedHeader p {
+  margin: 0;
   color: var(--rif-muted);
-  font-size: 13px;
-  line-height: 1.7;
-  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .rifTextLink {
@@ -306,295 +260,193 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
-  color: var(--rif-teal-dark);
+  padding: 10px 0;
+  color: var(--rif-primary);
   font-size: 13px;
   font-weight: 700;
+  text-decoration: none;
 }
 
-.rifTextLink svg {
-  font-size: 17px;
-  transition: transform 0.2s ease;
-}
-
-.rifTextLink:hover svg {
-  transform: translate(3px, -3px);
+.rifTextLink:hover {
+  color: #258c7e;
 }
 
 .rifPostsGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .rifPostCard {
-  min-width: 0;
   display: block;
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--rif-line);
-  border-radius: 15px;
-  background: #ffffff;
-  color: var(--rif-ink);
+  border-radius: 16px;
+  background: #e6efed;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(23, 63, 70, 0.06);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .rifPostCard:hover {
   transform: translateY(-5px);
-  border-color: rgba(8, 180, 165, 0.45);
-  box-shadow: 0 15px 35px rgba(30, 50, 60, 0.1);
+  box-shadow: 0 16px 35px rgba(23, 63, 70, 0.14);
 }
 
 .rifPostMedia {
-  width: 100%;
-  aspect-ratio: 4 / 5;
   position: relative;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: #eaf4f3;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(84, 197, 181, 0.55),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #173f46, #347e79);
 }
 
-.rifPostImage {
-  position: absolute;
-  inset: 0;
+.rifPostMedia img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.45s ease;
-  z-index: 1;
+  transition: transform 0.55s ease;
 }
 
-.rifPostCard:hover .rifPostImage {
-  transform: scale(1.055);
+.rifPostCard:hover .rifPostMedia img {
+  transform: scale(1.06);
 }
 
-.rifPostFallback {
+.rifImageInstagramIcon,
+.rifImageOpenIcon,
+.rifPlayIcon {
   position: absolute;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 20px;
-  overflow: hidden;
-  text-align: center;
-  color: #ffffff;
-  background: linear-gradient(145deg, #173d48, #078f84);
-}
-
-.rifFallbackOrb {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%;
-  box-shadow:
-    0 0 0 20px rgba(255, 255, 255, 0.035),
-    0 0 0 40px rgba(255, 255, 255, 0.025);
-}
-
-.rifFallbackIcon {
-  position: relative;
-  z-index: 1;
-  width: 64px;
-  height: 64px;
   display: grid;
   place-items: center;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  font-size: 31px;
-}
-
-.rifFallbackBrand,
-.rifFallbackText {
-  position: relative;
-  z-index: 1;
-  font-size: 12px;
-}
-
-.rifFallbackBrand {
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-.rifPostFallback strong {
-  position: relative;
-  z-index: 1;
-  font-family: "Manrope", sans-serif;
-  font-size: 18px;
-  line-height: 1.35;
-}
-
-.rifFallbackText {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.rifTheme2 { background: linear-gradient(145deg, #233b60, #537fa3); }
-.rifTheme3 { background: linear-gradient(145deg, #5d4d87, #b18fc6); }
-.rifTheme4 { background: linear-gradient(145deg, #174c49, #4eb5a2); }
-.rifTheme5 { background: linear-gradient(145deg, #725137, #d2a875); }
-.rifTheme6 { background: linear-gradient(145deg, #633f52, #c17d87); }
-.rifTheme7 { background: linear-gradient(145deg, #174b6b, #55a5bc); }
-.rifTheme8 { background: linear-gradient(145deg, #363c57, #7d90aa); }
-
-.rifPostType {
-  position: absolute;
-  z-index: 2;
-  top: 11px;
-  left: 11px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 9px;
-  border-radius: 7px;
-  background: rgba(20, 24, 32, 0.78);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
+  color: #fff;
+  background: rgba(15, 45, 49, 0.7);
   backdrop-filter: blur(8px);
 }
 
-.rifPostType svg {
-  font-size: 13px;
+.rifImageInstagramIcon {
+  top: 12px;
+  left: 12px;
+  width: 35px;
+  height: 35px;
+  border-radius: 11px;
+  font-size: 17px;
 }
 
-.rifPostOpen {
-  position: absolute;
-  z-index: 2;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
+.rifImageOpenIcon {
+  right: 12px;
+  bottom: 12px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: #ffffff;
-  color: var(--rif-ink);
   font-size: 18px;
   transition:
-    background 0.2s ease,
-    color 0.2s ease;
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
-.rifPostCard:hover .rifPostOpen {
-  background: var(--rif-teal);
-  color: #ffffff;
+.rifPostCard:hover .rifImageOpenIcon {
+  background: #54c5b5;
+  color: #153d42;
+  transform: rotate(45deg);
 }
 
-.rifPostInfo {
-  padding: 15px;
-}
-
-.rifPostCategory {
-  display: block;
-  color: var(--rif-teal-dark);
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.rifPostInfo h3 {
-  min-height: 42px;
-  font-family: "Manrope", sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 700;
-  margin-bottom: 13px;
-}
-
-.rifPostLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding-top: 11px;
-  border-top: 1px solid var(--rif-line);
-  color: var(--rif-muted);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.rifPostLink svg {
-  color: var(--rif-teal-dark);
-  font-size: 16px;
+.rifPlayIcon {
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
 }
 
 .rifBottomCta {
   display: flex;
   align-items: center;
-  gap: 17px;
-  padding: 22px;
-  margin-top: 28px;
-  border: 1px solid var(--rif-line);
-  border-radius: 16px;
-  background: #f8fbfb;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #e0ece9;
+  border-radius: 18px;
+  background: #fff;
 }
 
 .rifBottomIcon {
+  display: grid;
+  place-items: center;
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  display: grid;
-  place-items: center;
   border-radius: 14px;
-  background: #ddf7f3;
-  color: var(--rif-teal-dark);
-  font-size: 23px;
+  background: #e1f5f0;
+  color: #258c7e;
+  font-size: 22px;
 }
 
-.rifBottomCta > div:nth-child(2) {
+.rifBottomContent {
   flex: 1;
 }
 
-.rifBottomCta h3 {
-  font-family: "Manrope", sans-serif;
+.rifBottomContent h3 {
+  margin: 0 0 6px;
   font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 5px;
+  line-height: 1.4;
 }
 
-.rifBottomCta p {
+.rifBottomContent p {
+  margin: 0;
   color: var(--rif-muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
-  margin-bottom: 0;
 }
 
 .rifBottomButton {
   flex-shrink: 0;
 }
 
-/* Tablet */
+@keyframes rifFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+}
 
 @media (max-width: 900px) {
   .rifHero {
     grid-template-columns: 1fr 0.8fr;
-    gap: 20px;
-    padding: 25px;
+    padding: 24px;
   }
 
   .rifHeroStats {
-    gap: 15px;
+    gap: 14px;
   }
 
   .rifPostsGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
   }
 
-  .rifPostInfo h3 {
-    min-height: auto;
+  .rifVisualCard {
+    padding: 20px;
   }
 }
 
-/* Mobile */
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .rifSection {
-    padding: 15px 0;
+    padding: 16px 0;
   }
 
   .rifContainer {
@@ -604,115 +456,107 @@
   .rifHero {
     grid-template-columns: 1fr;
     gap: 10px;
-    padding: 22px 18px;
-    border-radius: 18px;
+    padding: 24px 20px;
+    border-radius: 20px;
   }
 
   .rifHeroContent h2 {
-    font-size: 33px;
-    letter-spacing: -1px;
+    font-size: 34px;
   }
 
   .rifHeroContent > p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .rifHeroStats {
-    gap: 12px;
-    margin-top: 23px;
-  }
-
-  .rifHeroStats div {
-    flex: 1;
-  }
-
-  .rifHeroStats strong,
-  .rifHeroStats span {
-    font-size: 12px;
+    gap: 18px;
+    margin-top: 22px;
   }
 
   .rifHeroVisual {
     min-height: 270px;
+    margin-top: 4px;
   }
 
   .rifVisualCard {
-    width: min(88%, 330px);
-    min-height: 235px;
-    padding: 20px;
-  }
-
-  .rifVisualCard h3 {
-    font-size: 22px;
+    width: min(100%, 310px);
   }
 
   .rifFloatingTag {
     right: 0;
-    bottom: 12px;
+    bottom: 4px;
   }
 
   .rifFeedHeader {
     align-items: start;
     flex-direction: column;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 8px;
+    margin-top: 26px;
   }
 
   .rifFeedHeader h2 {
-    font-size: 25px;
-  }
-
-  .rifFeedHeader p {
-    font-size: 12px;
+    font-size: 27px;
   }
 
   .rifPostsGrid {
-    gap: 12px;
-  }
-
-  .rifPostInfo {
-    padding: 11px;
-  }
-
-  .rifPostInfo h3 {
-    font-size: 13px;
-  }
-
-  .rifPostCategory,
-  .rifPostLink {
-    font-size: 12px;
-  }
-
-  .rifPostFallback {
-    padding: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
-  .rifFallbackIcon {
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
+  .rifPostCard {
+    border-radius: 12px;
   }
 
-  .rifPostFallback strong {
+  .rifImageInstagramIcon {
+    top: 8px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
     font-size: 15px;
   }
 
+  .rifImageOpenIcon {
+    right: 8px;
+    bottom: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .rifPlayIcon {
+    width: 38px;
+    height: 38px;
+  }
+
   .rifBottomCta {
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 12px;
     padding: 16px;
   }
 
-  .rifBottomCta > div:nth-child(2) {
-    min-width: 0;
+  .rifBottomContent {
     flex-basis: calc(100% - 65px);
   }
 
-  .rifBottomCta h3 {
-    font-size: 14px;
+  .rifBottomContent h3 {
+    font-size: 15px;
   }
 
   .rifBottomButton {
-    width: 100%;
+    margin-left: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rifVisualCard {
+    animation: none;
+  }
+
+  .rifPostCard,
+  .rifPostMedia img,
+  .rifProfileButton,
+  .rifBottomButton {
+    transition: none;
   }
 }

@@ -1,0 +1,82 @@
+
+.scrollTopButton {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+
+  background: linear-gradient(135deg, #173f46, #26766e);
+  color: #ffffff;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(15px) scale(0.92);
+
+  box-shadow: 0 8px 24px rgba(23, 63, 70, 0.22);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.scrollTopButton.isVisible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.scrollTopButton.isVisible:hover {
+  background: linear-gradient(135deg, #26766e, #35a294);
+  box-shadow: 0 12px 30px rgba(23, 63, 70, 0.3);
+  transform: translateY(-4px);
+}
+
+.scrollTopButton:focus-visible {
+  outline: 3px solid #54c5b5;
+  outline-offset: 4px;
+}
+
+.scrollTopButton svg {
+  transition: transform 0.3s ease;
+}
+
+.scrollTopButton.isVisible:hover svg {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .scrollTopButton {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollTopButton,
+  .scrollTopButton svg {
+    transition: none;
+  }
+}
