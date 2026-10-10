@@ -40,7 +40,7 @@
 .rpc-hero {
   position: relative;
   isolation: isolate;
-  padding: 60px 0;
+  padding: 20px 0;
   background:
     radial-gradient(ellipse at 85% 20%, #e9e2fa 0%, transparent 34%),
     radial-gradient(ellipse at 12% 85%, #dff8f3 0%, transparent 35%),

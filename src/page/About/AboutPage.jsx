@@ -23,6 +23,7 @@ import {
   FiUsers,
 
 } from "react-icons/fi";
+import logo from "../../assets/logo.png";
 
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,7 @@ import "./AboutPage.css";
 
 const clinicImage =
 
-  "https://rehabicsphysiotherapy.in/wp-content/uploads/2023/10/rehabics-physiotherapy-bangalore-5fa37ebe3aad5-2.jpg";
+  logo;
 
 const doctorImage =
 
@@ -351,25 +352,7 @@ export default function AboutPage() {
 
       </div>
 
-      <div className="rapHeroFloat">
-
-        <span className="rapFloatIcon">
-
-          <FiHeart />
-
-        </span>
-
-        <div>
-
-          <strong>Care with purpose</strong>
-
-          <small>Focused on your recovery</small>
-
-        </div>
-
-        <FiArrowUpRight className="rapHeroFloatArrow" />
-
-      </div>
+      
 
       <div className="rapHeroAccent" aria-hidden="true" />
 
@@ -401,13 +384,7 @@ export default function AboutPage() {
 
             <img src={clinicImage} alt="Rehabics physiotherapy centre" />
 
-            <div className="rapImageCaption">
-
-              <FiMapPin />
-
-              <span>Koramangala, Bengaluru</span>
-
-            </div>
+            
 
           </motion.div>
 
@@ -429,7 +406,7 @@ export default function AboutPage() {
 
               <span className="rapEyebrow"><span className="rapEyebrowDot" />OUR STORY</span>
 
-              <span className="rapHeadingMeta">OUR APPROACH</span>
+              
 
             </div>
 

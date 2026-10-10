@@ -50,7 +50,6 @@
 
   max-width: 100%;
 
-  object-fit: cover;
 
 }
 
@@ -126,7 +125,7 @@
 
   overflow: hidden;
 
-  padding: 60px 0;
+  padding: 20px 0;
 
   background:
 
@@ -2298,7 +2297,6 @@
 
   border-radius: 18px;
 
-  background: #eee7f5;
 
   isolation: isolate;
 
@@ -2355,6 +2353,7 @@
 }
 
 .rapHeroFloat {
+  display: none;
 
   position: absolute;
 
