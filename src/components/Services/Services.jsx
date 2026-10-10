@@ -85,14 +85,14 @@ const services = [
   ["Women's Wellness", "Movement, strength and wellness guidance tailored to women's needs.", "wellness", "pink", HeartPulse],
   ["Sports Nutrition", "Nutrition guidance to support training and recovery from a qualified professional.", "wellness", "purple", ShieldCheck],
   ["Online Wellness Guidance", "Practical guidance on daily movement, exercise and healthy routines.", "rehab", "teal", Sparkles],
-].map(([title, description, image, accent, icon]) => ({
+].map(([title, description, category, accent, icon], index) => ({
   title,
   description,
-  image: serviceImages[image],
+  category,
+  image: serviceImages[index % serviceImages.length],
   accent,
   icon,
 }));
-
 function getCardsPerView() {
   if (typeof window === "undefined") return 4;
   if (window.innerWidth <= 700) return 1;
